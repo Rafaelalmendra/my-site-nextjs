@@ -8,13 +8,14 @@ import GlobalStyle from '../styles/global';
 import { lightTheme, darkTheme } from "../styles/theme";
 import { ThemeProvider } from 'styled-components';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import ScrollButton from '../components/ScrollButton';
 //import { usePersistedState } from '../utils/usePersistedState';
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
     Aos.init({ duration: 700, offset: 120 })
   }, [])
-
   
   const [theme, setTheme] = useState(darkTheme)
 
@@ -25,8 +26,10 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
       <Navbar toggleTheme={toggleTheme}/>
+      <ScrollButton />
       <GlobalStyle />
       <Component {...pageProps} />
+      <Footer />
     </ThemeProvider>
   )
 }

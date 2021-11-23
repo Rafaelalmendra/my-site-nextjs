@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 
+import About from '../components/About'
 import { 
   Container, 
   Main, 
@@ -8,7 +9,8 @@ import {
   Title, 
   ButtonHome, 
   VectorOne, 
-  VectorTwo } from '../styles/home'
+  VectorTwo 
+} from '../styles/home'
 
 export default function Home() {
   return (
@@ -20,7 +22,7 @@ export default function Home() {
               data-aos="zoom-in"
               src="/images/logohome.svg"
               alt="Logo Principal Rafael Almendra"
-              width={784}
+              width={528}
               height={328}
             />
           </Logo>
@@ -75,7 +77,7 @@ export default function Home() {
         </Main>
       </Container>
       <section id="about">
-        
+        <About />
       </section>
     </>
   )
