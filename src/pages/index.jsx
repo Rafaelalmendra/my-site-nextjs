@@ -27,7 +27,7 @@ export default function Home() {
             />
           </Logo>
 
-          <Title data-aos="fade-in" data-aos-delay="200"> 
+          <Title data-aos="fade-up" data-aos-delay="200"> 
             <a href="#about">
               <ButtonHome>
                 Sobre mim <i className="bi bi-caret-down-fill"></i>
@@ -71,7 +71,7 @@ export default function Home() {
                 alt="Imagem de outro vetor no fundo da tela"
                 width={100}
                 height={100}
-                />
+              />
             </motion.div>
           </VectorOne>
         </Main>

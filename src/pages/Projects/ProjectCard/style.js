@@ -53,7 +53,7 @@ export const Techs = styled.div`
   }
 
   @media (max-width: 768px) {
-    justify-content: center;
+    justify-content: left;
     max-width: 100%;
     margin-bottom: 1.5rem;
   }

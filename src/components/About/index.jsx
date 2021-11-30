@@ -33,7 +33,7 @@ export default function About() {
             </a>
           </CurriculumLink>
           
-          <Link href='/projects' style={{ textDecoration: 'none' }}>
+          <Link href='/Projects' style={{ textDecoration: 'none' }}>
             <a>
               <button className="global-button" >
                 Projetos <i className="bi bi-caret-right-fill"></i>

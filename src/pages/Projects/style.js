@@ -19,6 +19,11 @@ export const TitleProjects = styled.div`
   h2 {
     font-size: var(--title);
     font-weight: 600;
+
+    @media (max-width: 768px) {
+      font-size: var(--small-title);
+      font-weight: 600;
+    }
   }
 `
 
@@ -35,6 +40,12 @@ export const ProjectsContainer = styled.div`
       &:hover {
         color: var(--blue);
       }
+    }
+
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 0.8rem;
     }
   }
 `

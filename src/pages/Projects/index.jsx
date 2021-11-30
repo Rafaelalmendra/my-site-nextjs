@@ -1,4 +1,5 @@
 import ProjectCard from './ProjectCard';
+import Footer from './Footer';
 
 import { 
   Container, 
@@ -65,6 +66,12 @@ export default function Projects() {
           link="https://almendraemota.com/"
         />
       </div>
+
+      <div className="divider"></div>
+
+      <footer className="margins">
+        <Footer />
+      </footer>
     </Container>
   )
 };
