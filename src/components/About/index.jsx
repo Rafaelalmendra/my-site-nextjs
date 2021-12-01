@@ -55,7 +55,7 @@ export default function About() {
           <ImageProfile>
             <Image
               data-aos="zoom-in"
-              src={"/images/perfil.png"} 
+              src={"/images/profile.svg"} 
               alt="Foto de perfil Rafael de Sousa Almendra"
               width={322}
               height={342}

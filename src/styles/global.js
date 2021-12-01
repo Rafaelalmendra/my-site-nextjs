@@ -7,14 +7,11 @@ export default createGlobalStyle `
     //colors
     --blue: #32C5FF;
     --hover-blue: #2EB2E5;
-    --dark-blue: #597393;
-    --light: #DDEAF3;
     --white: #FFFFFF;
     --black: #131219;
-    --light-black: #404040;
-    --super-light-black: #6D6D6D;
-    --gray: #B8B7B9;
+    --light-black: #6D6D6D;
     --link: #463FDF;
+    --purple-black: #161B3D;
 
     //font-size
     --title: 3.5rem;
@@ -74,6 +71,15 @@ export default createGlobalStyle `
     color: ${(props) => props.theme.text};
   }
 
+  .title-blog {
+    color: ${(props) => props.theme.blogText};
+  }
+
+  .tech-blog {
+    color: ${(props) => props.theme.techText};
+    background: ${(props) => props.theme.techBackground};
+  }
+
   button {
     border: none;
     cursor: pointer;
@@ -125,6 +131,11 @@ export default createGlobalStyle `
   .margins-nav {
     margin-left: 14rem;
     margin-right: 14rem;
+  }
+
+  .margins-blog {
+    margin-left: 35rem;
+    margin-right: 35rem;
   }
 
   .global-button {

@@ -75,15 +75,15 @@ export const FormContainer = styled.div`
       width: 90%;
 
       font-size: 1rem;
-      color: var(--super-light-black);
+      color: var(--light-black);
 
-      border-bottom: 1px solid var(--super-light-black);
+      border-bottom: 1px solid var(--light-black);
       background: none;
       
       transition: border-bottom 0.2s ease-in-out;
 
       &::placeholder {
-        color: var(--super-light-black);
+        color: var(--light-black);
         font-size: 0.9rem;
         font-weight: 300;
       }
