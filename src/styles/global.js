@@ -192,6 +192,13 @@ export default createGlobalStyle `
     z-index: 10;
   }
 
+  .sk-chase {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    animation: sk-chase 2.5s infinite linear both;
+  }
+
   //--animate-float--//
   @keyframes float {
     0% {

@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-direction: column;
   min-height: 100vh;
@@ -14,7 +13,8 @@ export const Title = styled.div`
   justify-content: center;
   flex-direction: column;
   gap: 2.275rem;
-  margin-top: 6rem;
+  margin-top: 2rem;
+  margin-bottom: 4.875rem;
 
   h1 {
     font-size: 2.625rem;
@@ -26,7 +26,6 @@ export const Title = styled.div`
     width: 24rem;
     height: 3.375rem;
     padding-left: 1rem;
-    margin-bottom: 4.875rem;
     
     font-size: 1rem;
 
