@@ -39,6 +39,7 @@ export default createGlobalStyle `
   
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 9rem;
 
     @media (max-width: 1080px) {
       font-size: 93.75%;
@@ -136,6 +137,41 @@ export default createGlobalStyle `
   .margins-blog {
     margin-left: 35rem;
     margin-right: 35rem;
+
+    @media (max-width: 1680px) {
+      margin-left: 25rem;
+      margin-right: 25rem;
+    }
+
+    @media (max-width: 1440px) {
+      margin-left: 20rem;
+      margin-right: 20rem;
+    }
+
+    @media (max-width: 1366px) {
+      margin-left: 17rem;
+      margin-right: 17rem;
+    }
+
+    @media (max-width: 1112px) {
+      margin-left: 14rem;
+      margin-right: 14rem;
+    }
+
+    @media (max-width: 991.98px) {
+      margin-left: 12rem;
+      margin-right: 12rem;
+    }
+
+    @media (max-width: 767.98px) {
+      margin-left: 8rem;
+      margin-right: 8rem;
+    }
+
+    @media (max-width: 575.98px) {
+      margin-left: 1.5rem;
+      margin-right: 1.5rem;
+    }
   }
 
   .global-button {

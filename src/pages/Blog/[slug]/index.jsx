@@ -45,8 +45,6 @@ export const getStaticProps = async context => {
     author: response.data.author[0].text,
     author_image: response.data.author_image.url,
     date: response.data.date,
-    section_one: response.data.section_one,
-    subtitle: response.data.subtitle[0].text,
     content: response.data.content,
   };
 
@@ -99,29 +97,18 @@ export default function Slug({ posts }) {
       </AuthorImage>
 
       <h1 className="title-blog">{posts.title}</h1>
-      <p 
-        className="title-blog" 
-        style={{marginBottom: "2rem"}}
-      >
-        {posts.section_one.map((item, index) => (
-          <>
-            <p key={index}>{item.text}</p>
-            {item.url ? (
-              <img src={item.url} />
-            ) : (null)}
-          </>
-        ))}
-      </p>
-
-      <h2 className="title-blog">{posts.subtitle}</h2>
-      
       <p className="title-blog">
         {posts.content.map((item, index) => (
           <>
-            <p key={index}>{item.text} <br /></p>
+            {item.type == "preformatted" ? (
+              <h2 style={{marginTop: '2rem'}}>{item.text}</h2>
+            ) : (
+              <p key={index}>{item.text}</p>
+            )}
             
             {item.url ? (
-              <img src={item.url} />
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={item.url} alt=""/>
             ) : (null)}
           </>
         ))}
