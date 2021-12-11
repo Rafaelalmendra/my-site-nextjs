@@ -37,7 +37,13 @@ export const Container = styled.div`
   }
 
   img {
-    margin-left: 0.475rem;
+    margin-top: 1rem;
+    margin-bottom: 1.125rem;
+    width: 30rem;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
 
   .image-blog {
