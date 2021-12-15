@@ -43,7 +43,14 @@ export const UlContainer = styled.ul`
   li {
     font-size: 1rem;
     font-weight: 400;
-    transition: color ease-in-out 0.2s;
+    
+    a, i {
+      transition: color ease-in-out 0.2s;
+      
+      &:hover {
+        color: var(--blue)
+      }
+    }
   }
 
   @media (max-width: 575.98) {
@@ -86,7 +93,6 @@ export const UlLinks = styled.ul`
   align-items: center;
   justify-content: center;
 
-  color: #32C5FF;
   font-size: 2.125rem;
   font-weight: 500;
 

@@ -34,6 +34,13 @@ export const Container = styled.div`
     line-height: 2rem;
     text-align: justify;
     width: 100%;
+    margin-bottom: 1rem;
+
+  }
+
+  a {
+    font-size: 1.1rem;
+    color: #00a8ff;
   }
 
   img {
@@ -117,4 +124,12 @@ export const AuthorImage = styled.div`
   margin-bottom: 3rem;
 
   clip-path: circle();
+`
+
+export const Return = styled.div`
+  margin-top: 2rem;
+  
+  a {
+    color: var(--white);
+  }
 `

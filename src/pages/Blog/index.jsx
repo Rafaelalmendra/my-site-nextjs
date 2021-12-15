@@ -45,19 +45,21 @@ export default function Blog({posts}) {
 
       <ContainerPost>
         {posts.map(post => (
-          <Link key={post.slug} href={`/Blog/${post.slug}`}>
-            <a>
-              <Post>
-                <ImageEffect style={{ backgroundImage: `url(${post.thumbnail})`}}>
-                </ImageEffect>
-                <p>{post.title}</p>
-                <div>
-                  <span>por <strong>{post.author}</strong></span>
-                  <span>{post.date}</span>
-                </div>
-              </Post>
-            </a>
-          </Link>
+          <>
+            <Link key={post.slug} href={`/Blog/${post.slug}`}>
+              <a>
+                <Post>
+                  <ImageEffect style={{ backgroundImage: `url(${post.thumbnail})`}}>
+                  </ImageEffect>
+                  <p>{post.title}</p>
+                  <div>
+                    <span>por <strong>{post.author}</strong></span>
+                    <span>{post.date}</span>
+                  </div>
+                </Post>
+              </a>
+            </Link>
+          </>
         ))}
       </ContainerPost>
     </Container>

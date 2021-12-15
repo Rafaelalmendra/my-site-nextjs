@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import getPrismicClient from '../../../services/prismic';
 import Prismic from '@prismicio/client'
 
@@ -7,7 +8,8 @@ import {
   ImageContainer,
   Techs,
   AuthorAndDate,
-  AuthorImage
+  AuthorImage,
+  Return
 } from './style';
 import LoadingScreen from '../../../components/LoadingScreen';
 import { useRouter } from 'next/dist/client/router';
@@ -27,8 +29,8 @@ export const getStaticPaths = async () => {
   return {
     paths,
     fallback: false
-  }
-}
+  };
+};
 
 export const getStaticProps = async context => {
   const prismic = getPrismicClient();
@@ -46,6 +48,7 @@ export const getStaticProps = async context => {
     author_image: response.data.author_image.url,
     date: response.data.date,
     content: response.data.content,
+    link: response.data.link.url
   };
 
   return {
@@ -57,12 +60,11 @@ export const getStaticProps = async context => {
 };
 
 export default function Slug({ posts }) {
-  console.log(posts);
-
   const router = useRouter();
+
   if (router.isFallback) {
     return <LoadingScreen />;
-  }
+  };
 
   return (
     <Container className="margins-blog">
@@ -97,7 +99,7 @@ export default function Slug({ posts }) {
       </AuthorImage>
 
       <h1 className="title-blog">{posts.title}</h1>
-      <p className="title-blog">
+      <div className="title-blog">
         {posts.content.map((item, index) => (
           <>
             {item.type == "preformatted" ? (
@@ -112,7 +114,24 @@ export default function Slug({ posts }) {
             ) : (null)}
           </>
         ))}
-      </p>
+
+        {posts.link ? (
+          <a href={posts.link} target="_blank" rel="noopener noreferrer">
+            Clique aqui para saber mais sobre o {posts.technologie2}
+          </a>
+        ) : (null)}
+      </div>
+
+      <div className="divider-two" style={{marginTop: '2rem'}}></div>
+
+      <Return>
+        <Link href="/Blog">
+          <a>
+            <i className="bi bi-caret-left-fill"></i>
+            Voltar para o blog
+          </a>
+        </Link>
+      </Return>
     </Container>
-  )
+  );
 };

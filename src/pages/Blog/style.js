@@ -20,23 +20,20 @@ export const Title = styled.div`
     font-size: 2.625rem;
     font-weight: 500;
     color: var(--blue);
-  }
 
-  input {
-    width: 24rem;
-    height: 3.375rem;
-    padding-left: 1rem;
-    
-    font-size: 1rem;
+    @media (max-width: 850px) {
+      font-size: 2.2rem;
+    }
 
-    border: 1px solid var(--blue);
-    border-radius: 4px;
+    @media (max-width: 575.98px) {
+      font-size: 1.575rem;
+    }
   }
 `
 
 export const Post = styled.div`
-  width: 339px;
-  height: 419px;
+  width: 21.188rem;
+  height: 26.188rem;
   display: flex;
   flex-direction: column;
   
@@ -57,6 +54,11 @@ export const Post = styled.div`
     font-weight: 500;
     line-height: 3rem;
     margin-bottom: 10rem;
+
+    @media (max-width: 850px) {
+      font-size: 2.2rem;
+      line-height: 2.675rem;
+    }
   }
 
   div {
@@ -77,13 +79,14 @@ export const Post = styled.div`
       }
     }
   }
+  
 `
 
 export const ImageEffect = styled.div`
   position: absolute;
-  width: 339px;
+  width: 21.188rem;
   z-index: -1;
-  height: 419px;
+  height: 26.188rem;
   border-radius: 20px;
   background: no-repeat center center;
   background-size: cover;
@@ -100,6 +103,16 @@ export const ImageEffect = styled.div`
 `
 
 export const ContainerPost = styled.div`
+  max-width: 100%;
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
+
+  @media (max-width: 850px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  
 `

@@ -16,58 +16,55 @@ export default function Contact() {
         <ContactContainer className="margins">
           <div data-aos="zoom-in">
             <FormContainer>
-              <form 
-                name="form-contact"
-                method="POST"
-                data-netlify="true"
-                onSubmit="submit"
-                netlify
-              >
-                <p>Entre em contato comigo</p>
-                <ContainerForm>
-                  <input type="hidden" name="form-name" value="form-contact"/>
-                  <label>
-                    Nome
-                    <input 
-                      type="text" 
-                      name="name" 
-                      placeholder="Qual seu nome?" 
-                      required 
-                    />
-                  </label>
-                  <label>
-                    E-mail
-                    <input 
-                      type="email" 
-                      name="email" 
-                      placeholder="Insira um e-mail para contato" 
-                      required 
-                    />
-                  </label>
-                  <label>
-                    Telefone (opcional)
-                    <input 
-                      type="number" 
-                      name="phone" 
-                      placeholder="Insira um número para contato" 
-                    />
-                  </label>
-                  <label>
-                    Mensagem (opcional)
-                    <textarea 
-                      name="message" 
-                      type="text" 
-                      placeholder="Escreva sua mensagem" 
-                    />
-                  </label>
-                  <input 
-                    className="contact-button" 
-                    type="submit"
-                    value="Enviar"
-                  />
-                </ContainerForm>
-              </form>
-            </FormContainer>
+              <form action="https://formsubmit.co/rafaelalmendra28@gmail.com" method="POST">
+                  <input type="hidden" name="_next" value="http://localhost:3000/" />
+                  <input type="hidden" name="_captcha" value="false" />
+                  <p>Entre em contato comigo</p>
+                  <ContainerForm>
+                    <input type="hidden" name="form-name" value="form-contact"/>
+                    <label>
+                      Nome
+                      <input 
+                        type="text" 
+                        name="name" 
+                        placeholder="Qual seu nome?" 
+                        required 
+                      />
+                    </label>
+                    <label>
+                      E-mail
+                      <input 
+                        type="email" 
+                        name="email" 
+                        placeholder="Insira um e-mail para contato" 
+                        required 
+                      />
+                    </label>
+                    <label>
+                      Telefone (opcional)
+                      <input 
+                        type="number" 
+                        name="phone" 
+                        placeholder="Insira um número para contato" 
+                      />
+                    </label>
+                    <label>
+                      Mensagem (opcional)
+                      <textarea 
+                        name="message" 
+                        type="text" 
+                        placeholder="Escreva sua mensagem" 
+                      />
+                    </label>
+                    <button 
+                      className="contact-button" 
+                      type="submit"
+                    >
+                      Enviar
+                    </button>
+                  </ContainerForm>
+                </form>
+              </FormContainer>
           </div>
         </ContactContainer>
 

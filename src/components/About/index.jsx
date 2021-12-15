@@ -21,7 +21,7 @@ export default function About() {
           <h2>Quem sou</h2>
           <h3>Rafael de Sousa Almendra</h3>
           <p>
-            Sou desenvolvedor Front-end e graduando em sistemas de informação. Tenho experiência com Designer como Freelancer a 2 anos.
+            Sou desenvolvedor Front-end e graduando em sistemas de informação.
           </p>
           <CurriculumLink>
             <a 
