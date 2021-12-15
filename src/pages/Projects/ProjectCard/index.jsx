@@ -7,7 +7,7 @@ import {
   Techs,
   Text,
   NameAndLink
-} from './style';
+} from '../../../styles/projectCard';
 
 export default function ProjectCard(props) {
   return (
@@ -42,5 +42,5 @@ export default function ProjectCard(props) {
         </div>
       </NameAndLink>
     </ProjectContainer>
-  )
+  );
 };

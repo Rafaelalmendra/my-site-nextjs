@@ -9,7 +9,7 @@ import {
   Post,
   ImageEffect,
   ContainerPost
-} from './style';
+} from '../../styles/blog';
 
 export const getStaticProps = async () => {
   const prismic = getPrismicClient();

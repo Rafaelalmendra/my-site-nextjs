@@ -1,7 +1,11 @@
 import Link from 'next/link';
-import Image from 'next/image'
+import Image from 'next/image';
 
-import { FooterVector, FooterText, FooterContainer } from './style';
+import {
+  FooterVector,
+  FooterText,
+  FooterContainer
+} from '../../../styles/projectsFooter';
 
 export default function Footer() {
   return (
@@ -22,5 +26,5 @@ export default function Footer() {
           />
         </FooterVector>
       </FooterContainer>
-  )
+  );
 };

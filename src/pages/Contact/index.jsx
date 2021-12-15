@@ -8,7 +8,7 @@ import {
   ContainerForm,
   VectorTwo,
   VectorOne
-} from './style';
+} from '../../styles/contact';
 
 export default function Contact() {
   return (
@@ -17,7 +17,7 @@ export default function Contact() {
           <div data-aos="zoom-in">
             <FormContainer>
               <form action="https://formsubmit.co/rafaelalmendra28@gmail.com" method="POST">
-                  <input type="hidden" name="_next" value="http://localhost:3000/" />
+                  <input type="hidden" name="_next" value="rafaelalmendra.com/" />
                   <input type="hidden" name="_captcha" value="false" />
                   <p>Entre em contato comigo</p>
                   <ContainerForm>

@@ -5,7 +5,7 @@ import {
   Container, 
   TitleProjects, 
   ProjectsContainer, 
-} from './style';
+} from '../../styles/projects';
 
 export default function Projects() {
   return (

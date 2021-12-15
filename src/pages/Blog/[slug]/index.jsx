@@ -1,8 +1,10 @@
+import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
 import Link from 'next/link';
 import getPrismicClient from '../../../services/prismic';
 import Prismic from '@prismicio/client'
 
+import LoadingScreen from '../../../components/LoadingScreen';
 import { 
   Container,
   ImageContainer,
@@ -10,9 +12,7 @@ import {
   AuthorAndDate,
   AuthorImage,
   Return
-} from './style';
-import LoadingScreen from '../../../components/LoadingScreen';
-import { useRouter } from 'next/dist/client/router';
+} from '../../../styles/slug';
 
 export const getStaticPaths = async () => {
   const prismic = getPrismicClient();
