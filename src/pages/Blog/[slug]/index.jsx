@@ -1,7 +1,9 @@
 import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
 import Link from 'next/link';
+
 import getPrismicClient from '../../../services/prismic';
+import server from '../../../services/prismic';
 import Prismic from '@prismicio/client'
 
 import LoadingScreen from '../../../components/LoadingScreen';
@@ -15,7 +17,7 @@ import {
 } from '../../../styles/slug';
 
 export const getStaticPaths = async () => {
-  const prismic = getPrismicClient();
+  const prismic = server();
   const posts = await prismic.query([
     Prismic.Predicates.at('document.type', 'post'),
   ]);
@@ -33,7 +35,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async context => {
-  const prismic = getPrismicClient();
+  const prismic = server();
   const { slug } = context.params;
 
   const response = await prismic.getByUID('post', String(slug), {});

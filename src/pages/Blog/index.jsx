@@ -1,7 +1,8 @@
 import Link from 'next/link';
 
 import getPrismicClient from '../../services/prismic';
-import Prismic from '@prismicio/client'
+import server from '../../services/prismic';
+import Prismic from '@prismicio/client';
 
 import {
   Container,
@@ -12,10 +13,10 @@ import {
 } from '../../styles/blog';
 
 export const getStaticProps = async () => {
-  const prismic = getPrismicClient();
+  const prismic = server();
 
   const projectResponse = await prismic.query(
-    [Prismic.Predicates.at('document.type', 'post')],
+    [ Prismic.Predicates.at('document.type', 'post') ],
     { orderings: '[document.frist_publication_date desc]' }
   );
 

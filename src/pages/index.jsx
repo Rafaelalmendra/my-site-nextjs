@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import { motion } from 'framer-motion'
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 import About from '../components/About'
 import { 
@@ -10,7 +10,7 @@ import {
   ButtonHome, 
   VectorOne, 
   VectorTwo 
-} from '../styles/home'
+} from '../styles/home';
 
 export default function Home() {
   return (
@@ -80,5 +80,5 @@ export default function Home() {
         <About />
       </section>
     </>
-  )
-}
+  );
+};

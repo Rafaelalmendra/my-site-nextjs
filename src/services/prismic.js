@@ -6,5 +6,8 @@ export default function getPrismicClient(req) {
     accessToken: process.env.PRISMIC_ACESS_TOKEN,
   });
 
+  
   return prismic;
 }
+
+export const server = getPrismicClient ? 'http:localhost:3000' : 'https://rafaelalmendra.com';
