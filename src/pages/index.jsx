@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Head from 'next/head'
 import { motion } from 'framer-motion';
 
 import About from '../components/About'
@@ -15,6 +16,9 @@ import {
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>Home | Rafael Almendra</title>
+      </Head>
       <Container>
         <Main>
           <Logo>

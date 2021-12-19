@@ -1,8 +1,8 @@
 import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
 import Link from 'next/link';
+import Head from 'next/head';
 
-import getPrismicClient from '../../../services/prismic';
 import server from '../../../services/prismic';
 import Prismic from '@prismicio/client'
 
@@ -70,6 +70,10 @@ export default function Slug({ posts }) {
 
   return (
     <Container className="margins-blog">
+      <Head>
+        <title>{posts.title}</title>
+      </Head>
+
       <ImageContainer>
         <Image
           className="image"

@@ -1,3 +1,5 @@
+import Head from 'next/head';
+
 import ProjectCard from './ProjectCard';
 import Footer from './Footer';
 
@@ -10,6 +12,10 @@ import {
 export default function Projects() {
   return (
     <Container>
+      <Head>
+        <title>Projetos | Rafael Almendra</title>
+      </Head>
+
       <TitleProjects className="margins" data-aos="fade-down">
         <h2>Projetos</h2>
         <ProjectsContainer>

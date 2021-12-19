@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import Head from 'next/head'
+
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 
@@ -10,7 +12,6 @@ import { ThemeProvider } from 'styled-components';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ScrollButton from '../components/ScrollButton';
-//import { usePersistedState } from '../utils/usePersistedState';
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -24,13 +25,18 @@ function MyApp({ Component, pageProps }) {
   }
 
   return (
-    <ThemeProvider theme={theme}>
-      <Navbar toggleTheme={toggleTheme}/>
-      <ScrollButton />
-      <GlobalStyle />
-      <Component {...pageProps} />
-      <Footer />
-    </ThemeProvider>
+    <>
+      <Head>
+        <title>Rafael Almendra</title>
+      </Head>
+      <ThemeProvider theme={theme}>
+        <Navbar toggleTheme={toggleTheme}/>
+        <ScrollButton />
+        <GlobalStyle />
+        <Component {...pageProps} />
+        <Footer />
+      </ThemeProvider>
+    </>
   )
 }
 

@@ -1,6 +1,6 @@
 import Link from 'next/link';
+import Head from 'next/head';
 
-import getPrismicClient from '../../services/prismic';
 import server from '../../services/prismic';
 import Prismic from '@prismicio/client';
 
@@ -39,6 +39,10 @@ export const getStaticProps = async () => {
 export default function Blog({posts}) {
   return (
     <Container className="margins-nav">
+      <Head>
+        <title>Blog | Rafael Almendra</title>
+      </Head>
+
       <Title>
         <h1>Bem vindo(a) ao meu Blog 👋</h1>
         {/*<input type="search" placeholder="Faça uma pesquisa"/>*/}
