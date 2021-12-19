@@ -122,7 +122,12 @@ export default function Slug({ posts }) {
         ))}
 
         {posts.link ? (
-          <a href={posts.link} target="_blank" rel="noopener noreferrer">
+          <a 
+            href={posts.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link-blog"
+          >
             Clique aqui para saber mais sobre o {posts.technologie2}
           </a>
         ) : (null)}

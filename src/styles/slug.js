@@ -40,6 +40,9 @@ export const Container = styled.div`
 
   a {
     font-size: 1.1rem;
+  }
+
+  .link-blog {
     color: #00a8ff;
   }
 
@@ -130,6 +133,6 @@ export const Return = styled.div`
   margin-top: 2rem;
   
   a {
-    color: var(--white);
+    
   }
 `

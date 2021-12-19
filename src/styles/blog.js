@@ -13,7 +13,7 @@ export const Title = styled.div`
   justify-content: center;
   flex-direction: column;
   gap: 2.275rem;
-  margin-top: 2rem;
+  margin-top: 6rem;
   margin-bottom: 4.875rem;
 
   h1 {
