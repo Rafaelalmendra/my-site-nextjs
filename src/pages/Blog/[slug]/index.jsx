@@ -142,10 +142,7 @@ export default function Slug({ posts }) {
 
       <Return>
         <Link href="/Blog">
-          <a>
-            <i className="bi bi-caret-left-fill"></i>
-            Voltar para o blog
-          </a>
+          <a><i className="bi bi-caret-left-fill"></i>Voltar para o blog</a>
         </Link>
       </Return>
 
