@@ -21,8 +21,7 @@ export default function Contact() {
         <div data-aos="zoom-in">
           <FormContainer>
             <form action="https://formsubmit.co/rafaelalmendra28@gmail.com" method="POST">
-                <input type="hidden" name="_next" value="rafaelalmendra.com/" />
-                <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value="https://rafaelalmendra.com/" />
                 <p>Entre em contato comigo</p>
                 <ContainerForm>
                   <input type="hidden" name="form-name" value="form-contact"/>
