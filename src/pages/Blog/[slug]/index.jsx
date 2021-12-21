@@ -15,6 +15,7 @@ import {
   AuthorImage,
   Return
 } from '../../../styles/slug';
+import Comments from '../../../components/comments/comments';
 
 export const getStaticPaths = async () => {
   const prismic = server();
@@ -133,7 +134,11 @@ export default function Slug({ posts }) {
         ) : (null)}
       </div>
 
-      <div className="divider-two" style={{marginTop: '2rem'}}></div>
+      <div className="divider-two"
+        style={{marginTop: '2rem', marginBottom: '2rem'}}
+      ></div>
+
+      <Comments />
 
       <Return>
         <Link href="/Blog">
@@ -143,6 +148,7 @@ export default function Slug({ posts }) {
           </a>
         </Link>
       </Return>
+
     </Container>
   );
 };
