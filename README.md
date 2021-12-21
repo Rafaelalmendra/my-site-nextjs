@@ -22,6 +22,8 @@ My website was created in order to demonstrate my skills and share my knowledge.
 - Styled Components
 - Prismic CMS
 
+<br>
+
 ## 🚀 How to run
 
 Clone the project and access its folder.
