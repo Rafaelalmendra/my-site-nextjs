@@ -7,6 +7,7 @@ import server from '../../../services/prismic';
 import Prismic from '@prismicio/client'
 
 import LoadingScreen from '../../../components/LoadingScreen';
+import Comments from '../../../components/Comments';
 import { 
   Container,
   ImageContainer,
@@ -15,7 +16,6 @@ import {
   AuthorImage,
   Return
 } from '../../../styles/slug';
-import Comments from '../../../components/comments/comments';
 
 export const getStaticPaths = async () => {
   const prismic = server();

@@ -4,7 +4,7 @@ export default class Comments extends Component {
   constructor(props) {
     super(props);
     this.commentBox = React.createRef();
-  }
+  };
 
   componentDidMount() {
     let scriptEl = document.createElement("script");
@@ -15,7 +15,7 @@ export default class Comments extends Component {
     scriptEl.setAttribute("issue-term", "url"),
     scriptEl.setAttribute("theme", "dark-blue"),
     this.commentBox.current.appendChild(scriptEl);
-  }
+  };
 
   render() {
     return (
@@ -23,5 +23,5 @@ export default class Comments extends Component {
         <div ref={this.commentBox}></div>
       </div>
     )
-  }
-}
+  };
+};
