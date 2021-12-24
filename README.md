@@ -21,3 +21,26 @@ My website was created in order to demonstrate my skills and share my knowledge.
 - Nextjs
 - Styled Components
 - Prismic CMS
+
+<br>
+
+## 🚀 How to run
+
+Clone the project and access its folder.
+
+```bash
+$ git clone Rafaelalmendra/my-site-next
+```
+
+To start it, follow the steps below:
+```bash
+# Install dependencies
+$ yarn
+
+# Start the project
+$ yarn dev
+```
+
+<br>
+
+Made with 💜 by Rafael Almendra 👋 [See my linkedin](https://www.linkedin.com/in/rafaelalmendradev/)
