@@ -14,6 +14,10 @@ export default function Projects() {
     <Container>
       <Head>
         <title>Projetos | Rafael Almendra</title>
+        <meta 
+          name="description" 
+          content="Conheça alguns dos meus projetos."
+        />
       </Head>
 
       <TitleProjects className="margins" data-aos="fade-down">

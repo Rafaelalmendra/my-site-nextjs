@@ -16,6 +16,11 @@ export default function Contact() {
     <Container>
       <Head>
         <title>Contato | Rafael Almendra</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta 
+          name="description" 
+          content="Entre em contato comigo através do formulário."
+        />
       </Head>
       <ContactContainer className="margins">
         <div data-aos="zoom-in">

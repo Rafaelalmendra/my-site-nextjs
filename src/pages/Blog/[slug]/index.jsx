@@ -73,6 +73,11 @@ export default function Slug({ posts }) {
     <Container className="margins-blog">
       <Head>
         <title>{posts.title}</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta 
+          name="description"
+          content={posts.title}
+        />
       </Head>
 
       <ImageContainer>

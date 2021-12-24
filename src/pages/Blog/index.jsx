@@ -41,6 +41,11 @@ export default function Blog({posts}) {
     <Container className="margins-nav">
       <Head>
         <title>Blog | Rafael Almendra</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta 
+          name="description" 
+          content="Conheça o meu blog e meus artigos sobre programação."
+        />
       </Head>
 
       <Title>

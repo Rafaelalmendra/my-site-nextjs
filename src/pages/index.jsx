@@ -18,6 +18,11 @@ export default function Home() {
     <>
       <Head>
         <title>Home | Rafael Almendra</title>
+        <meta 
+          name="description" 
+          content="Meu nome é Rafael, sou desenvolvedor Front-end."
+        />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Container>
         <Main>
