@@ -23,9 +23,6 @@ export default function About() {
           <p>
             Sou desenvolvedor Front-end e graduando em sistemas de informação.
           </p>
-          <p>
-            Sou desenvolvedor Front-end e graduando em sistemas de informação.
-          </p>
           <CurriculumLink>
             <a 
               href="https://drive.google.com/file/d/1Pt7ngkyQ-U-3nKnL0y1A2YEYDpXalyxq/view?usp=sharing"
