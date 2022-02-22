@@ -5,6 +5,7 @@ export const ProjectContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-bottom: 6.75rem;
 `
 
 export const ProjectImage = styled.div`
@@ -44,7 +45,8 @@ export const Techs = styled.div`
     align-items: center;
     justify-content: center;
     height: 2rem;
-    width: 7rem;
+    min-width: 7rem;
+    padding: 1rem;
 
     font-size: var(--small-text);
 

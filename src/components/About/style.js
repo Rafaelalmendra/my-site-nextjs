@@ -40,8 +40,9 @@ export const TextAbout = styled.div`
 
   p {
     font-size: var(--text);
+    opacity: 0.8;
     font-weight: 300;
-    max-width: 34rem;
+    max-width: 36rem;
     line-height: 1.6rem;
     margin-bottom: 1.6rem;
   }
@@ -79,10 +80,13 @@ export const CurriculumLink = styled.div`
   margin-bottom: 2.938rem;
   font-weight: 300;
   text-decoration: underline;
-  transition: color 0.2s ease-in-out;
+  
+  a {
+    transition: color 0.2s ease-in-out;
 
-  &:hover {
-    color: $blue;
+    &:hover {
+      color: var(--blue);
+    }
   }
 `
 
