@@ -6,6 +6,10 @@ export const ProjectContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   margin-bottom: 6.75rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 `
 
 export const ProjectImage = styled.div`

@@ -24,14 +24,15 @@ export default function Projects() {
         <h2>Projetos</h2>
         <ProjectsContainer>
           <ul>
+            <li><a href="#nftclub">NFTCLUB</a> </li>
             <li><a href="#letmeask">Letmeask</a> </li>
-            <li><a href="#beautysalon">Beautysalon</a></li>
             <li><a href="#almendra-e-mota">Almendra e Mota</a> </li>
+            <li><a href="#beautysalon">Beautysalon</a></li>
           </ul>
         </ProjectsContainer>
       </TitleProjects>
 
-      <div className="margins section"data-aos="zoom-in">
+      <div className="margins section" data-aos="zoom-in">
         <ProjectCard />
       </div>
 
