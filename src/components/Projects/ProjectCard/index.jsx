@@ -7,7 +7,8 @@ import {
   Details,
   Techs,
   Text,
-  NameAndLink
+  NameAndLink,
+  LinkAndRepository
 } from '../../../styles/projectCard';
 
 export default function ProjectCard() {
@@ -38,11 +39,23 @@ export default function ProjectCard() {
             <NameAndLink>
               <div><h3>{item.name}</h3></div>
 
-              <div>
-                <a href={item.link} target='_blank' rel='noopener noreferrer'>
-                  acesse aqui
+              <LinkAndRepository>
+                <a 
+                  href={item.link} 
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Deploy
                 </a>
-              </div>
+
+                <a 
+                  href={item.github} 
+                  target='_blank' 
+                  rel='noopener noreferrer'
+                >
+                    Repositório
+                </a>
+              </LinkAndRepository>
 
             </NameAndLink>
           </ProjectContainer>

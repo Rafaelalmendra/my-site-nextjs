@@ -26,8 +26,6 @@ export default function Projects() {
           <ul>
             <li><a href="#nftclub">NFTCLUB</a> </li>
             <li><a href="#letmeask">Letmeask</a> </li>
-            <li><a href="#almendra-e-mota">Almendra e Mota</a> </li>
-            <li><a href="#beautysalon">Beautysalon</a></li>
           </ul>
         </ProjectsContainer>
       </TitleProjects>

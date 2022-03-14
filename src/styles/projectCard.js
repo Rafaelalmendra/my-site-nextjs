@@ -101,8 +101,15 @@ export const NameAndLink = styled.div`
     }
   }
 
+`
+
+export const LinkAndRepository = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
   a {
     color: var(--blue);
-    font-size: 1.2rem;
+    font-size: 1.125rem;
   }
 `
