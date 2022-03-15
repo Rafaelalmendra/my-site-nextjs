@@ -6,8 +6,6 @@ import { ThemeContext} from 'styled-components'
 import Switch from 'react-switch'
 
 import NavLinks from './NavLinks'
-
-//images-and-styles
 import {
   Header,
   Nav,
@@ -19,8 +17,21 @@ import {
 } from './style'
 
 export default function Navbar({ toggleTheme }) {
-  const [ open, setOpen ] = useState(false);
+  const [ open, setOpen ] = useState(false)
+  const [ navbar, setnavbar ] = useState(false)
   const { title } = useContext(ThemeContext)
+
+  const changeBackground = () => {
+    if(window.scrollY >= 80) {
+      setnavbar(true)
+    } else {
+      setnavbar(false)
+    }
+  }
+
+  if (typeof window !== "undefined") {
+    window.addEventListener('scroll', changeBackground)
+  }
 
   const hamburguerIcon =
     <div className="hamburguer">
@@ -50,7 +61,7 @@ export default function Navbar({ toggleTheme }) {
   const closeMenu = () => setOpen(false)
 
   return (
-    <Header>
+    <Header className={navbar ? "active" : ""}>
       <Nav className="margins-nav">
         <Link href='/' style={{ textDecoration: 'none' }}>
           <a>

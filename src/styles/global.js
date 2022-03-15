@@ -124,6 +124,11 @@ export default createGlobalStyle `
     transform: matrix(-1, 0, 0, 1, 0, 0);
   }
 
+  .active {
+    background: var(--black);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+  }
+
   .margins {
     margin-left: 1.5rem;
     margin-right: 1.5rem;
