@@ -64,6 +64,7 @@ export const getStaticProps = async context => {
 
 export default function Slug({ posts }) {
   const router = useRouter();
+  console.log(posts);
 
   if (router.isFallback) {
     return <LoadingScreen />;
