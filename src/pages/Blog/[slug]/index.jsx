@@ -1,46 +1,39 @@
-import { useRouter } from 'next/dist/client/router';
-import Image from 'next/image';
-import Link from 'next/link';
-import Head from 'next/head';
-
-import server from '../../../services/prismic';
-import Prismic from '@prismicio/client'
-
-import LoadingScreen from '../../../components/LoadingScreen';
-import Comments from '../../../components/Comments';
-import { 
+import { useRouter } from "next/dist/client/router";
+import Image from "next/image";
+import Link from "next/link";
+import Head from "next/head";
+import server from "../../../services/prismic";
+import Prismic from "@prismicio/client";
+import LoadingScreen from "../../../components/LoadingScreen";
+import Comments from "../../../components/Comments";
+import {
   Container,
   ImageContainer,
   Techs,
   AuthorAndDate,
   AuthorImage,
-  Return
-} from '../../../styles/slug';
+  Return,
+} from "../../../styles/slug";
 
 export const getStaticPaths = async () => {
   const prismic = server();
   const posts = await prismic.query([
-    Prismic.Predicates.at('document.type', 'post'),
+    Prismic.Predicates.at("document.type", "post"),
   ]);
-
-  const paths = posts.results.map(post => ({
+  const paths = posts.results.map((post) => ({
     params: {
-      slug: post.uid
-    }
+      slug: post.uid,
+    },
   }));
-
   return {
     paths,
-    fallback: false
+    fallback: false,
   };
 };
-
-export const getStaticProps = async context => {
+export const getStaticProps = async (context) => {
   const prismic = server();
   const { slug } = context.params;
-
-  const response = await prismic.getByUID('post', String(slug), {});
-
+  const response = await prismic.getByUID("post", String(slug), {});
   const posts = {
     slug: response.uid,
     thumbnail: response.data.thumbnail,
@@ -51,36 +44,28 @@ export const getStaticProps = async context => {
     author_image: response.data.author_image.url,
     date: response.data.date,
     content: response.data.content,
-    link: response.data.link.url
+    link: response.data.link.url,
   };
-
   return {
     props: {
-      posts
+      posts,
     },
-    revalidate: 86400
+    revalidate: 86400,
   };
 };
 
-export default function Slug({ posts }) {
+const Slug = ({ posts }) => {
   const router = useRouter();
-  console.log(posts);
-
   if (router.isFallback) {
     return <LoadingScreen />;
-  };
-
+  }
   return (
     <Container className="margins-blog">
       <Head>
         <title>{posts.title}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta 
-          name="description"
-          content={posts.title}
-        />
+        <meta name="description" content={posts.title} />
       </Head>
-
       <ImageContainer>
         <Image
           className="image"
@@ -90,17 +75,16 @@ export default function Slug({ posts }) {
           height={posts.thumbnail.dimensions.height}
         />
       </ImageContainer>
-
       <Techs>
         <span className="tech-blog">{posts.technologie1}</span>
         <span className="tech-blog">{posts.technologie2}</span>
       </Techs>
-
       <AuthorAndDate className="title-blog">
-        <span>por <strong>{posts.author}</strong></span>
+        <span>
+          por <strong>{posts.author}</strong>
+        </span>
         <span>{posts.date}</span>
       </AuthorAndDate>
-
       <AuthorImage>
         <Image
           className="profile"
@@ -110,26 +94,20 @@ export default function Slug({ posts }) {
           height={80}
         />
       </AuthorImage>
-
       <h1 className="title-blog">{posts.title}</h1>
       <div className="title-blog">
         {posts.content.map((item, index) => (
           <>
             {item.type == "preformatted" ? (
-              <h2 style={{marginTop: '2rem'}}>{item.text}</h2>
+              <h2 style={{ marginTop: "2rem" }}>{item.text}</h2>
             ) : (
               <p key={index}>{item.text}</p>
             )}
-            
-            {item.url ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={item.url} alt=""/>
-            ) : (null)}
+            {item.url ? <img src={item.url} alt="" /> : null}
           </>
         ))}
-
         {posts.link ? (
-          <a 
+          <a
             href={posts.link}
             target="_blank"
             rel="noopener noreferrer"
@@ -137,21 +115,22 @@ export default function Slug({ posts }) {
           >
             Clique aqui para saber mais sobre o {posts.technologie2}
           </a>
-        ) : (null)}
+        ) : null}
       </div>
-
-      <div className="divider-two"
-        style={{marginTop: '2rem', marginBottom: '2rem'}}
+      <div
+        className="divider-two"
+        style={{ marginTop: "2rem", marginBottom: "2rem" }}
       ></div>
-
       <Comments />
-
       <Return>
         <Link href="/Blog">
-          <a><i className="bi bi-caret-left-fill"></i>Voltar para o blog</a>
+          <a>
+            <i className="bi bi-caret-left-fill"></i>Voltar para o blog
+          </a>
         </Link>
       </Return>
-
     </Container>
   );
 };
+
+export default Slug;

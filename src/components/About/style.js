@@ -1,29 +1,26 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 70vh;
-
+  height: 100vh;
   .bi-caret-right-fill {
-    color: #FFF;
+    color: var(--white);
   }
-`
+`;
 
 export const ContainerAbout = styled.div`
   display: flex;
   gap: 15.875rem;
-
   @media (max-width: 1366px) {
     gap: 0;
   }
-
   @media (max-width: 767.98px) {
     flex-direction: column;
   }
-`
+`;
 
 export const TextAbout = styled.div`
   h2 {
@@ -31,13 +28,11 @@ export const TextAbout = styled.div`
     font-weight: 600;
     margin-bottom: 1.7rem;
   }
-
   h3 {
     font-size: var(--subtitle);
     font-weight: 400;
     margin-bottom: 0.9rem;
   }
-
   p {
     font-size: var(--text);
     opacity: 0.8;
@@ -46,41 +41,36 @@ export const TextAbout = styled.div`
     line-height: 1.6rem;
     margin-bottom: 1.6rem;
   }
-
   @media (max-width: 767.98px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     order: 1;
-
     p {
       max-width: 25rem;
     }
-
-    button {
-      margin-bottom: 4rem;
-    }
   }
 
-  @media (max-width: 575.98px) { 
+  @media (max-width: 575.98px) {
     h2 {
       font-size: var(--small-title);
     }
-    
     h3 {
       font-size: var(--small-subtitle);
     }
-
     p {
       font-size: var(--small-text);
       line-height: 1.4rem;
     }
   }
-`
+`;
 
 export const CurriculumLink = styled.div`
   margin-bottom: 2.938rem;
   font-weight: 300;
   text-decoration: underline;
-  
   a {
     transition: color 0.2s ease-in-out;
 
@@ -88,13 +78,13 @@ export const CurriculumLink = styled.div`
       color: var(--blue);
     }
   }
-`
+`;
 
 export const ImageAbout = styled.div`
   display: flex;
   justify-content: center;
   margin: 0 auto;
-`
+`;
 
 export const ImageProfile = styled.div`
   position: relative;
@@ -106,27 +96,26 @@ export const ImageProfile = styled.div`
     margin-bottom: 2rem;
     max-width: 230px;
   }
-`
+`;
 
 export const ReactIcon = styled.div`
   position: relative;
   min-width: 8rem;
   z-index: 2;
-
   left: 4.8rem;
   transform: translateY(0);
   animation: float 3s ease-in-out infinite;
-
   @media (max-width: 767.98px) {
     display: none;
   }
-`
+`;
 
 export const ElementLine = styled.div`
-  position: relative;
-  left: -30rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 
   @media (max-width: 767.98px) {
     display: none;
   }
-`
+`;

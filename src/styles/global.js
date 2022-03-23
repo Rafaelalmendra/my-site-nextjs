@@ -1,10 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 
-export default createGlobalStyle `
+export default createGlobalStyle`
   :root {
     --header-height: 4.5rem;
-  
-    //colors
     --blue: #32C5FF;
     --hover-blue: #2EB2E5;
     --white: #FFFFFF;
@@ -12,18 +10,13 @@ export default createGlobalStyle `
     --light-black: #6D6D6D;
     --link: #463FDF;
     --purple-black: #161B3D;
-
-    //font-size
     --title: 3.5rem;
     --small-title: 2.5rem;
-
     --subtitle: 1.7rem;
     --small-subtitle: 1.2rem;
-
     --text: 1rem;
     --small-text: 0.9rem;
   }
-
   * {
     margin: 0;
     padding: 0;
@@ -32,215 +25,168 @@ export default createGlobalStyle `
     vertical-align: baseline;
     font-size: 100%;
     font: inherit;
-    list-style: none; 
+    list-style: none;
     text-decoration: none;
     color: inherit;
   }
-  
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 9rem;
-
     @media (max-width: 1080px) {
       font-size: 93.75%;
     }
-
     @media (max-width: 720px) {
       font-size: 87.5%;
     }
   }
-
   body, input, textarea, button  {
     font-family: 'Roboto', sans-serif;
     font-size: 0.875rem;
-    font-weight: 400;	
-    line-height: 1; 
-
+    font-weight: 400;
+    line-height: 1;
     color: ${(props) => props.theme.text};
     background: ${(props) => props.theme.background};
-
     border: none;
     -webkit-font-smoothing: antialiased;
-
     &:focus {
       border: 0 none;
       outline: 0;
     }
   }
-
   ul, li, a, i {
     color: ${(props) => props.theme.text};
   }
-
   .title-blog {
     color: ${(props) => props.theme.blogText};
   }
-
   .tech-blog {
     color: ${(props) => props.theme.techText};
     background: ${(props) => props.theme.techBackground};
   }
-
   button {
     border: none;
     cursor: pointer;
   }
-
   img {
     width: 100%;
   }
-
-  //--scroll--//
   ::-webkit-scrollbar {
     width: 0.625rem;
   }
-
   ::-webkit-scrollbar-track {
     background-color: #FFFFFF;
   }
-
   ::-webkit-scrollbar-thumb {
     background-color: #32C5FF;
   }
-  
   .nav-links {
     background: ${(props) => props.theme.background};
   }
-
   .section {
     padding: calc(4rem + 4rem) 0;
   }
-
   .divider {
     width: 100%;
     height: 1px;
     background: linear-gradient(270deg, var(--blue) 0%, rgba(204, 244, 230, 0.34) 100%);
   }
-
   .divider-two {
     width: 100%;
     height: 1px;
     background: linear-gradient(270deg, var(--blue) 0%, rgba(204, 244, 230, 0.34) 100%);
     transform: matrix(-1, 0, 0, 1, 0, 0);
   }
-
   .active {
     background: ${(props) => props.theme.background};
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
   }
-
   .margins {
     margin-left: 1.5rem;
     margin-right: 1.5rem;
   }
-  
   .margins-nav {
     margin-left: 14rem;
     margin-right: 14rem;
   }
-
   .margins-blog {
     margin-left: 35rem;
     margin-right: 35rem;
-
     @media (max-width: 1680px) {
       margin-left: 25rem;
       margin-right: 25rem;
     }
-
     @media (max-width: 1440px) {
       margin-left: 20rem;
       margin-right: 20rem;
     }
-
     @media (max-width: 1366px) {
       margin-left: 17rem;
       margin-right: 17rem;
     }
-
     @media (max-width: 1112px) {
       margin-left: 14rem;
       margin-right: 14rem;
     }
-
     @media (max-width: 991.98px) {
       margin-left: 12rem;
       margin-right: 12rem;
     }
-
     @media (max-width: 767.98px) {
       margin-left: 8rem;
       margin-right: 8rem;
     }
-
     @media (max-width: 575.98px) {
       margin-left: 1.5rem;
       margin-right: 1.5rem;
     }
   }
-
   .global-button {
     position: relative;
     width: 13rem;
     height: 4rem;
     z-index: 1;
-    
     font-size: 1.7rem;
     font-weight: 500;
-    
     color: #FFFFFF;
     background-color: #32C5FF;
-    
     cursor: pointer;
     border-radius: 0.65rem;
-
     transition: 0.2s ease-in-out;
-
-    &:hover {
-      background-color: #2EB2E5;
-      transform: scale(1.05);
+    background-color: #2EB2E5;
+    transform: scale(1.05);
     }
   }
-
   .hamburguer {
     font-size: 1.8rem;
     position: relative;
     cursor: pointer;
     z-index: 1000;
   }
-
   .close {
     font-size: 2.6rem;
     position: relative;
     cursor: pointer;
     z-index: 1000;
   }
-
   .nav-links {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     position: fixed;
     top: 0;
     left: 0;
-
     width: 100vw;
     min-height: 100vh;
-    
     transition: 0.2s;
     z-index: 10;
   }
-
   .sk-chase {
     width: 40px;
     height: 40px;
     position: relative;
     animation: sk-chase 2.5s infinite linear both;
   }
-
-  //--animate-float--//
   @keyframes float {
     0% {
       transform: translateY(0px);
@@ -252,50 +198,41 @@ export default createGlobalStyle `
       transform: translateY(0px);
     }
   }
-
-  //--small-devices--//
   @media (max-width: 1199.98px) {
     .margins-nav {
       margin-left: 6rem;
       margin-right: 6rem;
     }
   }
-
-  @media (max-width: 850px) { 
+  @media (max-width: 850px) {
     .margins-nav {
       margin-left: 5rem;
       margin-right: 5rem;
     }
-
     .desktop, .link {
       display: none;
     }
   }
-
   @media (max-width: 575.98px) {
     .margins-nav {
       margin-left: 1.5rem;
       margin-right: 1.5rem;
     }
-
     .global-button {
       width: 10rem;
       height: 3.4rem;
       border-radius: 0.5rem;
-      
+
       font-size: 1.2rem;
     }
-
     .hamburguer {
       width: 1.9rem;
     }
-
     .section {
       padding: calc(4rem + 2rem) 0;
     }
-
     :root {
       --header-height: 2.8rem;
     }
   }
-`
+`;
