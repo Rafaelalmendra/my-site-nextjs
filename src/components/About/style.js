@@ -5,7 +5,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   .bi-caret-right-fill {
     color: var(--white);
   }
@@ -14,6 +14,8 @@ export const Container = styled.div`
 export const ContainerAbout = styled.div`
   display: flex;
   gap: 15.875rem;
+  margin-top: 8.45rem;
+  margin-bottom: 4rem;
   @media (max-width: 1366px) {
     gap: 0;
   }
