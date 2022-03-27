@@ -1,11 +1,10 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { useContext, useState } from 'react'
-import { motion } from 'framer-motion'
-import { ThemeContext} from 'styled-components'
-import Switch from 'react-switch'
-
-import NavLinks from './NavLinks'
+import { useContext, useState } from "react";
+import { ThemeContext } from "styled-components";
+import { motion } from "framer-motion";
+import NavLinks from "./NavLinks";
+import Switch from "react-switch";
+import Image from "next/image";
+import Link from "next/link";
 import {
   Header,
   Nav,
@@ -14,34 +13,28 @@ import {
   MenuMain,
   ButtonContact,
   NavigationMobile,
-} from './style'
+} from "./style";
 
-export default function Navbar({ toggleTheme }) {
-  const [ open, setOpen ] = useState(false)
-  const [ navbar, setnavbar ] = useState(false)
-  const { title } = useContext(ThemeContext)
-
+const Navbar = ({ toggleTheme }) => {
+  const { title } = useContext(ThemeContext);
+  const [navbar, setnavbar] = useState(false);
+  const [open, setOpen] = useState(false);
   const changeBackground = () => {
-    if(window.scrollY >= 80) {
-      setnavbar(true)
+    if (window.scrollY >= 80) {
+      setnavbar(true);
     } else {
-      setnavbar(false)
+      setnavbar(false);
     }
-  }
-
+  };
   if (typeof window !== "undefined") {
-    window.addEventListener('scroll', changeBackground)
+    window.addEventListener("scroll", changeBackground);
   }
-
-  const hamburguerIcon =
+  const hamburguerIcon = (
     <div className="hamburguer">
-      <i 
-        className="bi bi-list"
-        onClick={() => setOpen(!open)}
-      ></i>
+      <i className="bi bi-list" onClick={() => setOpen(!open)}></i>
     </div>
-
-  const closeIcon = 
+  );
+  const closeIcon = (
     <motion.div
       className="close"
       initial={{ y: -100 }}
@@ -53,49 +46,52 @@ export default function Navbar({ toggleTheme }) {
     >
       <i
         className="bi bi-x"
-        alt="Icone de fechar menu" 
+        alt="Icone de fechar menu"
         onClick={() => setOpen(!open)}
       ></i>
     </motion.div>
-
-  const closeMenu = () => setOpen(false)
+  );
+  const closeMenu = () => setOpen(false);
 
   return (
     <Header className={navbar ? "active" : ""}>
       <Nav className="margins-nav">
-        <Link href='/' style={{ textDecoration: 'none' }}>
+        <Link href="/" style={{ textDecoration: "none" }}>
           <a>
             <Logo>
               <Image
                 src="/images/logo.svg"
                 alt="Logo Rafael Almendra"
-                width= {46}
-                height= {46}
-                />
+                width={46}
+                height={46}
+              />
             </Logo>
           </a>
         </Link>
-
         <MenuMain>
           <UlContainer>
             <li className="desktop black-font">
-              <Link href='/'><a>Home</a></Link>
-            </li>
-
-            <li className="desktop">
-              <Link href='/Projects'><a>Projetos</a></Link>
-            </li>
-
-            <li className="desktop">
-              <Link href='/Blog'><a>Blog</a></Link>
-            </li>
-
-            <li className="desktop">
-              <Link href='/Contact'>
-                <a><ButtonContact>Contato</ButtonContact></a>
+              <Link href="/">
+                <a>Home</a>
               </Link>
             </li>
-            
+            <li className="desktop">
+              <Link href="/Projects">
+                <a>Projetos</a>
+              </Link>
+            </li>
+            <li className="desktop">
+              <Link href="/Blog">
+                <a>Blog</a>
+              </Link>
+            </li>
+            <li className="desktop">
+              <Link href="/Contact">
+                <a>
+                  <ButtonContact>Contato</ButtonContact>
+                </a>
+              </Link>
+            </li>
             <li>
               <a
                 href="https://www.linkedin.com/in/rafaelalmendradev/"
@@ -106,7 +102,6 @@ export default function Navbar({ toggleTheme }) {
                 <i className="bi bi-linkedin"></i>
               </a>
             </li>
-
             <li>
               <a
                 href="https://github.com/Rafaelalmendra"
@@ -117,10 +112,9 @@ export default function Navbar({ toggleTheme }) {
                 <i className="bi bi-github"></i>
               </a>
             </li>
-
-            <Switch 
+            <Switch
               onChange={toggleTheme}
-              checked={title === 'dark'}
+              checked={title === "dark"}
               checkedIcon={false}
               uncheckedIcon={false}
               height={20}
@@ -133,8 +127,6 @@ export default function Navbar({ toggleTheme }) {
               boxShadow="0px 1px 5px rgba(0, 0, 0, 0.4)"
             />
           </UlContainer>
-
-          {/* menu mobile */}
           <NavigationMobile>
             {open ? closeIcon : hamburguerIcon}
             {open && <NavLinks isMenu={true} closeMenu={closeMenu} />}
@@ -142,5 +134,7 @@ export default function Navbar({ toggleTheme }) {
         </MenuMain>
       </Nav>
     </Header>
-  )
-}
+  );
+};
+
+export default Navbar;

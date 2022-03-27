@@ -1,6 +1,6 @@
-import { Container, SpinnerContainer } from './style'
+import { Container, SpinnerContainer } from "./style";
 
-export default function LoadingScreen() {
+const LoadingScreen = () => {
   return (
     <Container>
       <SpinnerContainer className="sk-chase">
@@ -12,5 +12,7 @@ export default function LoadingScreen() {
         <div className="sk-chase-dot"></div>
       </SpinnerContainer>
     </Container>
-  )
-}
+  );
+};
+
+export default LoadingScreen();
