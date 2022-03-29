@@ -26,7 +26,7 @@ export const Container = styled.div`
     line-height: 1.6rem;
     margin-bottom: 1.6rem;
     @media (max-width: 767.98px) {
-      min-width: 100%;
+      width: 90%;
       font-size: 0.875rem;
       text-align: justify;
       line-height: 1.4rem;
