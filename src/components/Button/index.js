@@ -12,9 +12,17 @@ const Button = styled.button`
   background-color: var(--blue);
 
   border-radius: 0.65rem;
-  transform: scale(1.05);
   transition: 0.2s ease-in-out;
   cursor: pointer;
+
+  &:hover {
+    background-color: var(--hover-blue);
+  }
+
+  @media (max-width: 768px) {
+    width: 90vw;
+    font-size: 1.4rem;
+  }
 `;
 
 export default Button;

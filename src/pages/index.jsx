@@ -1,30 +1,21 @@
-import Image from "next/image";
 import Head from "next/head";
-import { motion } from "framer-motion";
+import Container from "../styles/home";
+import TextAbout from "../components/TextAbout";
+import ImageAbout from "../components/ImageAbout";
 
-import About from "../components/About";
-import {
-  Container,
-  Main,
-  Logo,
-  Title,
-  ButtonHome,
-  VectorOne,
-  VectorTwo,
-} from "../styles/home";
+const Home = () => (
+  <Container className="margins">
+    <Head>
+      <title>Home | Rafael Almendra</title>
+      <meta
+        name="description"
+        content="Meu nome é Rafael, sou desenvolvedor Front-end."
+      />
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    </Head>
+    <TextAbout />
+    <ImageAbout />
+  </Container>
+);
 
-export default function Home() {
-  return (
-    <>
-      <Head>
-        <title>Home | Rafael Almendra</title>
-        <meta
-          name="description"
-          content="Meu nome é Rafael, sou desenvolvedor Front-end."
-        />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
-      <About />
-    </>
-  );
-}
+export default Home;
