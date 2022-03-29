@@ -19,8 +19,8 @@ const Blog = ({ posts }) => {
       {posts.map((post) => (
         <CardPost
           title={post.title}
-          image={post.media.url}
-          author={post.title}
+          thumbnail={post.thumbnail.url}
+          author={post.author}
           date={post.date}
         />
       ))}

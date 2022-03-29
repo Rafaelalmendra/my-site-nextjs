@@ -25,12 +25,20 @@ export async function getAllPosts() {
     {
       allPosts {
         id
-        title
-        text
-        description
+        slug
+        technologie1
+        technologie2
+        author
         date
-        media {
-          url(imgixParams: {})
+        title
+        content
+        thumbnail {
+          url
+          alt
+        }
+        authorImage {
+          url
+          alt
         }
       }
     }

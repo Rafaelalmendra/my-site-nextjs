@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { Container, Post, ImageEffect } from "./style";
 
-const CardPost = ({ title, image, author, date }) => {
+const CardPost = ({ title, thumbnail, author, date }) => {
   return (
     <Container>
       <Link href={`/Blog/`}>
         <a>
           <Post>
-            <ImageEffect style={{ backgroundImage: `url(${image})` }} />
+            <ImageEffect style={{ backgroundImage: `url(${thumbnail})` }} />
             <p>{title}</p>
             <div>
               <span>
