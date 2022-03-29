@@ -1,70 +1,41 @@
-import Link from "next/link";
 import Head from "next/head";
-import server from "../../services/prismic";
-import Prismic from "@prismicio/client";
-import {
-  Container,
-  Title,
-  Post,
-  ImageEffect,
-  ContainerPost,
-} from "../../styles/blog";
+import CardPost from "../../components/CardPost";
+import { getAllPosts } from "../../services/dato-cms";
+import { Container, Title } from "../../styles/blog";
+
+const Blog = ({ posts }) => {
+  console.log(posts);
+  return (
+    <Container className="margins-nav">
+      <Head>
+        <title>Blog | Rafael Almendra</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="description"
+          content="Conheça o meu blog e meus artigos sobre programação."
+        />
+      </Head>
+      <Title>Bem vindo(a) ao meu Blog 👋</Title>
+      {posts.map((post) => (
+        <CardPost
+          title={post.title}
+          image={post.media.url}
+          author={post.title}
+          date={post.date}
+        />
+      ))}
+    </Container>
+  );
+};
 
 export const getStaticProps = async () => {
-  const prismic = server();
-  const projectResponse = await prismic.query(
-    [Prismic.Predicates.at("document.type", "post")],
-    { orderings: "[document.frist_publication_date desc]" }
-  );
-  const posts = projectResponse.results.map((post) => ({
-    slug: post.uid,
-    thumbnail: post.data.thumbnail.url,
-    title: post.data.title[0].text,
-    author: post.data.author[0].text,
-    date: post.data.date,
-  }));
+  const posts = await getAllPosts();
   return {
     props: {
       posts,
     },
-    revalidate: 86400,
+    revalidate: 120,
   };
 };
-
-const Blog = ({ posts }) => (
-  <Container className="margins-nav">
-    <Head>
-      <title>Blog | Rafael Almendra</title>
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      <meta
-        name="description"
-        content="Conheça o meu blog e meus artigos sobre programação."
-      />
-    </Head>
-    <Title>
-      <h1>Bem vindo(a) ao meu Blog 👋</h1>
-    </Title>
-    <ContainerPost>
-      {posts.map((post) => (
-        <Link key={post.slug} href={`/Blog/${post.slug}`}>
-          <a>
-            <Post>
-              <ImageEffect
-                style={{ backgroundImage: `url(${post.thumbnail})` }}
-              />
-              <p>{post.title}</p>
-              <div>
-                <span>
-                  por <strong>{post.author}</strong>
-                </span>
-                <span>{post.date}</span>
-              </div>
-            </Post>
-          </a>
-        </Link>
-      ))}
-    </ContainerPost>
-  </Container>
-);
 
 export default Blog;

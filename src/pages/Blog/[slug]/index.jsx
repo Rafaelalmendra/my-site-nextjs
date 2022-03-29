@@ -2,8 +2,6 @@ import { useRouter } from "next/dist/client/router";
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
-import server from "../../../services/prismic";
-import Prismic from "@prismicio/client";
 import LoadingScreen from "../../../components/LoadingScreen";
 import Comments from "../../../components/Comments";
 import {
@@ -15,57 +13,15 @@ import {
   Return,
 } from "../../../styles/slug";
 
-export const getStaticPaths = async () => {
-  const prismic = server();
-  const posts = await prismic.query([
-    Prismic.Predicates.at("document.type", "post"),
-  ]);
-  const paths = posts.results.map((post) => ({
-    params: {
-      slug: post.uid,
-    },
-  }));
-  return {
-    paths,
-    fallback: false,
-  };
-};
-export const getStaticProps = async (context) => {
-  const prismic = server();
-  const { slug } = context.params;
-  const response = await prismic.getByUID("post", String(slug), {});
-  const posts = {
-    slug: response.uid,
-    thumbnail: response.data.thumbnail,
-    title: response.data.title[0].text,
-    technologie1: response.data.technologie1[0].text,
-    technologie2: response.data.technologie2[0].text,
-    author: response.data.author[0].text,
-    author_image: response.data.author_image.url,
-    date: response.data.date,
-    content: response.data.content,
-    link: response.data.link.url,
-  };
-  return {
-    props: {
-      posts,
-    },
-    revalidate: 86400,
-  };
-};
-
 const Slug = ({ posts }) => {
-  const router = useRouter();
-  if (router.isFallback) {
-    return <LoadingScreen />;
-  }
   return (
     <Container className="margins-blog">
       <Head>
-        <title>{posts.title}</title>
+        <title>titulo</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="description" content={posts.title} />
+        <meta name="description" content="titulo" />
       </Head>
+      {/*
       <ImageContainer>
         <Image
           className="image"
@@ -129,6 +85,7 @@ const Slug = ({ posts }) => {
           </a>
         </Link>
       </Return>
+      */}
     </Container>
   );
 };
