@@ -154,7 +154,6 @@ export default createGlobalStyle`
     transition: 0.2s ease-in-out;
     background-color: #2EB2E5;
     transform: scale(1.05);
-    }
   }
   .hamburguer {
     font-size: 1.8rem;

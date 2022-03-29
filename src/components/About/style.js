@@ -1,26 +1,16 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.main`
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
   .bi-caret-right-fill {
     color: var(--white);
   }
-`;
-
-export const ContainerAbout = styled.div`
-  display: flex;
-  gap: 15.875rem;
-  margin-top: 8.45rem;
-  margin-bottom: 4rem;
-  @media (max-width: 1366px) {
-    gap: 0;
-  }
   @media (max-width: 767.98px) {
     flex-direction: column;
+    margin: 6rem 0 4rem 0;
   }
 `;
 
@@ -75,7 +65,6 @@ export const CurriculumLink = styled.div`
   text-decoration: underline;
   a {
     transition: color 0.2s ease-in-out;
-
     &:hover {
       color: var(--blue);
     }
@@ -85,7 +74,6 @@ export const CurriculumLink = styled.div`
 export const ImageAbout = styled.div`
   display: flex;
   justify-content: center;
-  margin: 0 auto;
 `;
 
 export const ImageProfile = styled.div`

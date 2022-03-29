@@ -4,6 +4,7 @@ export const Header = styled.header`
   width: 100%;
   z-index: 1000;
   position: fixed;
+  top: 0;
   li {
     cursor: pointer;
   }
@@ -11,7 +12,6 @@ export const Header = styled.header`
     display: none;
   }
 `;
-
 export const Nav = styled.nav`
   display: flex;
   align-items: center;
@@ -21,7 +21,6 @@ export const Nav = styled.nav`
     font-size: 1.4rem;
   }
 `;
-
 export const MenuMain = styled.div`
   display: flex;
   gap: 2.5rem;
@@ -30,7 +29,6 @@ export const MenuMain = styled.div`
     gap: 1.3rem;
   }
 `;
-
 export const UlContainer = styled.ul`
   display: flex;
   align-items: center;
