@@ -1,7 +1,7 @@
 import Head from "next/head";
-import CardPost from "../../components/CardPost";
-import { getAllPosts } from "../../services/dato-cms";
-import { Container, Title } from "../../styles/blog";
+import CardPost from "@/components/CardPost";
+import { getAllPosts } from "@/services/dato-cms";
+import { Container, Title } from "styles/blog";
 
 const Blog = ({ posts }) => {
   console.log(posts);
@@ -19,9 +19,10 @@ const Blog = ({ posts }) => {
       {posts.map((post) => (
         <CardPost
           title={post.title}
-          thumbnail={post.thumbnail.url}
+          thumbnail={post.thumbnail?.url}
           author={post.author}
           date={post.date}
+          slug={post.slug}
         />
       ))}
     </Container>

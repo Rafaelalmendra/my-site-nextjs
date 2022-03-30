@@ -28,17 +28,34 @@ export async function getAllPosts() {
         slug
         technologie1
         technologie2
-        author
-        date
-        title
-        content
         thumbnail {
           url
           alt
         }
+        author
         authorImage {
           url
           alt
+        }
+        date
+        title
+        content {
+          ... on ImageRecord {
+            id
+            _status
+            image {
+              url
+              alt
+            }
+          }
+          ... on SubtitleRecord {
+            id
+            subtitle
+          }
+          ... on TextRecord {
+            id
+            text
+          }
         }
       }
     }
