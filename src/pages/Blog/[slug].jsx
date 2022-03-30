@@ -1,3 +1,5 @@
+{
+  /*
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
@@ -114,3 +116,5 @@ export const getStaticPaths = async () => {
 };
 
 export default Slug;
+*/
+}
