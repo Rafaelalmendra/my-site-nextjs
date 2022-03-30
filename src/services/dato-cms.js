@@ -56,6 +56,14 @@ export async function getAllPosts() {
             id
             text
           }
+          ... on LinkRecord {
+            id
+            link
+          }
+          ... on UrlLinkRecord {
+            id
+            urlLink
+          }
         }
       }
     }
