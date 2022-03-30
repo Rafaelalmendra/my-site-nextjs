@@ -20,7 +20,7 @@ My website was created in order to demonstrate my skills and share my knowledge.
 
 - Nextjs
 - Styled Components
-- Prismic CMS
+- Dato CMS
 
 <br>
 
