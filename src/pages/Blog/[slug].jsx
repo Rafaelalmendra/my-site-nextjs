@@ -12,7 +12,7 @@ import {
   AuthorAndDate,
   AuthorImage,
   Return,
-} from "styles/slug";
+} from "styles/post";
 
 const getFullPost = gql`
   query singlePost($slug: String!) {

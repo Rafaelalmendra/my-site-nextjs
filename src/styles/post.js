@@ -62,6 +62,7 @@ export const ImageContainer = styled.div`
 export const Techs = styled.span`
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   margin-top: 1.4rem;
   gap: 1rem;
   width: 100%;
@@ -78,6 +79,12 @@ export const Techs = styled.span`
     font-weight: 500;
     text-transform: uppercase;
     border-radius: 8.25rem;
+
+    @media (max-width: 768px) {
+      font-size: 0.7rem;
+      gap: 0.875rem;
+      margin-bottom: 0.4rem;
+    }
   }
 `;
 export const AuthorAndDate = styled.div`
