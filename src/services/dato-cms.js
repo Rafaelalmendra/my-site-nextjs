@@ -1,74 +1,24 @@
-const API_URL = "https://graphql.datocms.com/";
-const API_TOKEN = process.env.DATOCMS_READ_ONLY_API_TOKEN;
+import { ApolloClient, InMemoryCache, createHttpLink } from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
 
-async function fetchCmsAPI(query, { variables } = {}) {
-  const response = await fetch(API_URL, {
-    method: "POST",
+const url = "https://graphql.datocms.com/";
+const token = `${process.env.DATOCMS_READ_ONLY_API_TOKEN}`;
+
+const httpLink = createHttpLink({
+  uri: url,
+});
+const authLink = setContext((_, { headers }) => {
+  return {
     headers: {
+      ...headers,
+      Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
-      Authorization: `Bearer ${API_TOKEN}`,
     },
-    body: JSON.stringify({
-      query,
-      variables,
-    }),
-  });
-  const json = await response.json();
-  if (json.errors) {
-    throw new Error("Failed to fetch CMS API");
-  }
-  return json.data;
-}
+  };
+});
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
 
-export async function getAllPosts() {
-  const data = await fetchCmsAPI(`
-    {
-      allPosts {
-        id
-        slug
-        technologie1
-        technologie2
-        thumbnail {
-          url
-          alt
-        }
-        author
-        authorImage {
-          url
-          alt
-        }
-        date
-        title
-        content {
-          ... on ImageRecord {
-            id
-            _status
-            image {
-              url
-              alt
-            }
-          }
-          ... on SubtitleRecord {
-            id
-            subtitle
-          }
-          ... on TextRecord {
-            id
-            text
-          }
-          ... on LinkRecord {
-            id
-            link
-          }
-          ... on UrlLinkRecord {
-            id
-            urlLink
-          }
-        }
-      }
-    }
-  `);
-  return data.allPosts;
-}
-
-export default { getAllPosts };
+export default client;

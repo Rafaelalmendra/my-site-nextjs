@@ -1,18 +1,12 @@
-import { Container, SpinnerContainer } from "./style";
+const LoadingScreen = () => (
+  <div className="loading">
+    <div className="lds-ellipsis">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+);
 
-const LoadingScreen = () => {
-  return (
-    <Container>
-      <SpinnerContainer className="sk-chase">
-        <div className="sk-chase-dot"></div>
-        <div className="sk-chase-dot"></div>
-        <div className="sk-chase-dot"></div>
-        <div className="sk-chase-dot"></div>
-        <div className="sk-chase-dot"></div>
-        <div className="sk-chase-dot"></div>
-      </SpinnerContainer>
-    </Container>
-  );
-};
-
-export default LoadingScreen();
+export default LoadingScreen;
