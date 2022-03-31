@@ -78,9 +78,6 @@ export default createGlobalStyle`
   ::-webkit-scrollbar-thumb {
     background-color: #32C5FF;
   }
-  .nav-links {
-    background: ${(props) => props.theme.background};
-  }
   .section {
     padding: calc(4rem + 4rem) 0;
   }
@@ -153,19 +150,6 @@ export default createGlobalStyle`
     transition: 0.2s ease-in-out;
     background-color: #2EB2E5;
     transform: scale(1.05);
-  }
-  .nav-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    min-height: 100vh;
-    transition: 0.2s;
-    z-index: 10;
   }
   .loading {
     min-height: 100vh;

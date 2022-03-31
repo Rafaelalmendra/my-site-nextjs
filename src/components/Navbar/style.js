@@ -5,21 +5,12 @@ export const Header = styled.header`
   z-index: 1000;
   position: fixed;
   top: 0;
-  li {
-    cursor: pointer;
-  }
-  .navigation-mobile {
-    display: none;
-  }
 `;
 export const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 6rem;
-  .link {
-    font-size: 1.4rem;
-  }
 `;
 export const MenuMain = styled.div`
   display: flex;
@@ -34,6 +25,7 @@ export const UlContainer = styled.ul`
   align-items: center;
   gap: 2.5rem;
   li {
+    cursor: pointer;
     font-size: 1rem;
     font-weight: 400;
     a,
@@ -60,7 +52,6 @@ export const ButtonContact = styled.button`
   &:hover {
     background: var(--hover-blue);
   }
-
   @media (max-width: 575.98) {
     width: 100%;
   }
