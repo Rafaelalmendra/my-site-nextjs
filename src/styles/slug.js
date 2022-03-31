@@ -59,23 +59,25 @@ export const ImageContainer = styled.div`
   align-items: center;
   margin-top: 10rem;
 `;
-export const Techs = styled.div`
-  margin-top: 1.4rem;
+export const Techs = styled.span`
   display: flex;
   align-items: center;
+  margin-top: 1.4rem;
   gap: 1rem;
   width: 100%;
   span {
-    width: 5.875rem;
+    min-width: 5.875rem;
     height: 1.688rem;
-    margin-bottom: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+
     font-size: 0.775rem;
     font-weight: 500;
     text-transform: uppercase;
-    border-radius: 132px;
+    border-radius: 8.25rem;
   }
 `;
 export const AuthorAndDate = styled.div`

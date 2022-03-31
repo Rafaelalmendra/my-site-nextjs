@@ -1,13 +1,12 @@
 import Head from "next/head";
 import { gql, useQuery } from "@apollo/client";
 import CardPost from "@/components/CardPost";
-import { Container, Title, ContainerCards } from "styles/blog";
 import LoadingScreen from "@/components/LoadingScreen";
+import { Container, Title, ContainerCards } from "styles/blog";
 
 const GET_POSTS = gql`
   query {
     allPosts {
-      id
       slug
       thumbnail {
         url
@@ -26,8 +25,9 @@ const Blog = () => {
     return <LoadingScreen />;
   }
   if (error) {
-    console.log(error);
+    console.error(error);
   }
+
   return (
     <Container className="margins-nav">
       <Head>
