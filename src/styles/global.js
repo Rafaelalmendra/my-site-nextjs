@@ -10,7 +10,6 @@ export default createGlobalStyle`
     --light-black: #6D6D6D;
     --link: #463FDF;
     --purple-black: #161B3D;
-    --title: 3.5rem;
     --small-title: 2.5rem;
     --subtitle: 1.7rem;
     --small-subtitle: 1.2rem;
@@ -155,18 +154,6 @@ export default createGlobalStyle`
     background-color: #2EB2E5;
     transform: scale(1.05);
   }
-  .hamburguer {
-    font-size: 1.8rem;
-    position: relative;
-    cursor: pointer;
-    z-index: 1000;
-  }
-  .close {
-    font-size: 2.6rem;
-    position: relative;
-    cursor: pointer;
-    z-index: 1000;
-  }
   .nav-links {
     display: flex;
     flex-direction: column;
@@ -285,9 +272,6 @@ export default createGlobalStyle`
       border-radius: 0.5rem;
 
       font-size: 1.2rem;
-    }
-    .hamburguer {
-      width: 1.9rem;
     }
     .section {
       padding: calc(4rem + 2rem) 0;

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { UlLinks } from "./style";
+import { UlLinks, ButtonContact } from "./style";
 
 const NavLinks = (props) => {
   return (
@@ -30,12 +30,9 @@ const NavLinks = (props) => {
         </Link>
         <Link href="/Contact" style={{ textDecoration: "none" }}>
           <a>
-            <button
-              onClick={() => props.isMenu && props.closeMenu()}
-              className="global-button"
-            >
+            <ButtonContact onClick={() => props.isMenu && props.closeMenu()}>
               Contato
-            </button>
+            </ButtonContact>
           </a>
         </Link>
         <li>

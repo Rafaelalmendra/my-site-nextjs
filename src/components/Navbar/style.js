@@ -49,20 +49,20 @@ export const UlContainer = styled.ul`
     gap: 1.3rem;
   }
 `;
-export const Logo = styled.div`
-  cursor: pointer;
-  max-width: 2.5rem;
-`;
 export const ButtonContact = styled.button`
   width: 6rem;
   height: 2.25rem;
   border-radius: 0.28rem;
   font-size: 1rem;
-  color: #ffffff;
-  transition: transform 0.2s ease-in-out;
-  background-color: #32c5ff;
+  color: var(--white);
+  transition: background 0.2s ease-in-out;
+  background-color: var(--blue);
   &:hover {
-    transform: scale(1.05);
+    background: var(--hover-blue);
+  }
+
+  @media (max-width: 575.98) {
+    width: 100%;
   }
 `;
 export const NavigationMobile = styled.div`
@@ -82,7 +82,20 @@ export const UlLinks = styled.ul`
   li {
     transition: 0.2s ease-in-out;
     &:hover {
-      color: #2eb2e5;
+      color: var(--blue);
     }
   }
+`;
+export const HamburguerIcon = styled.div`
+  font-size: 1.8rem;
+  cursor: pointer;
+  @media (max-width: 575.98) {
+    width: 1.9rem;
+  }
+`;
+export const CloseIcon = styled.div`
+  font-size: 2.6rem;
+  position: relative;
+  cursor: pointer;
+  z-index: 1000;
 `;

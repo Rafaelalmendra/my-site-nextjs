@@ -60,12 +60,12 @@ export const ImageContainer = styled.div`
   margin-top: 10rem;
 `;
 export const Techs = styled.span`
+  width: 100%;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   margin-top: 1.4rem;
   gap: 1rem;
-  width: 100%;
   span {
     min-width: 5.875rem;
     height: 1.688rem;

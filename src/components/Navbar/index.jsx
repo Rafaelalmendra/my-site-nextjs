@@ -3,78 +3,62 @@ import { ThemeContext } from "styled-components";
 import { motion } from "framer-motion";
 import NavLinks from "./NavLinks";
 import Switch from "react-switch";
-import Image from "next/image";
+import Logo from "../Logo";
 import Link from "next/link";
 import {
   Header,
   Nav,
-  Logo,
   UlContainer,
   MenuMain,
   ButtonContact,
   NavigationMobile,
+  HamburguerIcon,
+  CloseIcon,
 } from "./style";
+import Li from "../Li";
 
 const Navbar = ({ toggleTheme }) => {
   const { title } = useContext(ThemeContext);
-  const [navbar, setnavbar] = useState(false);
+  const [navbar, setNavbar] = useState(false);
   const [open, setOpen] = useState(false);
   const changeBackground = () => {
     if (window.scrollY >= 80) {
-      setnavbar(true);
+      setNavbar(true);
     } else {
-      setnavbar(false);
+      setNavbar(false);
     }
   };
   if (typeof window !== "undefined") {
     window.addEventListener("scroll", changeBackground);
   }
   const hamburguerIcon = (
-    <div className="hamburguer">
+    <HamburguerIcon>
       <i className="bi bi-list" onClick={() => setOpen(!open)}></i>
-    </div>
+    </HamburguerIcon>
   );
   const closeIcon = (
-    <motion.div
-      className="close"
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{
-        type: "spring",
-        stiffness: 120,
-      }}
-    >
-      <i
-        className="bi bi-x"
-        alt="Icone de fechar menu"
-        onClick={() => setOpen(!open)}
-      ></i>
-    </motion.div>
+    <CloseIcon>
+      <motion.div
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{
+          type: "spring",
+          stiffness: 120,
+        }}
+      >
+        <i className="bi bi-x" onClick={() => setOpen(!open)}></i>
+      </motion.div>
+    </CloseIcon>
   );
   const closeMenu = () => setOpen(false);
 
   return (
     <Header className={navbar ? "active" : ""}>
       <Nav className="margins-nav">
-        <Link href="/" style={{ textDecoration: "none" }}>
-          <a>
-            <Logo>
-              <Image
-                src="/images/logo.svg"
-                alt="Logo Rafael Almendra"
-                width={46}
-                height={46}
-              />
-            </Logo>
-          </a>
-        </Link>
+        <Logo />
         <MenuMain>
           <UlContainer>
-            <li className="desktop black-font">
-              <Link href="/">
-                <a>Home</a>
-              </Link>
-            </li>
+            <Li name="Home" />
             <li className="desktop">
               <Link href="/Projects">
                 <a>Projetos</a>

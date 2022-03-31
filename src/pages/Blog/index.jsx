@@ -1,5 +1,5 @@
-import Head from "next/head";
 import { gql, useQuery } from "@apollo/client";
+import HeadSeo from "@/components/HeadSeo";
 import CardPost from "@/components/CardPost";
 import LoadingScreen from "@/components/LoadingScreen";
 import { Container, Title, ContainerCards } from "styles/blog";
@@ -30,13 +30,10 @@ const Blog = () => {
 
   return (
     <Container className="margins-nav">
-      <Head>
-        <title>Blog | Rafael Almendra</title>
-        <meta
-          name="description"
-          content="Conheça meus artigos sobre programação."
-        />
-      </Head>
+      <HeadSeo
+        title="Blog | Rafael Almendra"
+        content="Conheça meus artigos sobre programação."
+      />
       <Title>Bem vindo(a) ao meu Blog 👋</Title>
       <ContainerCards>
         {data?.allPosts.map((post) => (
