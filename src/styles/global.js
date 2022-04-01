@@ -30,7 +30,7 @@ export default createGlobalStyle`
   }
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 9rem;
+    scroll-padding-top: 16rem;
     @media (max-width: 1080px) {
       font-size: 93.75%;
     }
@@ -77,9 +77,6 @@ export default createGlobalStyle`
   }
   ::-webkit-scrollbar-thumb {
     background-color: #32C5FF;
-  }
-  .section {
-    padding: calc(4rem + 4rem) 0;
   }
   .divider-two {
     width: 100%;

@@ -15,7 +15,7 @@ const DesktopLinks = ({ toggleTheme }) => {
       <Li className="desktop" url="/Blog" name="Blog" />
       <Li
         className="desktop"
-        url="/Blog"
+        url="/Contact"
         name={<ButtonContact>Contato</ButtonContact>}
       />
       <LiSocial
