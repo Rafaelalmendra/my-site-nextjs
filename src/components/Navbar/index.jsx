@@ -1,8 +1,8 @@
 import { useState } from "react";
+import { OpenIcon, CloseIcon } from "./Icons";
 import MobileLinks from "./MobileLinks";
 import Ul from "./DesktopLinks";
 import Logo from "./Logo";
-import { OpenIcon, CloseIcon } from "./Icons";
 import { Header, Nav, MenuMain, NavigationMobile } from "./style";
 
 const Navbar = ({ toggleTheme }) => {

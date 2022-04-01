@@ -81,11 +81,6 @@ export default createGlobalStyle`
   .section {
     padding: calc(4rem + 4rem) 0;
   }
-  .divider {
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(270deg, var(--blue) 0%, rgba(204, 244, 230, 0.34) 100%);
-  }
   .divider-two {
     width: 100%;
     height: 1px;

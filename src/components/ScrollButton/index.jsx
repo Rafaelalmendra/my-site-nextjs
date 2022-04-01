@@ -1,39 +1,32 @@
-import { useState } from 'react'
-import Image from 'next/image'
+import { useState } from "react";
+import Image from "next/image";
+import { Container } from "./style";
 
-//images-and-styles
-import { Container } from './style'
-
-export default function ScrollButton() {
-  const [ visible, setVisible ] = useState(false)
-
+const ScrollButton = () => {
+  const [visible, setVisible] = useState(false);
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
-
     if (scrolled > 300) {
-      setVisible(true)
+      setVisible(true);
     } else if (scrolled <= 300) {
-      setVisible(false)
+      setVisible(false);
     }
-  }
-
+  };
   const scrollButtonTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
-    })
-  }
-
+      behavior: "smooth",
+    });
+  };
   if (typeof window !== "undefined") {
-    // Client-side-only code
-    window.addEventListener('scroll', toggleVisible)
+    window.addEventListener("scroll", toggleVisible);
   }
 
-  return(
+  return (
     <Container>
       <button
         onClick={scrollButtonTop}
-        style={{display: visible ? 'inline' : 'none'}}
+        style={{ display: visible ? "inline" : "none" }}
       >
         <Image
           src={"/images/top.svg"}
@@ -43,5 +36,7 @@ export default function ScrollButton() {
         />
       </button>
     </Container>
-  )
-}
+  );
+};
+
+export default ScrollButton;
