@@ -1,26 +1,11 @@
-import { gql, useQuery } from "@apollo/client";
+import useGetAllPosts from "hooks/useGetAllPosts";
 import HeadSeo from "@/components/HeadSeo";
 import CardPost from "@/components/CardPost";
 import LoadingScreen from "@/components/LoadingScreen";
-import { Container, Title, ContainerCards } from "styles/blog";
-
-const GET_POSTS = gql`
-  query {
-    allPosts {
-      slug
-      thumbnail {
-        url
-        alt
-      }
-      author
-      date
-      title
-    }
-  }
-`;
+import { Title, Container, ContainerCards } from "styles/blog";
 
 const Blog = () => {
-  const { data, loading, error } = useQuery(GET_POSTS);
+  const { data, loading, error } = useGetAllPosts();
   if (loading) {
     return <LoadingScreen />;
   }

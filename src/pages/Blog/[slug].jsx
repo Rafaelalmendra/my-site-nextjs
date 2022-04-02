@@ -2,77 +2,24 @@ import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { gql, useQuery } from "@apollo/client";
+import useGetFullPost from "@/hooks/useGetFullPost";
 import LoadingScreen from "@/components/LoadingScreen";
 import Comments from "@/components/Comments";
 import {
-  Container,
-  ImageContainer,
   Techs,
-  AuthorAndDate,
-  AuthorImage,
   Return,
+  Container,
+  AuthorImage,
+  AuthorAndDate,
+  ImageContainer,
 } from "styles/post";
-
-const getFullPost = gql`
-  query singlePost($slug: String!) {
-    allPosts(filter: { slug: { eq: $slug } }) {
-      id
-      slug
-      technologies {
-        technologie
-      }
-      thumbnail {
-        url
-        alt
-      }
-      author
-      authorImage {
-        url
-        alt
-      }
-      date
-      title
-      content {
-        ... on ImageRecord {
-          id
-          _status
-          image {
-            url
-            alt
-          }
-        }
-        ... on SubtitleRecord {
-          id
-          subtitle
-        }
-        ... on TextRecord {
-          id
-          text
-        }
-        ... on LinkRecord {
-          id
-          link
-        }
-        ... on UrlLinkRecord {
-          id
-          urlLink
-        }
-      }
-    }
-  }
-`;
 
 const Post = () => {
   const router = useRouter();
   const slug = router.query.slug;
-  const { data, loading, error } = useQuery(getFullPost, {
-    variables: {
-      slug: slug,
-    },
-  });
+  const { data, loading, error } = useGetFullPost(slug);
   const post = data?.allPosts[0];
-  console.log(post);
+
   if (loading) {
     return <LoadingScreen />;
   }
