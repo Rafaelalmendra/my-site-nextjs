@@ -1,7 +1,7 @@
-import Container from "../styles/home";
+import Container from "styles/home";
 import HeadSeo from "@/components/HeadSeo";
-import TextAbout from "../components/Home/TextAbout";
-import ImageAbout from "../components/Home/ImageAbout";
+import TextAbout from "@/components/Home/TextAbout";
+import ImageAbout from "@/components/Home/ImageAbout";
 
 const Home = () => (
   <Container className="margins">

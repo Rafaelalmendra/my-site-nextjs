@@ -1,25 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
-import Head from "next/head";
 import { useRouter } from "next/router";
+import { DividerTwo } from "@/components/Dividers";
 import useGetFullPost from "@/hooks/useGetFullPost";
-import LoadingScreen from "@/components/LoadingScreen";
+import HeadSeo from "@/components/HeadSeo";
 import Comments from "@/components/Comments";
-import {
-  Techs,
-  Return,
-  Container,
-  AuthorImage,
-  AuthorAndDate,
-  ImageContainer,
-} from "styles/post";
+import Author from "@/components/Blog/Author";
+import Content from "@/components/Blog/Content";
+import LoadingScreen from "@/components/LoadingScreen";
+import { Techs, Return, Container, ImageContainer } from "styles/post";
 
 const Post = () => {
   const router = useRouter();
   const slug = router.query.slug;
   const { data, loading, error } = useGetFullPost(slug);
   const post = data?.allPosts[0];
-
   if (loading) {
     return <LoadingScreen />;
   }
@@ -28,11 +23,8 @@ const Post = () => {
   }
 
   return (
-    <Container className="margins-blog">
-      <Head>
-        <title>{post?.title}</title>
-        <meta name="description" content={post?.title} />
-      </Head>
+    <Container>
+      <HeadSeo title={post?.title} content={post?.title} />
       <ImageContainer>
         <Image
           className="image"
@@ -47,55 +39,16 @@ const Post = () => {
           <span className="tech-blog">{tech?.technologie}</span>
         ))}
       </Techs>
-      <AuthorImage>
-        <Image
-          className="profile"
-          src={post?.authorImage?.url}
-          alt={post?.authorImage?.alt}
-          width={80}
-          height={80}
-        />
-      </AuthorImage>
-      <AuthorAndDate className="title-blog">
-        <span>
-          por <strong>{post?.author}</strong>
-        </span>
-        <span>{post?.date}</span>
-      </AuthorAndDate>
-      <h1 className="title-blog">{post?.title}</h1>
-      <div className="title-blog">
-        {post?.content?.map((content) => (
-          <>
-            {content?.subtitle ? <h2>{content?.subtitle}</h2> : null}
-            {content?.text ? <p>{content?.text}</p> : null}
-            {content?.image ? (
-              <img src={content?.image?.url} alt={content.image?.alt} />
-            ) : null}
-            {content?.link ? <p>{content?.link}</p> : null}
-            {content?.urlLink ? (
-              <a
-                href={content?.urlLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link-blog"
-              >
-                {content?.link}
-                {content?.urlLink}
-              </a>
-            ) : null}
-          </>
-        ))}
-      </div>
-      <div
-        className="divider-two"
-        style={{ marginTop: "2rem", marginBottom: "2rem" }}
-      ></div>
+      <Author post={post} />
+      <h1>{post?.title}</h1>
+      <Content post={post} />
+      <DividerTwo />
       <Comments />
       <Return>
         <Link href="/Blog">
           <a>
             <i className="bi bi-caret-left-fill"></i>
-            Voltar para o blog
+            <span>Voltar para o blog</span>
           </a>
         </Link>
       </Return>

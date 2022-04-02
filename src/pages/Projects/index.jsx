@@ -1,9 +1,9 @@
-import Container from "styles/projects";
-import HeadSeo from "@/components/HeadSeo";
-import Divider from "@/components/Divider";
+import { Divider } from "@/components/Dividers";
+import ProjectCard from "@/components/Projects/ProjectCard";
 import Header from "@/components/Projects/Header";
 import Footer from "@/components/Projects/Footer";
-import ProjectCard from "@/components/Projects/ProjectCard";
+import HeadSeo from "@/components/HeadSeo";
+import Container from "styles/projects";
 
 const Projects = () => (
   <Container className="margins">
