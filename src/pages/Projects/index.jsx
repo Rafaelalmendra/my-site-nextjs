@@ -1,11 +1,11 @@
+import LoadingScreen from "@/components/LoadingScreen";
+import useGetProjects from "@/hooks/useGetProjects";
 import { Divider } from "@/components/Dividers";
 import ProjectCard from "@/components/Projects/ProjectCard";
 import Header from "@/components/Projects/Header";
 import Footer from "@/components/Projects/Footer";
 import HeadSeo from "@/components/HeadSeo";
 import Container from "styles/projects";
-import useGetProjects from "@/hooks/useGetProjects";
-import LoadingScreen from "@/components/LoadingScreen";
 
 const Projects = () => {
   const { data, loading, error } = useGetProjects();
@@ -15,6 +15,7 @@ const Projects = () => {
   if (error) {
     console.error(error);
   }
+
   return (
     <Container className="margins">
       <HeadSeo

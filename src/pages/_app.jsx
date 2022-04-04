@@ -20,6 +20,7 @@ const MyApp = ({ Component, pageProps }) => {
   const toggleTheme = () => {
     setTheme(theme.title === "dark" ? lightTheme : darkTheme);
   };
+
   return (
     <ApolloProvider client={client}>
       <ThemeProvider theme={theme}>
