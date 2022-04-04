@@ -1,6 +1,4 @@
 import Image from "next/image";
-import useGetProjects from "@/hooks/useGetProjects";
-import LoadingScreen from "@/components/LoadingScreen";
 import {
   ProjectContainer,
   ProjectImage,
@@ -11,22 +9,14 @@ import {
   LinkAndRepository,
 } from "./style";
 
-const ProjectCard = () => {
-  const { data, loading, error } = useGetProjects();
-  if (loading) {
-    return <LoadingScreen />;
-  }
-  if (error) {
-    console.error(error);
-  }
-
+const ProjectCard = ({ data }) => {
   return (
     <>
       {data?.allProjects.map((project) => (
         <ProjectContainer
           className="margins-nav"
           data-aos="zoom-in"
-          id={project?.id}
+          id={project?.title}
         >
           <ProjectImage>
             <Image

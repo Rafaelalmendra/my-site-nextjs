@@ -4,18 +4,29 @@ import Header from "@/components/Projects/Header";
 import Footer from "@/components/Projects/Footer";
 import HeadSeo from "@/components/HeadSeo";
 import Container from "styles/projects";
+import useGetProjects from "@/hooks/useGetProjects";
+import LoadingScreen from "@/components/LoadingScreen";
 
-const Projects = () => (
-  <Container className="margins">
-    <HeadSeo
-      title="Projetos | Rafael Almendra"
-      content="Conheça alguns dos meus projetos"
-    />
-    <Header />
-    <ProjectCard />
-    <Divider />
-    <Footer />
-  </Container>
-);
+const Projects = () => {
+  const { data, loading, error } = useGetProjects();
+  if (loading) {
+    return <LoadingScreen />;
+  }
+  if (error) {
+    console.error(error);
+  }
+  return (
+    <Container className="margins">
+      <HeadSeo
+        title="Projetos | Rafael Almendra"
+        content="Conheça alguns dos meus projetos"
+      />
+      <Header data={data} />
+      <ProjectCard data={data} />
+      <Divider />
+      <Footer />
+    </Container>
+  );
+};
 
 export default Projects;
