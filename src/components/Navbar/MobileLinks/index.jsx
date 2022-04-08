@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import Li from "../Li";
 import LiSocial from "../LiSocial";
-import Button from "@/components/Button";
 import { Container, UlLinks } from "./style";
 
 const MobileLinks = ({ closeMenu }) => {
@@ -15,14 +14,7 @@ const MobileLinks = ({ closeMenu }) => {
         }}
       >
         <UlLinks>
-          <Li onClick={() => closeMenu()} url="/" name="Home" />
-          <Li onClick={() => closeMenu()} url="/Projects" name="Projetos" />
-          <Li onClick={() => closeMenu()} url="/Blog" name="Blog" />
-          <Li
-            onClick={() => closeMenu()}
-            url="/Contact"
-            name={<Button>Contato</Button>}
-          />
+          <Li onClick={() => closeMenu()} />
           <LiSocial
             className=""
             url="https://www.linkedin.com/in/rafaelalmendradev/"

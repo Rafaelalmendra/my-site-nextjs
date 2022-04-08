@@ -8,14 +8,6 @@ export const UlContainer = styled.ul`
     cursor: pointer;
     font-size: 1rem;
     font-weight: 400;
-    a,
-    i {
-      transition: color ease-in-out 0.2s;
-
-      &:hover {
-        color: var(--blue);
-      }
-    }
   }
   @media (max-width: 575.98) {
     gap: 1.3rem;
@@ -28,7 +20,8 @@ export const ButtonContact = styled.button`
   font-size: 1rem;
   color: var(--white);
   transition: background 0.2s ease-in-out;
-  background-color: var(--blue);
+  //background-color: var(--blue);
+  border: 1px solid var(--blue);
   &:hover {
     background: var(--hover-blue);
   }

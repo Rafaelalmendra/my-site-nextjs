@@ -3,21 +3,14 @@ import { ThemeContext } from "styled-components";
 import Switch from "react-switch";
 import Li from "../Li";
 import LiSocial from "../LiSocial";
-import { UlContainer, ButtonContact } from "./style";
+import { UlContainer } from "./style";
 
 const DesktopLinks = ({ toggleTheme }) => {
   const { title } = useContext(ThemeContext);
 
   return (
     <UlContainer>
-      <Li className="desktop" url="/" name="Home" />
-      <Li className="desktop" url="/Projects" name="Projetos" />
-      <Li className="desktop" url="/Blog" name="Blog" />
-      <Li
-        className="desktop"
-        url="/Contact"
-        name={<ButtonContact>Contato</ButtonContact>}
-      />
+      <Li className="desktop" />
       <LiSocial
         className="desktop"
         url="https://www.linkedin.com/in/rafaelalmendradev/"

@@ -3,6 +3,7 @@
   "rules": {
     "@next/next/no-img-element": "off",
     "react/jsx-key": "off",
-    "import/no-anonymous-default-export": "off"
+    "import/no-anonymous-default-export": "off",
+    "@next/next/link-passhref": "off"
   }
 }
