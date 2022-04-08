@@ -13,6 +13,7 @@ export const FormContainer = styled.div`
   border-radius: 0.8rem;
   background: #212529;
   box-shadow: 9px 11px 14px rgba(0, 0, 0, 0.12);
+
   @media (max-width: 575.98px) {
     width: 31rem;
   }
@@ -23,20 +24,24 @@ export const FormContainer = styled.div`
     width: 20rem;
     height: 38rem;
     margin: 8rem 0 4rem 0;
-    p {
-      font-size: 2.5rem;
-    }
+
     label input,
     textarea {
       width: 88%;
     }
   }
+
   p {
     margin-bottom: 3rem;
     font-weight: 500;
-    font-size: 2.5rem;
+    font-size: 1.875rem;
     color: var(--white);
+
+    @media (max-width: 575px) {
+      font-size: 1.5rem;
+    }
   }
+
   label {
     display: flex;
     flex-direction: column;
@@ -47,6 +52,7 @@ export const FormContainer = styled.div`
     font-size: 1.1rem;
     font-weight: 300;
     color: var(--white);
+
     input,
     textarea {
       width: 90%;
@@ -68,29 +74,33 @@ export const FormContainer = styled.div`
       }
     }
   }
+
   textarea {
     height: 5.5rem;
     resize: none;
   }
-  .contact-button {
-    width: 90%;
-    height: 3.8rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.3rem;
-    font-weight: 500;
-    color: var(--white);
-    background: var(--blue);
-    border-radius: 0.4rem;
-    cursor: pointer;
-    transition: background ease 0.2s;
-    &:hover {
-      background: var(--hover-blue);
-    }
-    @media (max-width: 575.98px) {
-      width: 96%;
-    }
+`;
+
+export const ContactButton = styled.div`
+  width: 90%;
+  height: 3.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--white);
+  background: var(--blue);
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: background ease 0.2s;
+
+  &:hover {
+    background: var(--hover-blue);
+  }
+
+  @media (max-width: 575.98px) {
+    width: 96%;
   }
 `;
 export const ContainerForm = styled.div`
@@ -98,6 +108,7 @@ export const ContainerForm = styled.div`
   justify-content: center;
   align-items: flex-start;
   margin-left: 3.5rem;
+
   @media (max-width: 575.98px) {
     margin-left: 1.4rem;
   }

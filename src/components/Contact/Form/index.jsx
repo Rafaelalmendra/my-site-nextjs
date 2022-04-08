@@ -1,4 +1,4 @@
-import { ContainerForm, FormContainer } from "./style";
+import { ContainerForm, FormContainer, ContactButton } from "./style";
 
 const Form = () => (
   <FormContainer data-aos="zoom-in" className="margins">
@@ -44,9 +44,7 @@ const Form = () => (
             placeholder="Escreva sua mensagem"
           />
         </label>
-        <button className="contact-button" type="submit">
-          Enviar
-        </button>
+        <ContactButton type="submit">Enviar</ContactButton>
       </ContainerForm>
     </form>
   </FormContainer>

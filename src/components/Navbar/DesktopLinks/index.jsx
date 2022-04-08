@@ -1,8 +1,10 @@
 import { useContext } from "react";
 import { ThemeContext } from "styled-components";
+
 import Switch from "react-switch";
-import Li from "../Li";
 import LiSocial from "../LiSocial";
+import Li from "../Li";
+
 import { UlContainer } from "./style";
 
 const DesktopLinks = ({ toggleTheme }) => {
