@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ProjectContainer = styled.div`
-  width: 60%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,12 +9,6 @@ export const ProjectContainer = styled.div`
   margin-bottom: 6.75rem;
   &:last-child {
     margin-bottom: 0;
-  }
-  @media (max-width: 1366px) {
-    width: 80%;
-  }
-  @media (max-width: 768px) {
-    width: 100%;
   }
 `;
 export const ProjectImage = styled.div`

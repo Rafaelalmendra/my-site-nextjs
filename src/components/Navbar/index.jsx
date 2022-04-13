@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { OpenIcon, CloseIcon } from "./Icons";
 import MobileLinks from "./MobileLinks";
-import Ul from "./DesktopLinks";
+import DesktopSocialLinks from "./DesktopSocialLinks";
 import Logo from "./Logo";
-import { Header, Nav, MenuMain, NavigationMobile } from "./style";
+import Li from "./Li";
+import { Header, Nav, UlContainer, NavigationMobile } from "./style";
 
 const Navbar = ({ toggleTheme }) => {
   const [navbar, setNavbar] = useState(false);
@@ -20,18 +21,18 @@ const Navbar = ({ toggleTheme }) => {
   }
   const openNavbar = <OpenIcon onClick={() => setOpen(!open)} />;
   const closeNavbar = <CloseIcon onClick={() => setOpen(!open)} />;
-
   return (
     <Header className={navbar ? "active" : ""}>
-      <Nav className="margins-nav">
+      <Nav className="margins">
         <Logo />
-        <MenuMain>
-          <Ul toggleTheme={toggleTheme} />
-          <NavigationMobile>
-            {open ? closeNavbar : openNavbar}
-            {open && <MobileLinks closeMenu={() => setOpen(false)} />}
-          </NavigationMobile>
-        </MenuMain>
+        <UlContainer>
+          <Li className="desktop" />
+        </UlContainer>
+        <DesktopSocialLinks toggleTheme={toggleTheme} />
+        <NavigationMobile>
+          {open ? closeNavbar : openNavbar}
+          {open && <MobileLinks closeMenu={() => setOpen(false)} />}
+        </NavigationMobile>
       </Nav>
     </Header>
   );

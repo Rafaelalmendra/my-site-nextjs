@@ -12,6 +12,7 @@ export const Container = styled.div`
 export const A = styled.a`
   color: ${(props) => (props.active ? "var(--blue)" : props.theme.text)};
   transition: color ease-in-out 0.2s;
+  cursor: pointer;
   &:hover {
     color: var(--blue);
   }
@@ -31,6 +32,7 @@ export const ButtonContact = styled.button`
 
   &:hover {
     background: var(--hover-blue);
+    color: var(--white);
   }
 
   @media (max-width: 575.98px) {

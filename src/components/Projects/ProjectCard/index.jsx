@@ -14,7 +14,7 @@ const ProjectCard = ({ data }) => {
     <>
       {data?.allProjects.map((project) => (
         <ProjectContainer
-          className="margins-nav"
+          className="margins"
           data-aos="zoom-in"
           id={project?.title}
         >

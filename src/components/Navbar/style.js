@@ -12,14 +12,6 @@ export const Nav = styled.nav`
   justify-content: space-between;
   height: 6rem;
 `;
-export const MenuMain = styled.div`
-  display: flex;
-  gap: 2.5rem;
-  align-items: center;
-  @media (max-width: 575.98) {
-    gap: 1.3rem;
-  }
-`;
 export const UlContainer = styled.ul`
   display: flex;
   align-items: center;
@@ -31,29 +23,13 @@ export const UlContainer = styled.ul`
     a,
     i {
       transition: color ease-in-out 0.2s;
-
       &:hover {
         color: var(--blue);
       }
     }
   }
-  @media (max-width: 575.98) {
+  @media (max-width: 575.98px) {
     gap: 1.3rem;
-  }
-`;
-export const ButtonContact = styled.button`
-  width: 6rem;
-  height: 2.25rem;
-  border-radius: 0.28rem;
-  font-size: 1rem;
-  color: var(--white);
-  transition: background 0.2s ease-in-out;
-  background-color: var(--blue);
-  &:hover {
-    background: var(--hover-blue);
-  }
-  @media (max-width: 575.98) {
-    width: 100%;
   }
 `;
 export const NavigationMobile = styled.div`
@@ -76,17 +52,4 @@ export const UlLinks = styled.ul`
       color: var(--blue);
     }
   }
-`;
-export const HamburguerIcon = styled.div`
-  font-size: 1.8rem;
-  cursor: pointer;
-  @media (max-width: 575.98) {
-    width: 1.9rem;
-  }
-`;
-export const CloseIcon = styled.div`
-  font-size: 2.6rem;
-  position: relative;
-  cursor: pointer;
-  z-index: 1000;
 `;

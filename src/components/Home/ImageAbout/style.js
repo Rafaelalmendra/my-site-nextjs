@@ -11,12 +11,12 @@ export const ReactIcon = styled.div`
   left: 4.8rem;
   transform: translateY(0);
   animation: float 3s ease-in-out infinite;
-  @media (max-width: 767.98px) {
+  @media (max-width: 850px) {
     display: none;
   }
 `;
 export const ImageProfile = styled.div`
-  @media (max-width: 767.98px) {
+  @media (max-width: 850px) {
     max-width: 10rem;
     display: flex;
     justify-content: center;

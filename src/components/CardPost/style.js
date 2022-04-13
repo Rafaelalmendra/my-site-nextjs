@@ -30,6 +30,7 @@ export const Post = styled.div`
     font-weight: 500;
     line-height: 3rem;
     margin-bottom: 10rem;
+    color: var(--white);
     @media (max-width: 850px) {
       font-size: 2.2rem;
       line-height: 2.675rem;

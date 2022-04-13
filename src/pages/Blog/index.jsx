@@ -14,7 +14,7 @@ const Blog = () => {
   }
 
   return (
-    <Container className="margins-nav">
+    <Container className="margins">
       <HeadSeo
         title="Blog | Rafael Almendra"
         content="Conheça meus artigos sobre programação."

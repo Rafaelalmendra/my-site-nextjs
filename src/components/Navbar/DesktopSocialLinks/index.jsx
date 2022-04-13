@@ -1,18 +1,13 @@
+import Switch from "react-switch";
 import { useContext } from "react";
 import { ThemeContext } from "styled-components";
-
-import Switch from "react-switch";
 import LiSocial from "../LiSocial";
-import Li from "../Li";
+import { Container } from "./style";
 
-import { UlContainer } from "./style";
-
-const DesktopLinks = ({ toggleTheme }) => {
+const DesktopSocialLinks = ({ toggleTheme }) => {
   const { title } = useContext(ThemeContext);
-
   return (
-    <UlContainer>
-      <Li className="desktop" />
+    <Container>
       <LiSocial
         className="desktop"
         url="https://www.linkedin.com/in/rafaelalmendradev/"
@@ -37,8 +32,8 @@ const DesktopLinks = ({ toggleTheme }) => {
         onHandleColor="#597393"
         boxShadow="0px 1px 5px rgba(0, 0, 0, 0.4)"
       />
-    </UlContainer>
+    </Container>
   );
 };
 
-export default DesktopLinks;
+export default DesktopSocialLinks;

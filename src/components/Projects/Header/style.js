@@ -1,18 +1,12 @@
 import styled from "styled-components";
 
 const TitleProjects = styled.div`
-  width: 60%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
   margin: 10rem 0 4rem 0;
-  @media (max-width: 1366px) {
-    width: 80%;
-  }
-  @media (max-width: 768px) {
-    width: 100%;
-  }
   h2 {
     font-size: 2.4rem;
     font-weight: 600;
@@ -24,13 +18,11 @@ const TitleProjects = styled.div`
     display: flex;
     flex-wrap: wrap;
     gap: 1.875rem;
-
     @media (max-width: 768px) {
       gap: 0.875rem;
       align-items: center;
       justify-content: right;
     }
-
     a {
       font-size: 0.875rem;
       text-transform: uppercase;

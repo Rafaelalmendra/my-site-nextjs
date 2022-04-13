@@ -6,7 +6,7 @@ export const Container = styled.div`
     font-weight: 600;
     margin-bottom: 1.7rem;
     text-transform: uppercase;
-    @media (max-width: 767.98px) {
+    @media (max-width: 850px) {
       font-size: 2rem;
     }
   }
@@ -14,7 +14,7 @@ export const Container = styled.div`
     font-size: 1.4rem;
     font-weight: 400;
     margin-bottom: 0.6rem;
-    @media (max-width: 767.98px) {
+    @media (max-width: 850px) {
       font-size: 1.2rem;
     }
   }
@@ -25,14 +25,14 @@ export const Container = styled.div`
     max-width: 36rem;
     line-height: 1.6rem;
     margin-bottom: 1.6rem;
-    @media (max-width: 767.98px) {
+    @media (max-width: 850px) {
       width: 90%;
       font-size: 0.875rem;
       text-align: justify;
       line-height: 1.4rem;
     }
   }
-  @media (max-width: 767.98px) {
+  @media (max-width: 850px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,7 +48,7 @@ export const CurriculumLink = styled.div`
   margin-bottom: 2.938rem;
   font-weight: 300;
   text-decoration: underline;
-  @media (max-width: 767.98px) {
+  @media (max-width: 850px) {
     margin-bottom: 1.7rem;
   }
   a {

@@ -76,12 +76,36 @@ export default createGlobalStyle`
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
   }
   .margins {
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-  }
-  .margins-nav {
-    margin-left: 14rem;
-    margin-right: 14rem;
+    margin-left: 26rem;
+    margin-right: 26rem;
+    @media (max-width: 1680px) {
+      margin-left: 18rem;
+      margin-right: 18rem;
+    }
+    @media (max-width: 1440px) {
+      margin-left: 14rem;
+      margin-right: 14rem;
+    }
+    @media (max-width: 1366px) {
+      margin-left: 12rem;
+      margin-right: 12rem;
+    }
+    @media (max-width: 1112px) {
+      margin-left: 8rem;
+      margin-right: 8rem;
+    }
+    @media (max-width: 991.98px) {
+      margin-left: 6rem;
+      margin-right: 6rem;
+    }
+    @media (max-width: 767.98px) {
+      margin-left: 4rem;
+      margin-right: 4rem;
+    }
+    @media (max-width: 575.98px) {
+      margin-left: 1.5rem;
+      margin-right: 1.5rem;
+    }
   }
   .margins-blog {
     margin-left: 35rem;
