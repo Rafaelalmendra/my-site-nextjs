@@ -43,6 +43,7 @@ export const Post = styled.div`
     span {
       padding-left: 2rem;
       font-size: 1.125rem;
+      color: var(--white);
       &:last-child {
         font-size: 0.875rem;
       }

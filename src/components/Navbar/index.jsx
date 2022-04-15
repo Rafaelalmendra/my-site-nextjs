@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { OpenIcon, CloseIcon } from "./Icons";
-import MobileLinks from "./MobileLinks";
 import DesktopSocialLinks from "./DesktopSocialLinks";
+import MobileLinks from "./MobileLinks";
 import Logo from "./Logo";
 import Li from "./Li";
 import { Header, Nav, UlContainer, NavigationMobile } from "./style";
