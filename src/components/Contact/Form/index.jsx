@@ -1,51 +1,28 @@
-import { ContainerForm, FormContainer, ContactButton } from "./style";
+import { FormContainer, Field, TwoFields, Button } from "./style";
 
 const Form = () => (
-  <FormContainer data-aos="zoom-in" className="margins">
+  <FormContainer>
     <form
       action="https://formsubmit.co/rafaelalmendra28@gmail.com"
       method="POST"
     >
       <input type="hidden" name="_next" value="https://rafaelalmendra.com/" />
-      <p>Entre em contato comigo</p>
-      <ContainerForm>
-        <input type="hidden" name="form-name" value="form-contact" />
-        <label>
-          Nome
-          <input
-            type="text"
-            name="name"
-            placeholder="Qual seu nome?"
-            required
-          />
-        </label>
-        <label>
-          E-mail
-          <input
-            type="email"
-            name="email"
-            placeholder="Insira um e-mail para contato"
-            required
-          />
-        </label>
-        <label>
-          Telefone (opcional)
-          <input
-            type="number"
-            name="phone"
-            placeholder="Insira um número para contato"
-          />
-        </label>
-        <label>
-          Mensagem (opcional)
-          <textarea
-            name="message"
-            type="text"
-            placeholder="Escreva sua mensagem"
-          />
-        </label>
-        <ContactButton type="submit">Enviar</ContactButton>
-      </ContainerForm>
+      <input type="hidden" name="form-name" value="form-contact" />
+      <TwoFields>
+        <Field>
+          <label htmlFor="name">Nome *</label>
+          <input type="text" name="name" id="name" required />
+        </Field>
+        <Field>
+          <label htmlFor="email">Endereço de e-mail *</label>
+          <input type="email" id="email" required />
+        </Field>
+      </TwoFields>
+      <Field style={{ marginTop: "2.0625rem", marginBottom: "2.0625rem" }}>
+        <label htmlFor="message">Digite sua mensagem...</label>
+        <textarea id="message" name="message" />
+      </Field>
+      <Button type="submit">Enviar</Button>
     </form>
   </FormContainer>
 );

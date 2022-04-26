@@ -11,7 +11,7 @@ const Button = styled.button`
   color: var(--white);
   background-color: var(--blue);
 
-  border-radius: 0.65rem;
+  border-radius: 4px;
   transition: 0.2s ease-in-out;
   cursor: pointer;
 

@@ -1,115 +1,87 @@
 import styled from "styled-components";
 
 export const FormContainer = styled.div`
-  width: 36rem;
-  height: 40rem;
-  position: relative;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 8rem 0 4rem 0;
-  text-align: center;
-  border-radius: 0.8rem;
-  background: #212529;
-  box-shadow: 9px 11px 14px rgba(0, 0, 0, 0.12);
+  margin-top: 3.1875rem;
 
-  @media (max-width: 575.98px) {
-    width: 31rem;
-  }
-  @media (max-width: 460px) {
-    width: 26rem;
-  }
-  @media (max-width: 390px) {
-    width: 20rem;
-    height: 38rem;
-    margin: 8rem 0 4rem 0;
-
-    label input,
-    textarea {
-      width: 88%;
-    }
-  }
-
-  p {
-    margin-bottom: 3rem;
-    font-weight: 500;
-    font-size: 1.875rem;
-    color: var(--white);
-
-    @media (max-width: 575px) {
-      font-size: 1.5rem;
-    }
-  }
-
-  label {
+  form {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    margin-bottom: 2rem;
+  }
+`;
 
-    font-size: 1.1rem;
-    font-weight: 300;
-    color: var(--white);
+export const Field = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 
-    input,
-    textarea {
-      width: 90%;
-      font-size: 1rem;
-      color: var(--light-black);
-      border-bottom: 1px solid var(--light-black);
-      background: none;
-      transition: border-bottom 0.2s ease-in-out;
-      &::placeholder {
-        color: var(--light-black);
-        font-size: 0.9rem;
-        font-weight: 300;
-      }
-      &:focus {
-        border-bottom: 1px solid var(--blue);
-      }
-      &::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-      }
+  label {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+
+  input {
+    height: 3rem;
+    margin-top: 1rem;
+    padding-left: 0.875rem;
+    border: 1px solid;
+    border-radius: 4px;
+
+    &:active,
+    &:focus {
+      border: 1px solid var(--blue);
     }
   }
 
   textarea {
-    height: 5.5rem;
+    height: 18rem;
+    margin-top: 1rem;
+    padding-left: 0.875rem;
+    padding: 0.875rem 0.875rem 0.875rem 0.875rem;
+    border: 1px solid;
+    border-radius: 4px;
     resize: none;
+
+    &:active,
+    &:focus {
+      border: 1px solid var(--blue);
+    }
   }
 `;
 
-export const ContactButton = styled.div`
-  width: 90%;
-  height: 3.8rem;
+export const TwoFields = styled.div`
+  display: flex;
+  width: 100%;
+  gap: 2rem;
+
+  @media (max-width: 445px) {
+    flex-direction: column;
+  }
+`;
+
+export const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.3rem;
+
+  width: 13rem;
+  height: 4rem;
+
+  font-size: 1.7rem;
   font-weight: 500;
+
   color: var(--white);
-  background: var(--blue);
-  border-radius: 0.4rem;
+  background-color: var(--blue);
+
+  border-radius: 4px;
+  transition: 0.2s ease-in-out;
   cursor: pointer;
-  transition: background ease 0.2s;
 
   &:hover {
-    background: var(--hover-blue);
+    background-color: var(--hover-blue);
   }
 
-  @media (max-width: 575.98px) {
-    width: 96%;
-  }
-`;
-export const ContainerForm = styled.div`
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  margin-left: 3.5rem;
-
-  @media (max-width: 575.98px) {
-    margin-left: 1.4rem;
+  @media (max-width: 768px) {
+    width: 100%;
+    font-size: 1.4rem;
   }
 `;
