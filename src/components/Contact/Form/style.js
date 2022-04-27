@@ -17,6 +17,10 @@ export const Field = styled.div`
   label {
     font-size: 1.2rem;
     margin-top: 1rem;
+
+    @media (max-width: 445px) {
+      margin-top: 0;
+    }
   }
 
   input {
@@ -25,7 +29,6 @@ export const Field = styled.div`
     padding-left: 0.875rem;
     border: 1px solid;
     border-radius: 4px;
-
     &:active,
     &:focus {
       border: 1px solid var(--blue);
