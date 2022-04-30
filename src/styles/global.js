@@ -66,7 +66,7 @@ export default createGlobalStyle`
     width: 0.625rem;
   }
   ::-webkit-scrollbar-track {
-    background-color: var(--white);
+    background-color: ${(props) => props.theme.background};
   }
   ::-webkit-scrollbar-thumb {
     background-color: var(--blue);
