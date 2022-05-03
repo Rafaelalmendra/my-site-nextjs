@@ -1,5 +1,8 @@
+//components
 import Form from "@/components/Contact/Form";
 import HeadSeo from "@/components/HeadSeo";
+
+//styles
 import { Container, FormContainer } from "styles/contact";
 
 const Contact = () => (

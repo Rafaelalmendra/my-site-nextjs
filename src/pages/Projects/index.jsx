@@ -1,14 +1,20 @@
-import LoadingScreen from "@/components/LoadingScreen";
+//hooks
 import useGetProjects from "@/hooks/useGetProjects";
-import { Divider } from "@/components/Dividers";
+
+//components
 import ProjectCard from "@/components/Projects/ProjectCard";
+import LoadingScreen from "@/components/LoadingScreen";
 import Header from "@/components/Projects/Header";
 import Footer from "@/components/Projects/Footer";
+import { Divider } from "@/components/Dividers";
 import HeadSeo from "@/components/HeadSeo";
+
+//styles
 import Container from "styles/projects";
 
 const Projects = () => {
   const { data, loading, error } = useGetProjects();
+
   if (loading) {
     return <LoadingScreen />;
   }

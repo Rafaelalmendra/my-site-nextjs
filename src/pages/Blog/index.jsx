@@ -1,11 +1,17 @@
+//hooks
 import useGetAllPosts from "hooks/useGetAllPosts";
-import HeadSeo from "@/components/HeadSeo";
-import CardPost from "@/components/CardPost";
+
+//components
 import LoadingScreen from "@/components/LoadingScreen";
+import CardPost from "@/components/CardPost";
+import HeadSeo from "@/components/HeadSeo";
+
+//styles
 import { Title, Container, ContainerCards } from "styles/blog";
 
 const Blog = () => {
   const { data, loading, error } = useGetAllPosts();
+
   if (loading) {
     return <LoadingScreen />;
   }

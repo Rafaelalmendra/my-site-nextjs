@@ -1,20 +1,28 @@
+import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { DividerTwo } from "@/components/Dividers";
+
+//hooks
 import useGetFullPost from "@/hooks/useGetFullPost";
-import HeadSeo from "@/components/HeadSeo";
-import Comments from "@/components/Comments";
-import Author from "@/components/Blog/Author";
-import Content from "@/components/Blog/Content";
+
+//components
 import LoadingScreen from "@/components/LoadingScreen";
+import { DividerTwo } from "@/components/Dividers";
+import Content from "@/components/Blog/Content";
+import Author from "@/components/Blog/Author";
+import Comments from "@/components/Comments";
+import HeadSeo from "@/components/HeadSeo";
+
+//styles
 import { Techs, Return, Container, ImageContainer } from "styles/post";
 
 const Post = () => {
   const router = useRouter();
   const slug = router.query.slug;
+
   const { data, loading, error } = useGetFullPost(slug);
   const post = data?.allPosts[0];
+
   if (loading) {
     return <LoadingScreen />;
   }
