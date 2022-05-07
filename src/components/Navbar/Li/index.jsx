@@ -20,6 +20,11 @@ const links = [
   },
   {
     id: 4,
+    name: "Setup",
+    url: "/Setup",
+  },
+  {
+    id: 5,
     name: <ButtonContact>Contato</ButtonContact>,
     url: "/Contact",
   },
