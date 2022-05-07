@@ -1,6 +1,23 @@
+import { Container, Content, Divider } from 'styles/setup'
+
 const Setup = () => {
   return (
-    <h1>Setup</h1>
+    <Container className='margins'>
+      <h1>Setup, aplicativos e equipamentos</h1>
+      <p>Lorem Ipsum Lorem Ispum Lorem Ipsum Lorem IspumLorem Ipsum Lorem Lorem Ipsum Lorem Ispum Lorem Ipsum Lorem Ispum Lorem Ipsum Lorem Ispum</p>
+
+      <Content>
+        <div>
+          teste
+        </div>
+        <div>
+          <Divider />
+        </div>
+        <div>
+          teste
+        </div>
+      </Content>
+    </Container>
   )
 }
 

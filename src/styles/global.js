@@ -8,6 +8,7 @@ export default createGlobalStyle`
     --white: #FFFFFF;
     --black: #131219;
     --light-black: #6D6D6D;
+    --grey: #ADADAD;
     --link: #463FDF;
     --purple-black: #161B3D;
     --small-title: 2.5rem;
