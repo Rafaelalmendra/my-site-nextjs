@@ -4,7 +4,7 @@ export const lightTheme = {
   blogText: "#161B3D",
   techText: "#FFFFFF",
   techBackground: "#161B3D",
-  background: "#FFFFFF"  
+  background: "#FFFFFF"
 }
 
 export const darkTheme = {
@@ -13,5 +13,5 @@ export const darkTheme = {
   blogText: "#FFFFFF",
   techText: "#131219",
   techBackground: "#FFFFFF",
-  background: "#131219"
+  background: "#1C2026"
 }
