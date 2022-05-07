@@ -27,7 +27,7 @@ export const Title = styled.h1`
   margin-bottom: 4.875rem;
   font-size: 2.625rem;
   font-weight: 500;
-  color: var(--blue);
+  color: var(--white);
   @media (max-width: 885px) {
     font-size: 2.2rem;
     margin: 9rem 0 2.875rem 0;
