@@ -1,19 +1,8 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  max-width: 100%;
-
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-
-  @media (max-width: 850px) {
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-  }
-`;
 export const Post = styled.div`
+  position: relative;
+
   width: 21.188rem;
   height: 26.188rem;
 
@@ -26,8 +15,8 @@ export const Post = styled.div`
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
 
-  &:hover {
-    transform: translateY(-0.375rem);
+  @media (max-width: 768px) {
+    width: 100%;
   }
 
   p {
@@ -74,6 +63,10 @@ export const ImageEffect = styled.div`
 
   width: 21.188rem;
   height: 26.188rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 
   border-radius: 20px;
   background-size: cover;

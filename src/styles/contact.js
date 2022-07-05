@@ -12,7 +12,7 @@ export const FormContainer = styled.div`
   margin-top: 8.0625rem;
 
   @media (max-width: 768px) {
-    margin-top: 8rem;
+    margin-top: 2.875rem;
   }
 
   h1 {

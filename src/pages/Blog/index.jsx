@@ -1,9 +1,11 @@
+import Link from "next/link";
+
 //hooks
 import useGetAllPosts from "src/hooks/useGetAllPosts";
 
 //components
 import HeadSeo from "src/components/HeadSeo";
-import CardPost from "src/components/CardPost";
+import CardPost from "src/components/Blog/CardPost";
 import LoadingScreen from "src/components/LoadingScreen";
 
 //styles
@@ -31,13 +33,16 @@ const Blog = () => {
 
       <ContainerCards>
         {data?.allPosts.map((post) => (
-          <CardPost
-            title={post.title}
-            thumbnail={post.thumbnail?.url}
-            author={post.author}
-            date={post.date}
-            slug={post.slug}
-          />
+          <Link href={`/Blog/${post.slug}`}>
+            <a>
+              <CardPost
+                title={post.title}
+                thumbnail={post.thumbnail?.url}
+                author={post.author}
+                date={post.date}
+              />
+            </a>
+          </Link>
         ))}
       </ContainerCards>
     </Container>

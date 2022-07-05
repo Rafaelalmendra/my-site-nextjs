@@ -9,6 +9,7 @@ export const Container = styled.div`
 `;
 
 export const ContainerCards = styled.main`
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 4rem;
@@ -18,6 +19,14 @@ export const ContainerCards = styled.main`
     justify-content: center;
     align-items: center;
     margin-bottom: 4rem;
+  }
+
+  a {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 `;
 
@@ -35,7 +44,7 @@ export const Title = styled.h1`
   color: var(--white);
 
   @media (max-width: 885px) {
-    margin: 9rem 0 2.875rem 0;
+    margin: 2.875rem 0 2.875rem 0;
     font-size: 2.2rem;
   }
 

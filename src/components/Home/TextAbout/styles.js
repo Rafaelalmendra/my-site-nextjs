@@ -37,7 +37,7 @@ export const Container = styled.div`
       width: 90%;
 
       font-size: 0.875rem;
-      text-align: justify;
+      text-align: center;
       line-height: 1.4rem;
     }
   }
@@ -58,8 +58,6 @@ export const Container = styled.div`
 `;
 
 export const CurriculumLink = styled.div`
-  margin-bottom: 2.938rem;
-
   font-weight: 300;
   text-decoration: underline;
 
@@ -73,5 +71,49 @@ export const CurriculumLink = styled.div`
     &:hover {
       color: var(--blue);
     }
+  }
+`;
+
+export const InfosContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 2.938rem;
+
+  @media (max-width: 850px) {
+    align-items: center;
+  }
+`;
+
+export const InfosText = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  span {
+    color: ${(props) =>
+      props.theme.title === "dark" ? "#DEDEDE" : "var(--black)"};
+  }
+`;
+
+export const InfosTextLink = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  span {
+    color: ${(props) =>
+      props.theme.title === "dark" ? "#DEDEDE" : "var(--black)"};
+    transition: color ease-in-out 0.2s;
+  }
+
+  a {
+    text-decoration: underline;
+    transition: color ease-in-out 0.2s;
+  }
+
+  span:hover,
+  a:hover {
+    color: var(--blue);
   }
 `;

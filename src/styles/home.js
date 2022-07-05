@@ -13,7 +13,7 @@ const Container = styled.main`
   @media (max-width: 850px) {
     flex-direction: column;
     justify-content: center;
-    margin: 2rem 0 2rem 0;
+    margin: 1.4rem 0 0 0;
   }
 `;
 
