@@ -1,35 +1,42 @@
-import Switch from "react-switch";
 import { useContext } from "react";
 import { ThemeContext } from "styled-components";
+import Switch from "react-switch";
+
+//components
 import LiSocial from "../LiSocial";
-import { Container } from "./style";
+
+//styles
+import { Container } from "./styles";
 
 const DesktopSocialLinks = ({ toggleTheme }) => {
   const { title } = useContext(ThemeContext);
+
   return (
     <Container>
       <LiSocial
         className="desktop"
-        url="https://www.linkedin.com/in/rafaelalmendradev/"
         icon="bi bi-linkedin"
+        url="https://www.linkedin.com/in/rafaelalmendradev/"
       />
+
       <LiSocial
         className="desktop"
-        url="https://github.com/Rafaelalmendra"
         icon="bi bi-github"
+        url="https://github.com/Rafaelalmendra"
       />
+
       <Switch
-        onChange={toggleTheme}
-        checked={title === "dark"}
-        checkedIcon={false}
-        uncheckedIcon={false}
-        height={20}
         width={40}
-        handleDiameter={24}
-        offColor="#d0d4d6"
-        offHandleColor="#32C5FF"
+        height={20}
         onColor="#053d52"
+        handleDiameter={24}
+        checkedIcon={false}
+        offColor="#d0d4d6"
+        uncheckedIcon={false}
+        onChange={toggleTheme}
         onHandleColor="#597393"
+        checked={title === "dark"}
+        offHandleColor="#32C5FF"
         boxShadow="0px 1px 5px rgba(0, 0, 0, 0.4)"
       />
     </Container>

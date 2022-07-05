@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
-import { Open, Close } from "./style";
+
+//styles
+import { Open, Close } from "./styles";
 
 const OpenIcon = ({ ...props }) => (
   <Open {...props}>

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { AuthorImage, AuthorAndDate } from "./style";
+import { AuthorImage, AuthorAndDate } from "./styles";
 
 const Author = ({ post }) => (
   <>

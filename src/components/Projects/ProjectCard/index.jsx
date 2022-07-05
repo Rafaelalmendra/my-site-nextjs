@@ -1,13 +1,15 @@
 import Image from "next/image";
+
+//styles
 import {
-  ProjectContainer,
-  ProjectImage,
-  Details,
-  Techs,
   Text,
-  NameAndDescription,
+  Techs,
+  Details,
+  ProjectImage,
+  ProjectContainer,
   LinkAndRepository,
-} from "./style";
+  NameAndDescription,
+} from "./styles";
 
 const ProjectCard = ({ data }) => {
   return (
@@ -26,12 +28,14 @@ const ProjectCard = ({ data }) => {
               height={431}
             />
           </ProjectImage>
+
           <NameAndDescription>
             <h3>{project?.title}</h3>
             <Text>
               <p>{project?.description}</p>
             </Text>
           </NameAndDescription>
+
           <Details>
             <Techs>
               {project?.technologies?.map((tech) => (
@@ -46,6 +50,7 @@ const ProjectCard = ({ data }) => {
               >
                 <i className="bi bi-globe"></i>
               </a>
+
               <a
                 href={project?.github}
                 target="_blank"

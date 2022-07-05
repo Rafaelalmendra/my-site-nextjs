@@ -3,6 +3,7 @@ import styled from "styled-components";
 const Divider = styled.div`
   width: 100%;
   height: 1px;
+
   background: linear-gradient(
     270deg,
     var(--blue) 0%,
@@ -14,6 +15,7 @@ const DividerTwo = styled.div`
   width: 100%;
   height: 1px;
   margin: 2rem 0;
+
   background: linear-gradient(
     270deg,
     var(--blue) 0%,

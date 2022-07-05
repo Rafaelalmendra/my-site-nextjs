@@ -1,32 +1,30 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Container, A, ButtonContact } from "./style";
 
+//styles
+import { Container, A, ButtonContact } from "./styles";
+
+//mock
 const links = [
   {
     id: 1,
-    name: "Home",
     url: "/",
+    name: "Home",
   },
   {
     id: 2,
-    name: "Projetos",
     url: "/Projects",
+    name: "Projetos",
   },
   {
     id: 3,
-    name: "Blog",
     url: "/Blog",
-  },
-  {
-    id: 4,
-    name: "Setup",
-    url: "/Setup",
+    name: "Blog",
   },
   {
     id: 5,
-    name: <ButtonContact>Contato</ButtonContact>,
     url: "/Contact",
+    name: <ButtonContact>Contato</ButtonContact>,
   },
 ];
 

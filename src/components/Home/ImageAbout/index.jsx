@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Container, ReactIcon, ImageProfile } from "./style";
+import { Container, ReactIcon, ImageProfile } from "./styles";
 
 const ImageAbout = () => (
   <Container>
@@ -11,6 +11,7 @@ const ImageAbout = () => (
         height={136}
       />
     </ReactIcon>
+
     <ImageProfile>
       <Image
         data-aos="zoom-in"

@@ -5,6 +5,7 @@ export default class Comments extends Component {
     super(props);
     this.commentBox = React.createRef();
   }
+
   componentDidMount() {
     let scriptEl = document.createElement("script");
     scriptEl.setAttribute("src", "https://utteranc.es/client.js");
@@ -15,6 +16,7 @@ export default class Comments extends Component {
       scriptEl.setAttribute("theme", "dark-blue"),
       this.commentBox.current.appendChild(scriptEl);
   }
+
   render() {
     return (
       <div style={{ width: "100%" }} id="comments">

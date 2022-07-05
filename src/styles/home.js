@@ -5,9 +5,11 @@ const Container = styled.main`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   .bi-caret-right-fill {
     color: var(--white);
   }
+
   @media (max-width: 850px) {
     flex-direction: column;
     justify-content: center;

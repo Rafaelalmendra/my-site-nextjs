@@ -1,13 +1,13 @@
 //hooks
-import useGetProjects from "@/hooks/useGetProjects";
+import useGetProjects from "src/hooks/useGetProjects";
 
 //components
-import ProjectCard from "@/components/Projects/ProjectCard";
-import LoadingScreen from "@/components/LoadingScreen";
-import Header from "@/components/Projects/Header";
-import Footer from "@/components/Projects/Footer";
-import { Divider } from "@/components/Dividers";
-import HeadSeo from "@/components/HeadSeo";
+import HeadSeo from "src/components/HeadSeo";
+import { Divider } from "src/components/Dividers";
+import Header from "src/components/Projects/Header";
+import Footer from "src/components/Projects/Footer";
+import LoadingScreen from "src/components/LoadingScreen";
+import ProjectCard from "src/components/Projects/ProjectCard";
 
 //styles
 import Container from "styles/projects";
@@ -18,6 +18,7 @@ const Projects = () => {
   if (loading) {
     return <LoadingScreen />;
   }
+
   if (error) {
     console.error(error);
   }
@@ -28,9 +29,13 @@ const Projects = () => {
         title="Projetos | Rafael Almendra"
         content="Conheça alguns dos meus projetos"
       />
+
       <Header data={data} />
+
       <ProjectCard data={data} />
+
       <Divider />
+
       <Footer />
     </Container>
   );

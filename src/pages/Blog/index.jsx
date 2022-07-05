@@ -1,10 +1,10 @@
 //hooks
-import useGetAllPosts from "hooks/useGetAllPosts";
+import useGetAllPosts from "src/hooks/useGetAllPosts";
 
 //components
-import LoadingScreen from "@/components/LoadingScreen";
-import CardPost from "@/components/CardPost";
-import HeadSeo from "@/components/HeadSeo";
+import HeadSeo from "src/components/HeadSeo";
+import CardPost from "src/components/CardPost";
+import LoadingScreen from "src/components/LoadingScreen";
 
 //styles
 import { Title, Container, ContainerCards } from "styles/blog";
@@ -15,6 +15,7 @@ const Blog = () => {
   if (loading) {
     return <LoadingScreen />;
   }
+
   if (error) {
     console.error(error);
   }
@@ -25,7 +26,9 @@ const Blog = () => {
         title="Blog | Rafael Almendra"
         content="Conheça meus artigos sobre programação."
       />
+
       <Title>Bem vindo(a) ao meu Blog 👋</Title>
+
       <ContainerCards>
         {data?.allPosts.map((post) => (
           <CardPost

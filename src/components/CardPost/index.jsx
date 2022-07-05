@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Container, Post, ImageEffect } from "./style";
+import { Container, Post, ImageEffect } from "./styles";
 
 const CardPost = ({ title, thumbnail, author, date, slug }) => {
   return (

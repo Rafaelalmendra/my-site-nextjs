@@ -1,8 +1,10 @@
-import Image from "next/image";
-import Link from "next/link";
 import { useContext } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import { ThemeContext } from "styled-components";
-import Container from "./style";
+
+//styles
+import Container from "./styles";
 
 const Logo = () => {
   const { title } = useContext(ThemeContext);

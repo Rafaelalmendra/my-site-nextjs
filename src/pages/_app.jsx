@@ -8,16 +8,16 @@ import "aos/dist/aos.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 //services
-import client from "@/services/dato-cms";
+import client from "src/services/dato-cms";
 
 //components
-import ScrollButton from "../components/ScrollButton";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import ScrollButton from "../components/ScrollButton";
 
 //styles
-import { lightTheme, darkTheme } from "../styles/theme";
 import GlobalStyle from "../styles/global";
+import { lightTheme, darkTheme } from "../styles/theme";
 
 const MyApp = ({ Component, pageProps }) => {
   const [theme, setTheme] = useState(darkTheme);
@@ -27,7 +27,7 @@ const MyApp = ({ Component, pageProps }) => {
   };
 
   useEffect(() => {
-    Aos.init({ duration: 700, offset: 120 });
+    Aos.init({ duration: 700, offset: 0 });
   }, []);
 
   return (
@@ -36,10 +36,15 @@ const MyApp = ({ Component, pageProps }) => {
         <Head>
           <title>Rafael Almendra</title>
         </Head>
+
         <Navbar toggleTheme={toggleTheme} />
+
         <ScrollButton />
+
         <GlobalStyle />
+
         <Component {...pageProps} />
+
         <Footer />
       </ThemeProvider>
     </ApolloProvider>

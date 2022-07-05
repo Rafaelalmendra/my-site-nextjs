@@ -9,18 +9,22 @@ export const Container = styled.div`
     flex-direction: column;
   }
 `;
+
 export const A = styled.a`
   color: ${(props) => (props.active ? "var(--blue)" : props.theme.text)};
   transition: color ease-in-out 0.2s;
   cursor: pointer;
+
   &:hover {
     color: var(--blue);
   }
+
   button {
     color: ${(props) => (props.active ? "var(--white)" : props.theme.text)};
     background-color: ${(props) => (props.active ? "var(--blue)" : "")};
   }
 `;
+
 export const ButtonContact = styled.button`
   width: 6rem;
   height: 2.25rem;

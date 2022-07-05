@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Button from "../../Button";
-import { Container, CurriculumLink } from "./style";
+import { Container, CurriculumLink } from "./styles";
 
 const TextAbout = () => (
   <Container data-aos="zoom-in">
@@ -10,6 +10,7 @@ const TextAbout = () => (
       Sou desenvolvedor Front-end apaixonado por tecnologia, programação e
       design.
     </p>
+
     <CurriculumLink>
       <a
         href="https://drive.google.com/file/d/1Pt7ngkyQ-U-3nKnL0y1A2YEYDpXalyxq/view?usp=sharing"
@@ -19,6 +20,7 @@ const TextAbout = () => (
         Acessar currículo
       </a>
     </CurriculumLink>
+
     <Link href="/Projects">
       <a>
         <Button>

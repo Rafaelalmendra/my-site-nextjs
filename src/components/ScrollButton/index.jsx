@@ -1,23 +1,29 @@
-import { useState } from "react";
 import Image from "next/image";
-import { Container } from "./style";
+import { useState } from "react";
+
+//styles
+import { Container } from "./styles";
 
 const ScrollButton = () => {
   const [visible, setVisible] = useState(false);
+
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
+
     if (scrolled > 300) {
       setVisible(true);
     } else if (scrolled <= 300) {
       setVisible(false);
     }
   };
+
   const scrollButtonTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
   };
+
   if (typeof window !== "undefined") {
     window.addEventListener("scroll", toggleVisible);
   }

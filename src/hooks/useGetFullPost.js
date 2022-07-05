@@ -5,46 +5,20 @@ const getFullPost = gql`
     allPosts(filter: { slug: { eq: $slug } }) {
       id
       slug
-      technologies {
-        technologie
-      }
       thumbnail {
         url
         alt
       }
+      technologies {
+        technologie
+      }
+      title
       author
       authorImage {
         url
-        alt
       }
       date
-      title
-      content {
-        ... on ImageRecord {
-          id
-          _status
-          image {
-            url
-            alt
-          }
-        }
-        ... on SubtitleRecord {
-          id
-          subtitle
-        }
-        ... on TextRecord {
-          id
-          text
-        }
-        ... on LinkRecord {
-          id
-          link
-        }
-        ... on UrlLinkRecord {
-          id
-          urlLink
-        }
-      }
+      content
     }
   }
 `;

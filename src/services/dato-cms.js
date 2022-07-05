@@ -1,5 +1,5 @@
-import { ApolloClient, InMemoryCache, createHttpLink } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
+import { ApolloClient, InMemoryCache, createHttpLink } from "@apollo/client";
 
 const url = "https://graphql.datocms.com/";
 const token = `${process.env.DATOCMS_READ_ONLY_API_TOKEN}`;
@@ -7,6 +7,7 @@ const token = `${process.env.DATOCMS_READ_ONLY_API_TOKEN}`;
 const httpLink = createHttpLink({
   uri: url,
 });
+
 const authLink = setContext((_, { headers }) => {
   return {
     headers: {
@@ -16,6 +17,7 @@ const authLink = setContext((_, { headers }) => {
     },
   };
 });
+
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),

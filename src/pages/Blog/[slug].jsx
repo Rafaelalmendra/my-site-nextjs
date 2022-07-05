@@ -3,18 +3,17 @@ import Image from "next/image";
 import Link from "next/link";
 
 //hooks
-import useGetFullPost from "@/hooks/useGetFullPost";
+import useGetFullPost from "src/hooks/useGetFullPost";
 
 //components
-import LoadingScreen from "@/components/LoadingScreen";
-import { DividerTwo } from "@/components/Dividers";
-import Content from "@/components/Blog/Content";
-import Author from "@/components/Blog/Author";
-import Comments from "@/components/Comments";
-import HeadSeo from "@/components/HeadSeo";
+import HeadSeo from "src/components/HeadSeo";
+import Comments from "src/components/Comments";
+import Author from "src/components/Blog/Author";
+import { DividerTwo } from "src/components/Dividers";
+import LoadingScreen from "src/components/LoadingScreen";
 
 //styles
-import { Techs, Return, Container, ImageContainer } from "styles/post";
+import { Techs, Return, Container, ImageContainer, Content } from "styles/post";
 
 const Post = () => {
   const router = useRouter();
@@ -26,6 +25,7 @@ const Post = () => {
   if (loading) {
     return <LoadingScreen />;
   }
+
   if (error) {
     console.error(error);
   }
@@ -33,25 +33,32 @@ const Post = () => {
   return (
     <Container>
       <HeadSeo title={post?.title} content={post?.title} />
+
       <ImageContainer>
         <Image
-          className="image"
           src={post?.thumbnail?.url}
           alt={post?.thumbnail?.alt}
           width={1920}
           height={1080}
         />
       </ImageContainer>
+
       <Techs>
         {post?.technologies?.map((tech) => (
           <span className="tech-blog">{tech?.technologie}</span>
         ))}
       </Techs>
+
       <Author post={post} />
+
       <h1>{post?.title}</h1>
-      <Content post={post} />
+
+      <Content dangerouslySetInnerHTML={{ __html: post.content }} />
+
       <DividerTwo />
+
       <Comments />
+
       <Return>
         <Link href="/Blog">
           <a>
