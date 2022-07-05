@@ -19,6 +19,10 @@ export const Post = styled.div`
     width: 100%;
   }
 
+  &:hover {
+    transform: translateY(-5px);
+  }
+
   p {
     padding: 2rem 0 0 2rem;
     margin-bottom: 10rem;

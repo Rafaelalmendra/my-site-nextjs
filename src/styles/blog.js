@@ -6,13 +6,11 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
+  overflow-y: scroll;
 `;
 
 export const ContainerCards = styled.main`
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4rem;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -24,9 +22,14 @@ export const ContainerCards = styled.main`
   a {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
   }
 `;
 

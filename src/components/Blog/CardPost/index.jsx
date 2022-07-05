@@ -1,4 +1,4 @@
-import { Container, Post, ImageEffect } from "./styles";
+import { Post, ImageEffect } from "./styles";
 
 const CardPost = ({ title, thumbnail, author, date }) => {
   return (
