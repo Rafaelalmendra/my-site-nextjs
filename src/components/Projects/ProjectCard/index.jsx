@@ -14,11 +14,7 @@ import {
 const ProjectCard = ({ data }) => (
   <>
     {data?.allProjects.map((project) => (
-      <ProjectContainer
-        className="margins"
-        data-aos="zoom-in"
-        id={project?.title}
-      >
+      <ProjectContainer data-aos="zoom-in" id={project?.title}>
         <ProjectImage>
           <Image
             src={project?.image.url}

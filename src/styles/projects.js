@@ -1,12 +1,10 @@
 import styled from "styled-components";
 
-const Container = styled.div`
-  min-height: 100vh;
+export const Container = styled.div`
+  min-height: calc(100vh - 120px);
 
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 `;
-
-export default Container;

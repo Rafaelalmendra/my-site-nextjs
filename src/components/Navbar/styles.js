@@ -6,14 +6,18 @@ export const Header = styled.header`
   top: 0;
 
   width: 100%;
+  overflow: hidden;
 `;
 
 export const Nav = styled.nav`
   height: 6rem;
 
+  width: 100%;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 32px;
 `;
 
 export const UlContainer = styled.ul`

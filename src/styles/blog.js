@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  min-height: 100vh;
+  min-height: calc(100vh - 120px);
 
   display: flex;
   justify-content: center;
   flex-direction: column;
-  overflow-y: scroll;
 `;
 
 export const ContainerCards = styled.main`
@@ -39,7 +38,6 @@ export const Title = styled.h1`
   justify-content: center;
   flex-direction: column;
   gap: 2.275rem;
-  margin-top: 2rem;
   margin-bottom: 4.875rem;
 
   font-size: 2.625rem;

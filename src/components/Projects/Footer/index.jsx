@@ -8,7 +8,7 @@ import Button from "src/components/Button";
 import { Container, Text, Vector } from "./styles";
 
 const Footer = () => (
-  <Container className="margins">
+  <Container>
     <Text>
       <h2>Quer entrar em contato comigo?</h2>
 

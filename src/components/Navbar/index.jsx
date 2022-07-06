@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { ThemeContext } from "styled-components";
 
 //components
 import Li from "./Li";
@@ -32,7 +33,7 @@ const Navbar = ({ toggleTheme }) => {
 
   return (
     <Header className={navbar ? "active" : ""}>
-      <Nav className="margins">
+      <Nav>
         <Logo />
 
         <UlContainer>

@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-const TitleProjects = styled.div`
+export const TitleProjects = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 10rem 0 4rem 0;
   gap: 1rem;
+  margin-bottom: 2rem;
 
   h2 {
     font-size: 2.4rem;
@@ -39,5 +39,3 @@ const TitleProjects = styled.div`
     }
   }
 `;
-
-export default TitleProjects;

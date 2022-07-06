@@ -10,7 +10,8 @@ import LoadingScreen from "src/components/LoadingScreen";
 import ProjectCard from "src/components/Projects/ProjectCard";
 
 //styles
-import Container from "styles/projects";
+import Layout from "src/components/Layout";
+import { Container } from "styles/projects";
 
 const Projects = () => {
   const { data, loading, error } = useGetProjects();
@@ -24,20 +25,22 @@ const Projects = () => {
   }
 
   return (
-    <Container className="margins">
-      <HeadSeo
-        title="Projetos | Rafael Almendra"
-        content="Conheça alguns dos meus projetos"
-      />
+    <Layout paddingTop>
+      <Container>
+        <HeadSeo
+          title="Projetos | Rafael Almendra"
+          content="Conheça alguns dos meus projetos"
+        />
 
-      <Header data={data} />
+        <Header data={data} />
 
-      <ProjectCard data={data} />
+        <ProjectCard data={data} />
 
-      <Divider />
+        <Divider />
 
-      <Footer />
-    </Container>
+        <Footer />
+      </Container>
+    </Layout>
   );
 };
 

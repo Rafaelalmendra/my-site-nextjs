@@ -7,35 +7,6 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin: 0 35rem;
-
-  @media (max-width: 1680px) {
-    margin: 0 25rem;
-  }
-
-  @media (max-width: 1440px) {
-    margin: 0 20rem;
-  }
-
-  @media (max-width: 1366px) {
-    margin: 0 17rem;
-  }
-
-  @media (max-width: 1112px) {
-    margin: 0 14rem;
-  }
-
-  @media (max-width: 991.98px) {
-    margin: 0 12rem;
-  }
-
-  @media (max-width: 767.98px) {
-    margin: 0 8rem;
-  }
-
-  @media (max-width: 575.98px) {
-    margin: 0 1.5rem;
-  }
 
   h1 {
     font-size: 2.8rem;
@@ -58,7 +29,6 @@ export const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10rem;
 
   img {
     border-radius: 4px;

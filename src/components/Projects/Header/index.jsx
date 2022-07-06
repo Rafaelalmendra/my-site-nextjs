@@ -1,7 +1,7 @@
-import TitleProjects from "./styles";
+import { TitleProjects } from "./styles";
 
 const Header = ({ data }) => (
-  <TitleProjects data-aos="fade-down" className="margins">
+  <TitleProjects data-aos="fade-down">
     <h2>PROJETOS</h2>
 
     <ul>

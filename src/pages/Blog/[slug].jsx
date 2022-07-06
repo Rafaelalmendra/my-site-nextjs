@@ -6,6 +6,7 @@ import Link from "next/link";
 import useGetFullPost from "src/hooks/useGetFullPost";
 
 //components
+import Layout from "src/components/Layout";
 import HeadSeo from "src/components/HeadSeo";
 import Comments from "src/components/Comments";
 import Author from "src/components/Blog/Author";
@@ -31,43 +32,45 @@ const Post = () => {
   }
 
   return (
-    <Container>
-      <HeadSeo title={post?.title} content={post?.title} />
+    <Layout paddingTop blogPost>
+      <Container>
+        <HeadSeo title={post?.title} content={post?.title} />
 
-      <ImageContainer>
-        <Image
-          src={post?.thumbnail?.url}
-          alt={post?.thumbnail?.alt}
-          width={1920}
-          height={1080}
-        />
-      </ImageContainer>
+        <ImageContainer>
+          <Image
+            src={post?.thumbnail?.url}
+            alt={post?.thumbnail?.alt}
+            width={1920}
+            height={1080}
+          />
+        </ImageContainer>
 
-      <Techs>
-        {post?.technologies?.map((tech) => (
-          <span className="tech-blog">{tech?.technologie}</span>
-        ))}
-      </Techs>
+        <Techs>
+          {post?.technologies?.map((tech) => (
+            <span className="tech-blog">{tech?.technologie}</span>
+          ))}
+        </Techs>
 
-      <Author post={post} />
+        <Author post={post} />
 
-      <h1>{post?.title}</h1>
+        <h1>{post?.title}</h1>
 
-      <Content dangerouslySetInnerHTML={{ __html: post.content }} />
+        <Content dangerouslySetInnerHTML={{ __html: post.content }} />
 
-      <DividerTwo />
+        <DividerTwo />
 
-      <Comments />
+        <Comments />
 
-      <Return>
-        <Link href="/Blog">
-          <a>
-            <i className="bi bi-caret-left-fill"></i>
-            <span>Voltar para o blog</span>
-          </a>
-        </Link>
-      </Return>
-    </Container>
+        <Return>
+          <Link href="/Blog">
+            <a>
+              <i className="bi bi-caret-left-fill"></i>
+              <span>Voltar para o blog</span>
+            </a>
+          </Link>
+        </Return>
+      </Container>
+    </Layout>
   );
 };
 

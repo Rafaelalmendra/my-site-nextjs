@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  min-height: 100vh;
+  min-height: calc(100vh - 120px);
 
   display: flex;
   justify-content: center;
@@ -9,12 +9,6 @@ export const Container = styled.div`
 `;
 
 export const FormContainer = styled.div`
-  margin-top: 8.0625rem;
-
-  @media (max-width: 768px) {
-    margin-top: 2.875rem;
-  }
-
   h1 {
     font-size: 2rem;
     font-weight: 600;

@@ -4,6 +4,7 @@ import Link from "next/link";
 import useGetAllPosts from "src/hooks/useGetAllPosts";
 
 //components
+import Layout from "src/components/Layout";
 import HeadSeo from "src/components/HeadSeo";
 import CardPost from "src/components/Blog/CardPost";
 import LoadingScreen from "src/components/LoadingScreen";
@@ -23,29 +24,31 @@ const Blog = () => {
   }
 
   return (
-    <Container className="margins">
-      <HeadSeo
-        title="Blog | Rafael Almendra"
-        content="Conheça meus artigos sobre programação."
-      />
+    <Layout>
+      <Container>
+        <HeadSeo
+          title="Blog | Rafael Almendra"
+          content="Conheça meus artigos sobre programação."
+        />
 
-      <Title>Bem vindo(a) ao meu Blog 👋</Title>
+        <Title>Bem vindo(a) ao meu Blog 👋</Title>
 
-      <ContainerCards>
-        {data?.allPosts.map((post) => (
-          <Link href={`/Blog/${post.slug}`}>
-            <a>
-              <CardPost
-                title={post.title}
-                thumbnail={post.thumbnail?.url}
-                author={post.author}
-                date={post.date}
-              />
-            </a>
-          </Link>
-        ))}
-      </ContainerCards>
-    </Container>
+        <ContainerCards>
+          {data?.allPosts.map((post) => (
+            <Link href={`/Blog/${post.slug}`}>
+              <a>
+                <CardPost
+                  title={post.title}
+                  thumbnail={post.thumbnail?.url}
+                  author={post.author}
+                  date={post.date}
+                />
+              </a>
+            </Link>
+          ))}
+        </ContainerCards>
+      </Container>
+    </Layout>
   );
 };
 

@@ -7,7 +7,7 @@ export const ProjectContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-bottom: 6.75rem;
+  margin-bottom: 3rem;
 
   &:last-child {
     margin-bottom: 0;
@@ -18,6 +18,7 @@ export const ProjectImage = styled.div`
   img {
     border-radius: 0.6rem;
   }
+
   @media (max-width: 575.98px) {
     min-width: 100%;
   }
