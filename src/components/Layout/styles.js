@@ -18,7 +18,7 @@ export const Content = styled.div`
 
   margin: 0 auto;
 
-  padding-top: ${(props) => (props.paddingTop ? "4rem" : 0)};
+  padding-top: ${(props) => (props.paddingTop ? "4.65rem" : 0)};
 
   @media (max-width: 850px) {
     width: 100%;
