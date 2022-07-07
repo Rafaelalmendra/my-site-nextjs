@@ -11,6 +11,8 @@ import {
   NameAndDescription,
 } from "./styles";
 
+import FigmaIcon from "../../../assets/icons/figma.svg";
+
 const ProjectCard = ({ data }) => (
   <>
     {data?.allProjects.map((project) => (
@@ -38,6 +40,10 @@ const ProjectCard = ({ data }) => (
             ))}
           </Techs>
           <LinkAndRepository>
+            <a href={project?.figma} target="_blank" rel="noopener noreferrer">
+              <FigmaIcon />
+            </a>
+
             <a href={project?.deploy} target="_blank" rel="noopener noreferrer">
               <i className="bi bi-globe"></i>
             </a>

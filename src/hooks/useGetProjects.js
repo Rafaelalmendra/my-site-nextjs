@@ -13,8 +13,10 @@ const getProjects = gql`
       technologies {
         technologie
       }
+      figma
       deploy
       github
+      ismyproject
     }
   }
 `;

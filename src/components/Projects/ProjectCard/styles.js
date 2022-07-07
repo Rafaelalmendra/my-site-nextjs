@@ -120,6 +120,7 @@ export const NameAndDescription = styled.div`
 
 export const LinkAndRepository = styled.div`
   display: flex;
+  align-items: center;
   gap: 1.6rem;
 
   @media (max-width: 768px) {
@@ -141,6 +142,21 @@ export const LinkAndRepository = styled.div`
 
     @media (max-width: 768px) {
       font-size: 1.4rem;
+    }
+  }
+
+  svg {
+    //scale zoom
+    transform: scale(0.95);
+
+    @media (max-width: 768px) {
+      transform: scale(0.75);
+    }
+    &:hover {
+      path {
+        transition: stroke 0.2s ease-in-out;
+        stroke: var(--blue);
+      }
     }
   }
 `;
