@@ -16,6 +16,8 @@ import { Container } from "styles/projects";
 const Projects = () => {
   const { data, loading, error } = useGetProjects();
 
+  console.log(data);
+
   if (loading) {
     return <LoadingScreen />;
   }

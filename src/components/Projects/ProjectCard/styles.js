@@ -15,12 +15,24 @@ export const ProjectContainer = styled.div`
 `;
 
 export const ProjectImage = styled.div`
+  position: relative;
+
   img {
     border-radius: 0.6rem;
   }
 
   @media (max-width: 575.98px) {
     min-width: 100%;
+  }
+`;
+
+export const TagContainer = styled.div`
+  position: absolute;
+  z-index: 10;
+  margin: 16px;
+
+  @media (max-width: 850px) {
+    margin: 10px;
   }
 `;
 

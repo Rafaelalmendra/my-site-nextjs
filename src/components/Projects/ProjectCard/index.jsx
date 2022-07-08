@@ -1,16 +1,21 @@
 import Image from "next/image";
 
+//components
+import Tag from "src/components/Tag";
+
 //styles
 import {
   Text,
   Techs,
   Details,
+  TagContainer,
   ProjectImage,
   ProjectContainer,
   LinkAndRepository,
   NameAndDescription,
 } from "./styles";
 
+//images
 import FigmaIcon from "../../../assets/icons/figma.svg";
 
 const ProjectCard = ({ data }) => (
@@ -18,6 +23,13 @@ const ProjectCard = ({ data }) => (
     {data?.allProjects.map((project) => (
       <ProjectContainer data-aos="zoom-in" id={project?.title}>
         <ProjectImage>
+          <TagContainer>
+            <Tag
+              text={project.ismyproject ? "Autoral" : "Curso"}
+              color={project.ismyproject ? "var(--blue)" : "var(--yellow)"}
+            />
+          </TagContainer>
+
           <Image
             src={project?.image.url}
             alt={project?.image.alt}
@@ -27,7 +39,9 @@ const ProjectCard = ({ data }) => (
         </ProjectImage>
 
         <NameAndDescription>
-          <h3>{project?.title}</h3>
+          <div>
+            <h3>{project?.title}</h3>
+          </div>
           <Text>
             <p>{project?.description}</p>
           </Text>

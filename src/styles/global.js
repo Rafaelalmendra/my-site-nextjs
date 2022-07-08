@@ -5,6 +5,7 @@ export default createGlobalStyle`
     --header-height: 4.5rem;
     --blue: #32C5FF;
     --hover-blue: #2EB2E5;
+    --yellow: #FFD818;
     --white: #FFFFFF;
     --black: #131219;
     --light-black: #6D6D6D;
