@@ -7,27 +7,17 @@ import Button from "src/components/Button";
 import HeadSeo from "src/components/HeadSeo";
 
 //styles
-import {
-  Container,
-  TextAbout,
-  InfosText,
-  ReactIcon,
-  ImageAbout,
-  ImageProfile,
-  InfosTextLink,
-  InfosContainer,
-  CurriculumLink,
-} from "styles/home";
+import * as S from "styles/home";
 
 const Home = () => (
   <Layout>
-    <Container>
+    <S.Container>
       <HeadSeo
         title="Home | Rafael Almendra"
         content="Meu nome é Rafael, sou desenvolvedor Front-end apaixonado por tecnologia, programação e Design. Gosto de resolver problemas e ser desafiado. Sempre aberto a novos aprendizados e pronto para enfrentar mudanças."
       />
 
-      <TextAbout data-aos="zoom-in">
+      <S.TextAbout data-aos="zoom-in">
         <h2>Sobre mim</h2>
         <h3>Rafael de Sousa Almendra</h3>
         <p>
@@ -35,20 +25,20 @@ const Home = () => (
           design.
         </p>
 
-        <InfosContainer>
-          <InfosTextLink>
+        <S.InfosContainer>
+          <S.InfosTextLink>
             <i className="bi bi-building" />
             <a href="https://liqi.com.br" target="_blank" rel="noreferrer">
               <span>Liqi Digital Assets</span>
             </a>
-          </InfosTextLink>
+          </S.InfosTextLink>
 
-          <InfosText>
+          <S.InfosText>
             <i className="bi bi-envelope" />
             <span>rafaelalmendra28@gmail.com</span>
-          </InfosText>
+          </S.InfosText>
 
-          <CurriculumLink>
+          <S.CurriculumLink>
             <a
               href="https://drive.google.com/file/d/1Pt7ngkyQ-U-3nKnL0y1A2YEYDpXalyxq/view?usp=sharing"
               target="_blank"
@@ -56,8 +46,8 @@ const Home = () => (
             >
               Acessar currículo
             </a>
-          </CurriculumLink>
-        </InfosContainer>
+          </S.CurriculumLink>
+        </S.InfosContainer>
 
         <Link href="/Projects">
           <a>
@@ -66,19 +56,19 @@ const Home = () => (
             </Button>
           </a>
         </Link>
-      </TextAbout>
+      </S.TextAbout>
 
-      <ImageAbout>
-        <ReactIcon data-aos="zoom-in">
+      <S.ImageAbout>
+        <S.ReactIcon data-aos="zoom-in">
           <Image
             src={"/images/react.svg"}
             alt="Icone do Reactjs"
             width={136}
             height={136}
           />
-        </ReactIcon>
+        </S.ReactIcon>
 
-        <ImageProfile>
+        <S.ImageProfile>
           <Image
             data-aos="zoom-in"
             src={"/images/profile.svg"}
@@ -86,9 +76,9 @@ const Home = () => (
             width={322}
             height={342}
           />
-        </ImageProfile>
-      </ImageAbout>
-    </Container>
+        </S.ImageProfile>
+      </S.ImageAbout>
+    </S.Container>
   </Layout>
 );
 
