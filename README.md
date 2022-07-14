@@ -21,12 +21,15 @@ My website was created in order to demonstrate my skills and share my knowledge.
 - Nextjs
 - Styled Components
 - Dato CMS
+- Graphql
+- Apollo Client
 
 <br>
 
 ## 🚀 How to run
 
 To start it, follow the steps below:
+
 ```bash
 # Install dependencies
 $ yarn
