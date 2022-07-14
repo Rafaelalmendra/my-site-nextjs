@@ -42,6 +42,7 @@ const Blog = () => {
                   thumbnail={post.thumbnail?.url}
                   author={post.author}
                   date={post.date}
+                  technologies={post.technologies}
                 />
               </a>
             </Link>

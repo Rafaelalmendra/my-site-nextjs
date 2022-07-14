@@ -8,6 +8,9 @@ const getAllPosts = gql`
         url
         alt
       }
+      technologies {
+        technologie
+      }
       author
       date
       title
