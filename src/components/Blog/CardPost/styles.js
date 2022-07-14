@@ -16,7 +16,7 @@ export const Post = styled.div`
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
 
-  @media (max-width: 768px) {
+  @media (max-width: 850px) {
     width: 100%;
   }
 
@@ -47,7 +47,7 @@ export const ImageEffect = styled.div`
   width: 21.188rem;
   height: 26.188rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 850px) {
     width: 100%;
   }
 

@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
 
 //components
-import Li from "../Li";
-import LiSocial from "../LiSocial";
+import { Li } from "../Li";
+import { LiSocial } from "../LiSocial";
 
 //styles
-import { Container, UlLinks } from "./styles";
+import * as S from "./styles";
 
-const MobileLinks = ({ closeMenu }) => {
+export const MobileLinks = ({ closeMenu }) => {
   return (
-    <Container>
+    <S.Container>
       <motion.div
         initial={{ y: -1000, opacity: 0.4 }}
         animate={{ y: 0, opacity: 1 }}
@@ -17,7 +17,7 @@ const MobileLinks = ({ closeMenu }) => {
           stiffness: 200,
         }}
       >
-        <UlLinks>
+        <S.UlLinks>
           <Li onClick={() => closeMenu()} />
 
           <LiSocial
@@ -33,10 +33,8 @@ const MobileLinks = ({ closeMenu }) => {
             icon="bi bi-github"
             style={{ fontSize: "2rem" }}
           />
-        </UlLinks>
+        </S.UlLinks>
       </motion.div>
-    </Container>
+    </S.Container>
   );
 };
-
-export default MobileLinks;

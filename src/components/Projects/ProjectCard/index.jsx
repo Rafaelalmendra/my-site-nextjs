@@ -1,34 +1,25 @@
 import Image from "next/image";
 
 //components
-import Tag from "src/components/Tag";
+import { Tag } from "src/components/Tag";
 
 //styles
-import {
-  Text,
-  Techs,
-  Details,
-  TagContainer,
-  ProjectImage,
-  ProjectContainer,
-  LinkAndRepository,
-  NameAndDescription,
-} from "./styles";
+import * as S from "./styles";
 
-//images
+//images-and-icons
 import FigmaIcon from "../../../assets/icons/figma.svg";
 
-const ProjectCard = ({ data }) => (
+export const ProjectCard = ({ data }) => (
   <>
     {data?.allProjects.map((project) => (
-      <ProjectContainer data-aos="zoom-in" id={project?.title}>
-        <ProjectImage>
-          <TagContainer>
+      <S.ProjectContainer data-aos="zoom-in" id={project?.title}>
+        <S.ProjectImage>
+          <S.TagContainer>
             <Tag
               text={project.ismyproject ? "Autoral" : "Curso"}
               color={project.ismyproject ? "var(--blue)" : "var(--yellow)"}
             />
-          </TagContainer>
+          </S.TagContainer>
 
           <Image
             src={project?.image.url}
@@ -36,24 +27,24 @@ const ProjectCard = ({ data }) => (
             width={1124}
             height={431}
           />
-        </ProjectImage>
+        </S.ProjectImage>
 
-        <NameAndDescription>
+        <S.NameAndDescription>
           <div>
             <h3>{project?.title}</h3>
           </div>
-          <Text>
+          <S.Text>
             <p>{project?.description}</p>
-          </Text>
-        </NameAndDescription>
+          </S.Text>
+        </S.NameAndDescription>
 
-        <Details>
-          <Techs>
+        <S.Details>
+          <S.Techs>
             {project?.technologies?.map((tech) => (
               <span>{tech.technologie}</span>
             ))}
-          </Techs>
-          <LinkAndRepository>
+          </S.Techs>
+          <S.LinkAndRepository>
             <a href={project?.deploy} target="_blank" rel="noopener noreferrer">
               <i className="bi bi-globe"></i>
             </a>
@@ -65,11 +56,9 @@ const ProjectCard = ({ data }) => (
             <a href={project?.figma} target="_blank" rel="noopener noreferrer">
               <FigmaIcon />
             </a>
-          </LinkAndRepository>
-        </Details>
-      </ProjectContainer>
+          </S.LinkAndRepository>
+        </S.Details>
+      </S.ProjectContainer>
     ))}
   </>
 );
-
-export default ProjectCard;

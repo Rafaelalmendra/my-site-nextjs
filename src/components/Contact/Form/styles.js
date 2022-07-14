@@ -60,31 +60,3 @@ export const TwoFields = styled.div`
     flex-direction: column;
   }
 `;
-
-export const Button = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 13rem;
-  height: 4rem;
-
-  font-size: 1.7rem;
-  font-weight: 500;
-
-  color: var(--white);
-  background-color: var(--blue);
-
-  border-radius: 4px;
-  transition: 0.2s ease-in-out;
-  cursor: pointer;
-
-  &:hover {
-    background-color: var(--hover-blue);
-  }
-
-  @media (max-width: 768px) {
-    width: 100%;
-    font-size: 1.4rem;
-  }
-`;

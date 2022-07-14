@@ -1,7 +1,7 @@
 //components
-import Layout from "src/components/Layout";
-import HeadSeo from "src/components/HeadSeo";
-import Form from "src/components/Contact/Form";
+import { Layout } from "src/components/Layout";
+import { HeadSeo } from "src/components/HeadSeo";
+import { Form } from "src/components/Contact/Form";
 
 //styles
 import { Container, FormContainer } from "styles/contact";

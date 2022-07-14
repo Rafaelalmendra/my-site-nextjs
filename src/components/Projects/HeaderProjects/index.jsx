@@ -1,7 +1,7 @@
-import { TitleProjects } from "./styles";
+import * as S from "./styles";
 
-const Header = ({ data }) => (
-  <TitleProjects data-aos="fade-down">
+export const HeaderProjects = ({ data }) => (
+  <S.TitleProjects data-aos="fade-down">
     <h2>PROJETOS</h2>
 
     <ul>
@@ -11,7 +11,7 @@ const Header = ({ data }) => (
         </li>
       ))}
     </ul>
-  </TitleProjects>
+  </S.TitleProjects>
 );
 
-export default Header;
+export default HeaderProjects;

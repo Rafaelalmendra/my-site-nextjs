@@ -1,16 +1,16 @@
 import { motion } from "framer-motion";
 
 //styles
-import { Open, Close } from "./styles";
+import * as S from "./styles";
 
-const OpenIcon = ({ ...props }) => (
-  <Open {...props}>
+export const OpenIcon = ({ ...props }) => (
+  <S.Open {...props}>
     <i className="bi bi-list"></i>
-  </Open>
+  </S.Open>
 );
 
-const CloseIcon = ({ ...props }) => (
-  <Close {...props}>
+export const CloseIcon = ({ ...props }) => (
+  <S.Close {...props}>
     <motion.div
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -21,7 +21,5 @@ const CloseIcon = ({ ...props }) => (
     >
       <i className="bi bi-x"></i>
     </motion.div>
-  </Close>
+  </S.Close>
 );
-
-export { OpenIcon, CloseIcon };

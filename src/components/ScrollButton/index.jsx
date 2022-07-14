@@ -1,10 +1,10 @@
-import Image from "next/image";
 import { useState } from "react";
+import Image from "next/image";
 
 //styles
-import { Container } from "./styles";
+import * as S from "./styles";
 
-const ScrollButton = () => {
+export const ScrollButton = () => {
   const [visible, setVisible] = useState(false);
 
   const toggleVisible = () => {
@@ -29,7 +29,7 @@ const ScrollButton = () => {
   }
 
   return (
-    <Container>
+    <S.Container>
       <button
         onClick={scrollButtonTop}
         style={{ display: visible ? "inline" : "none" }}
@@ -41,8 +41,6 @@ const ScrollButton = () => {
           height={50}
         />
       </button>
-    </Container>
+    </S.Container>
   );
 };
-
-export default ScrollButton;

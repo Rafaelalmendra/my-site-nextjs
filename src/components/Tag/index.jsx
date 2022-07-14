@@ -1,11 +1,7 @@
-import { TagContainer } from "./styles";
+import * as S from "./styles";
 
-const Tag = ({ text, color }) => {
-  return (
-    <TagContainer color={color}>
-      <span>{text}</span>
-    </TagContainer>
-  );
-};
-
-export default Tag;
+export const Tag = ({ text, color }) => (
+  <S.TagContainer color={color}>
+    <span>{text}</span>
+  </S.TagContainer>
+);

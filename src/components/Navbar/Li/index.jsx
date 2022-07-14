@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 //styles
-import { Container, A, ButtonContact } from "./styles";
+import * as S from "./styles";
 
 //mock
 const links = [
@@ -24,26 +24,24 @@ const links = [
   {
     id: 5,
     url: "/Contact",
-    name: <ButtonContact>Contato</ButtonContact>,
+    name: <S.ButtonContact>Contato</S.ButtonContact>,
   },
 ];
 
-const Li = ({ className, ...props }) => {
+export const Li = ({ className, ...props }) => {
   const router = useRouter();
 
   return (
-    <Container>
+    <S.Container>
       {links.map((link) => (
         <li key={link.id} className={`${className} black-font`} {...props}>
           <Link href={link.url}>
-            <A active={router.pathname === link.url ? "active" : ""}>
+            <S.A active={router.pathname === link.url ? "active" : ""}>
               {link.name}
-            </A>
+            </S.A>
           </Link>
         </li>
       ))}
-    </Container>
+    </S.Container>
   );
 };
-
-export default Li;

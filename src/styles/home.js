@@ -19,6 +19,9 @@ export const Container = styled.main`
 `;
 
 export const TextAbout = styled.div`
+  a {
+    width: 100%;
+  }
   h2 {
     margin-bottom: 1.7rem;
 

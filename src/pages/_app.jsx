@@ -10,8 +10,8 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import client from "src/services/dato-cms";
 
 //components
-import Navbar from "src/components/Navbar";
-import ScrollButton from "src/components/ScrollButton";
+import { Navbar } from "src/components/Navbar";
+import { ScrollButton } from "src/components/ScrollButton";
 
 //styles
 import GlobalStyle from "src/styles/global";

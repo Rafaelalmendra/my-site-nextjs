@@ -43,7 +43,7 @@ export const Details = styled.div`
   justify-content: space-between;
   margin-top: 2.8rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 850px) {
     align-items: start;
     margin-top: 2rem;
     gap: 4rem;
@@ -57,7 +57,7 @@ export const Techs = styled.div`
   flex-wrap: wrap;
   gap: 0.8rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 850px) {
     max-width: 100%;
     justify-content: left;
     margin-bottom: 1.5rem;
@@ -91,7 +91,7 @@ export const Text = styled.div`
   line-height: 1.4rem;
   text-align: justify;
 
-  @media (max-width: 768px) {
+  @media (max-width: 850px) {
     max-width: 100%;
 
     text-align: justify;
@@ -115,7 +115,7 @@ export const NameAndDescription = styled.div`
   justify-content: space-between;
   margin-top: 2rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 850px) {
     flex-direction: column;
     gap: 1rem;
   }
@@ -124,7 +124,7 @@ export const NameAndDescription = styled.div`
     font-weight: 500;
     font-size: var(--subtitle);
 
-    @media (max-width: 768px) {
+    @media (max-width: 850px) {
       font-size: var(--small-subtitle);
     }
   }
@@ -135,7 +135,7 @@ export const LinkAndRepository = styled.div`
   align-items: center;
   gap: 1.6rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 850px) {
     gap: 1.2rem;
   }
 
@@ -152,7 +152,7 @@ export const LinkAndRepository = styled.div`
       color: var(--blue);
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 850px) {
       font-size: 1.4rem;
     }
   }
@@ -161,7 +161,7 @@ export const LinkAndRepository = styled.div`
     //scale zoom
     transform: scale(0.95);
 
-    @media (max-width: 768px) {
+    @media (max-width: 850px) {
       transform: scale(0.75);
     }
     &:hover {

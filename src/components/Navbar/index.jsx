@@ -1,17 +1,16 @@
-import { useState, useContext } from "react";
-import { ThemeContext } from "styled-components";
+import { useState } from "react";
 
 //components
-import Li from "./Li";
-import Logo from "./Logo";
-import MobileLinks from "./MobileLinks";
+import { Li } from "./Li";
+import { Logo } from "./Logo";
+import { MobileLinks } from "./MobileLinks";
 import { OpenIcon, CloseIcon } from "./Icons";
-import DesktopSocialLinks from "./DesktopSocialLinks";
+import { DesktopSocialLinks } from "./DesktopSocialLinks";
 
 //styles
-import { Header, Nav, UlContainer, NavigationMobile } from "./styles";
+import * as S from "./styles";
 
-const Navbar = ({ toggleTheme }) => {
+export const Navbar = ({ toggleTheme }) => {
   const [open, setOpen] = useState(false);
   const [navbar, setNavbar] = useState(false);
 
@@ -32,23 +31,21 @@ const Navbar = ({ toggleTheme }) => {
   const closeNavbar = <CloseIcon onClick={() => setOpen(!open)} />;
 
   return (
-    <Header className={navbar ? "active" : ""}>
-      <Nav>
+    <S.Header className={navbar ? "active" : ""}>
+      <S.Nav>
         <Logo />
 
-        <UlContainer>
+        <S.UlContainer>
           <Li className="desktop" />
-        </UlContainer>
+        </S.UlContainer>
 
         <DesktopSocialLinks toggleTheme={toggleTheme} />
 
-        <NavigationMobile>
+        <S.NavigationMobile>
           {open ? closeNavbar : openNavbar}
           {open && <MobileLinks closeMenu={() => setOpen(false)} />}
-        </NavigationMobile>
-      </Nav>
-    </Header>
+        </S.NavigationMobile>
+      </S.Nav>
+    </S.Header>
   );
 };
-
-export default Navbar;

@@ -1,20 +1,20 @@
-import { useRouter } from "next/router";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+import { useRouter } from "next/router";
 
 //hooks
-import useGetFullPost from "src/hooks/useGetFullPost";
+import { useGetFullPost } from "src/hooks/useGetPosts";
 
 //components
-import Layout from "src/components/Layout";
-import HeadSeo from "src/components/HeadSeo";
-import Comments from "src/components/Comments";
-import Author from "src/components/Blog/Author";
+import { Layout } from "src/components/Layout";
+import { HeadSeo } from "src/components/HeadSeo";
+import { Comments } from "src/components/Comments";
+import { Author } from "src/components/Blog/Author";
 import { DividerTwo } from "src/components/Dividers";
-import LoadingScreen from "src/components/LoadingScreen";
+import { LoadingScreen } from "src/components/LoadingScreen";
 
 //styles
-import { Techs, Return, Container, ImageContainer, Content } from "styles/post";
+import * as S from "styles/post";
 
 const Post = () => {
   const router = useRouter();
@@ -33,43 +33,43 @@ const Post = () => {
 
   return (
     <Layout paddingTop blogPost>
-      <Container>
+      <S.Container>
         <HeadSeo title={post?.title} content={post?.title} />
 
-        <ImageContainer>
+        <S.ImageContainer>
           <Image
             src={post?.thumbnail?.url}
             alt={post?.thumbnail?.alt}
             width={1920}
             height={1080}
           />
-        </ImageContainer>
+        </S.ImageContainer>
 
-        <Techs>
+        <S.Techs>
           {post?.technologies?.map((tech) => (
             <span className="tech-blog">{tech?.technologie}</span>
           ))}
-        </Techs>
+        </S.Techs>
 
         <Author post={post} />
 
         <h1>{post?.title}</h1>
 
-        <Content dangerouslySetInnerHTML={{ __html: post.content }} />
+        <S.Content dangerouslySetInnerHTML={{ __html: post.content }} />
 
         <DividerTwo />
 
         <Comments />
 
-        <Return>
+        <S.Return>
           <Link href="/Blog">
             <a>
               <i className="bi bi-caret-left-fill"></i>
               <span>Voltar para o blog</span>
             </a>
           </Link>
-        </Return>
-      </Container>
+        </S.Return>
+      </S.Container>
     </Layout>
   );
 };

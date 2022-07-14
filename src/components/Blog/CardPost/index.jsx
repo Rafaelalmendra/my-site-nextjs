@@ -1,36 +1,28 @@
-import {
-  Post,
-  ImageEffect,
-  InfosContainer,
-  TechCardContainer,
-  TechCard,
-} from "./styles";
+import * as S from "./styles";
 
-const CardPost = ({ title, thumbnail, author, date, technologies }) => {
+export const CardPost = ({ title, thumbnail, author, date, technologies }) => {
   console.log(technologies);
 
   return (
-    <Post>
+    <S.Post>
       <div>
-        <ImageEffect style={{ backgroundImage: `url(${thumbnail})` }} />
+        <S.ImageEffect style={{ backgroundImage: `url(${thumbnail})` }} />
         <p>{title}</p>
       </div>
 
       <div>
-        <InfosContainer>
+        <S.InfosContainer>
           <span>
             por <strong>{author}</strong>
           </span>
           <span>{date}</span>
-        </InfosContainer>
-        <TechCardContainer>
+        </S.InfosContainer>
+        <S.TechCardContainer>
           {technologies.slice(0, 2).map((tech) => (
-            <TechCard>{tech.technologie}</TechCard>
+            <S.TechCard>{tech.technologie}</S.TechCard>
           ))}
-        </TechCardContainer>
+        </S.TechCardContainer>
       </div>
-    </Post>
+    </S.Post>
   );
 };
-
-export default CardPost;

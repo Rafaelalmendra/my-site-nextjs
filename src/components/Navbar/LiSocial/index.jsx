@@ -1,7 +1,7 @@
-import { Container } from "./styles";
+import * as S from "./styles";
 
-const LiSocial = ({ className, url, icon, ...props }) => (
-  <Container>
+export const LiSocial = ({ className, url, icon, ...props }) => (
+  <S.Container>
     <li>
       <a
         {...props}
@@ -14,7 +14,5 @@ const LiSocial = ({ className, url, icon, ...props }) => (
         <i className={icon}></i>
       </a>
     </li>
-  </Container>
+  </S.Container>
 );
-
-export default LiSocial;

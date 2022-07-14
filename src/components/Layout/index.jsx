@@ -1,20 +1,18 @@
 //components
-import Footer from "../Footer";
+import { Footer } from "../Footer";
 
 //styles
-import { Container, Content } from "./styles";
+import * as S from "./styles";
 
-const Layout = ({ children, paddingTop, blogPost }) => {
+export const Layout = ({ children, paddingTop, blogPost }) => {
   return (
     <>
-      <Container>
-        <Content paddingTop={paddingTop} blogPost={blogPost}>
+      <S.Container>
+        <S.Content paddingTop={paddingTop} blogPost={blogPost}>
           {children}
-        </Content>
-      </Container>
+        </S.Content>
+      </S.Container>
       <Footer />
     </>
   );
 };
-
-export default Layout;

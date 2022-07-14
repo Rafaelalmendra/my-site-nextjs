@@ -13,7 +13,7 @@ export const Container = styled.div`
     font-weight: 500;
     margin-bottom: 1.765rem;
 
-    @media (max-width: 768px) {
+    @media (max-width: 850px) {
       font-size: 2.1rem;
     }
   }
@@ -61,7 +61,7 @@ export const Techs = styled.span`
     border-radius: 8.25rem;
     background: ${(props) => props.theme.techBackground};
 
-    @media (max-width: 768px) {
+    @media (max-width: 850px) {
       gap: 0.875rem;
       margin-bottom: 0.4rem;
 
@@ -95,7 +95,7 @@ export const Content = styled.div`
     font-size: 1.8rem;
     font-weight: 500;
 
-    @media (max-width: 768px) {
+    @media (max-width: 850px) {
       font-size: 1.6rem;
     }
   }
@@ -119,7 +119,7 @@ export const Content = styled.div`
     width: 30rem;
     margin: 1rem 0 1.25rem 0;
 
-    @media (max-width: 768px) {
+    @media (max-width: 850px) {
       width: 100%;
     }
   }

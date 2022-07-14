@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Divider = styled.div`
+export const Divider = styled.div`
   width: 100%;
   height: 1px;
 
@@ -11,7 +11,7 @@ const Divider = styled.div`
   );
 `;
 
-const DividerTwo = styled.div`
+export const DividerTwo = styled.div`
   width: 100%;
   height: 1px;
   margin: 2rem 0;
@@ -23,5 +23,3 @@ const DividerTwo = styled.div`
   );
   transform: matrix(-1, 0, 0, 1, 0, 0);
 `;
-
-export { Divider, DividerTwo };

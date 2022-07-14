@@ -1,11 +1,9 @@
-import { Container } from "./styles";
+import * as S from "./styles";
 
-const Footer = () => (
-  <Container>
+export const Footer = () => (
+  <S.Container>
     <span>
       Feito com <i className="bi bi-heart-fill"></i> por Rafael Almendra
     </span>
-  </Container>
+  </S.Container>
 );
-
-export default Footer;

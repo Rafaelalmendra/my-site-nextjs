@@ -5,7 +5,7 @@ export const Container = styled.div`
   align-items: center;
   gap: 2.5rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 850px) {
     flex-direction: column;
   }
 `;
@@ -39,7 +39,7 @@ export const ButtonContact = styled.button`
     color: var(--white);
   }
 
-  @media (max-width: 575.98px) {
+  @media (max-width: 850px) {
     width: 90vw;
     height: 3.45rem;
 

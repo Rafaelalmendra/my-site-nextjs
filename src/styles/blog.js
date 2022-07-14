@@ -11,7 +11,7 @@ export const Container = styled.div`
 export const ContainerCards = styled.main`
   width: 100%;
 
-  @media (max-width: 768px) {
+  @media (max-width: 850px) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -24,7 +24,7 @@ export const ContainerCards = styled.main`
     flex-wrap: wrap;
     gap: 4rem;
 
-    @media (max-width: 768px) {
+    @media (max-width: 850px) {
       flex-direction: column;
       align-items: center;
       justify-content: center;

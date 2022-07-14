@@ -12,7 +12,7 @@ export const TitleProjects = styled.div`
     font-size: 2.4rem;
     font-weight: 600;
 
-    @media (max-width: 768px) {
+    @media (max-width: 850px) {
       font-size: 1.6rem;
     }
   }
@@ -22,7 +22,7 @@ export const TitleProjects = styled.div`
     flex-wrap: wrap;
     gap: 1.875rem;
 
-    @media (max-width: 768px) {
+    @media (max-width: 850px) {
       gap: 0.875rem;
       align-items: center;
       justify-content: right;

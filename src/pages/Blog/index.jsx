@@ -1,16 +1,16 @@
 import Link from "next/link";
 
 //hooks
-import useGetAllPosts from "src/hooks/useGetAllPosts";
+import { useGetAllPosts } from "src/hooks/useGetPosts";
 
 //components
-import Layout from "src/components/Layout";
-import HeadSeo from "src/components/HeadSeo";
-import CardPost from "src/components/Blog/CardPost";
-import LoadingScreen from "src/components/LoadingScreen";
+import { Layout } from "src/components/Layout";
+import { HeadSeo } from "src/components/HeadSeo";
+import { CardPost } from "src/components/Blog/CardPost";
+import { LoadingScreen } from "src/components/LoadingScreen";
 
 //styles
-import { Title, Container, ContainerCards } from "styles/blog";
+import * as S from "styles/blog";
 
 const Blog = () => {
   const { data, loading, error } = useGetAllPosts();
@@ -25,15 +25,15 @@ const Blog = () => {
 
   return (
     <Layout>
-      <Container>
+      <S.Container>
         <HeadSeo
           title="Blog | Rafael Almendra"
           content="Conheça meus artigos sobre programação."
         />
 
-        <Title>Bem vindo(a) ao meu Blog 👋</Title>
+        <S.Title>Bem vindo(a) ao meu Blog 👋</S.Title>
 
-        <ContainerCards>
+        <S.ContainerCards>
           {data?.allPosts.map((post) => (
             <Link href={`/Blog/${post.slug}`}>
               <a>
@@ -47,8 +47,8 @@ const Blog = () => {
               </a>
             </Link>
           ))}
-        </ContainerCards>
-      </Container>
+        </S.ContainerCards>
+      </S.Container>
     </Layout>
   );
 };

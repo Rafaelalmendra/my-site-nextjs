@@ -2,9 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 //components
-import Layout from "src/components/Layout";
-import Button from "src/components/Button";
-import HeadSeo from "src/components/HeadSeo";
+import { Layout } from "src/components/Layout";
+import { Button } from "src/components/Button";
+import { HeadSeo } from "src/components/HeadSeo";
 
 //styles
 import * as S from "styles/home";

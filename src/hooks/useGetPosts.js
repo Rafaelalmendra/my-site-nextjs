@@ -1,5 +1,23 @@
 import { gql, useQuery } from "@apollo/client";
 
+const getAllPosts = gql`
+  query {
+    allPosts {
+      slug
+      thumbnail {
+        url
+        alt
+      }
+      technologies {
+        technologie
+      }
+      author
+      date
+      title
+    }
+  }
+`;
+
 const getFullPost = gql`
   query singlePost($slug: String!) {
     allPosts(filter: { slug: { eq: $slug } }) {
@@ -23,12 +41,9 @@ const getFullPost = gql`
   }
 `;
 
-const useGetFullPost = (slug) => {
-  const { data, loading, error } = useQuery(getFullPost, {
-    variables: {
-      slug,
-    },
-  });
+export const useGetAllPosts = () => {
+  const { data, loading, error } = useQuery(getAllPosts);
+
   return {
     data,
     loading,
@@ -36,4 +51,16 @@ const useGetFullPost = (slug) => {
   };
 };
 
-export default useGetFullPost;
+export const useGetFullPost = (slug) => {
+  const { data, loading, error } = useQuery(getFullPost, {
+    variables: {
+      slug,
+    },
+  });
+
+  return {
+    data,
+    loading,
+    error,
+  };
+};

@@ -2,14 +2,14 @@ import Link from "next/link";
 import Image from "next/image";
 
 //components
-import Button from "src/components/Button";
+import { Button } from "src/components/Button";
 
 //styles
-import { Container, Text, Vector } from "./styles";
+import * as S from "./styles";
 
-const Footer = () => (
-  <Container>
-    <Text>
+export const ProjectFooter = () => (
+  <S.Container>
+    <S.Text>
       <h2>Quer entrar em contato comigo?</h2>
 
       <Link href="/Contact">
@@ -17,12 +17,12 @@ const Footer = () => (
           <Button>Vamos lá</Button>
         </a>
       </Link>
-    </Text>
+    </S.Text>
 
-    <Vector>
+    <S.Vector>
       <Image src={"/images/footer.svg"} alt="" width={455} height={255} />
-    </Vector>
-  </Container>
+    </S.Vector>
+  </S.Container>
 );
 
-export default Footer;
+export default ProjectFooter;

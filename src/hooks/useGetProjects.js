@@ -21,7 +21,7 @@ const getProjects = gql`
   }
 `;
 
-const useGetProjects = () => {
+export const useGetProjects = () => {
   const { data, loading, error } = useQuery(getProjects);
   return {
     data,
@@ -29,5 +29,3 @@ const useGetProjects = () => {
     error,
   };
 };
-
-export default useGetProjects;

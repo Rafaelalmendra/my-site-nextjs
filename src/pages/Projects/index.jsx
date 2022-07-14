@@ -1,17 +1,17 @@
 //hooks
-import useGetProjects from "src/hooks/useGetProjects";
+import { useGetProjects } from "src/hooks/useGetProjects";
 
 //components
-import HeadSeo from "src/components/HeadSeo";
+import { Layout } from "src/components/Layout";
+import { HeadSeo } from "src/components/HeadSeo";
 import { Divider } from "src/components/Dividers";
-import Header from "src/components/Projects/Header";
-import Footer from "src/components/Projects/Footer";
-import LoadingScreen from "src/components/LoadingScreen";
-import ProjectCard from "src/components/Projects/ProjectCard";
+import { LoadingScreen } from "src/components/LoadingScreen";
+import { ProjectCard } from "src/components/Projects/ProjectCard";
+import { ProjectFooter } from "src/components/Projects/ProjectFooter";
+import { HeaderProjects } from "src/components/Projects/HeaderProjects";
 
 //styles
-import Layout from "src/components/Layout";
-import { Container } from "styles/projects";
+import * as S from "styles/projects";
 
 const Projects = () => {
   const { data, loading, error } = useGetProjects();
@@ -26,20 +26,20 @@ const Projects = () => {
 
   return (
     <Layout paddingTop>
-      <Container>
+      <S.Container>
         <HeadSeo
           title="Projetos | Rafael Almendra"
           content="Conheça alguns dos meus projetos"
         />
 
-        <Header data={data} />
+        <HeaderProjects data={data} />
 
         <ProjectCard data={data} />
 
         <Divider />
 
-        <Footer />
-      </Container>
+        <ProjectFooter />
+      </S.Container>
     </Layout>
   );
 };

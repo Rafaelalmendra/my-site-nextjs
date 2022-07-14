@@ -1,4 +1,4 @@
-const LoadingScreen = () => (
+export const LoadingScreen = () => (
   <div className="loading">
     <div className="lds-ellipsis">
       <div></div>
@@ -8,5 +8,3 @@ const LoadingScreen = () => (
     </div>
   </div>
 );
-
-export default LoadingScreen;
