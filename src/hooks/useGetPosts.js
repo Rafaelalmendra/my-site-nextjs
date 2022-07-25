@@ -41,7 +41,7 @@ const getFullPost = gql`
   }
 `;
 
-export const useGetAllPosts = () => {
+const useGetAllPosts = () => {
   const { data, loading, error } = useQuery(getAllPosts);
 
   return {
@@ -51,7 +51,7 @@ export const useGetAllPosts = () => {
   };
 };
 
-export const useGetFullPost = (slug) => {
+const useGetFullPost = (slug) => {
   const { data, loading, error } = useQuery(getFullPost, {
     variables: {
       slug,
@@ -64,3 +64,5 @@ export const useGetFullPost = (slug) => {
     error,
   };
 };
+
+export { useGetAllPosts, useGetFullPost };
