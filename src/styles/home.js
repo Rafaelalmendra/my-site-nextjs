@@ -157,13 +157,19 @@ export const ReactIcon = styled.div`
 `;
 
 export const ImageProfile = styled.div`
+  position: relative;
+  width: 342px;
+  height: 366px;
+
+  img {
+    border-radius: 10px;
+  }
+
   @media (max-width: 850px) {
-    max-width: 10rem;
+    width: 152px;
+    height: 166px;
     display: flex;
     justify-content: center;
     margin-bottom: 2rem;
-    img {
-      border-radius: 50%;
-    }
   }
 `;

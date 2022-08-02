@@ -26,12 +26,12 @@ const Home = () => (
         </p>
 
         <S.InfosContainer>
-          <S.InfosTextLink>
+          {/* <S.InfosTextLink>
             <i className="bi bi-building" />
             <a href="https://liqi.com.br" target="_blank" rel="noreferrer">
-              <span>Liqi Digital Assets</span>
+              <span></span>
             </a>
-          </S.InfosTextLink>
+          </S.InfosTextLink> */}
 
           <S.InfosText>
             <i className="bi bi-envelope" />
@@ -70,11 +70,10 @@ const Home = () => (
 
         <S.ImageProfile>
           <Image
+            layout="fill"
             data-aos="zoom-in"
-            src={"/images/profile.svg"}
+            src={"/images/profile.png"}
             alt="Foto de perfil Rafael de Sousa Almendra"
-            width={322}
-            height={342}
           />
         </S.ImageProfile>
       </S.ImageAbout>
