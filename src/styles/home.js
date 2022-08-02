@@ -166,7 +166,7 @@ export const ImageProfile = styled.div`
   }
 
   @media (max-width: 850px) {
-    width: 152px;
+    width: 158px;
     height: 166px;
     display: flex;
     justify-content: center;
