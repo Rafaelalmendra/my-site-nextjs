@@ -16,7 +16,7 @@ export const DesktopSocialLinks = ({ toggleTheme }) => {
       <LiSocial
         className="desktop"
         icon="bi bi-linkedin"
-        url="https://www.linkedin.com/in/rafaelalmendradev/"
+        url="https://www.linkedin.com/in/rafaelalmendraa/"
       />
 
       <LiSocial
