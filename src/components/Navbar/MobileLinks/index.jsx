@@ -22,7 +22,7 @@ export const MobileLinks = ({ closeMenu }) => {
 
           <LiSocial
             className=""
-            url="https://www.linkedin.com/in/rafaelalmendradev/"
+            url="https://www.linkedin.com/in/rafaelalmendraa/"
             icon="bi bi-linkedin"
             style={{ fontSize: "2rem" }}
           />
