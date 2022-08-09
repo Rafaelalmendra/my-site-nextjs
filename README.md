@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="Loja do Condominio" src="github/logo.png" width="120px">
+  <img src="github/logo.png" width="120px">
 </p>
 
 <br />
