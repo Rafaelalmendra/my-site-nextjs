@@ -40,4 +40,4 @@ $ yarn dev
 
 <br>
 
-Made with 💜 by Rafael Almendra 👋 [See my linkedin](https://www.linkedin.com/in/rafaelalmendradev/)
+Made with 💜 by Rafael Almendra 👋 [See my linkedin](https://www.linkedin.com/in/rafaelalmendraa/)
