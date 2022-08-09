@@ -10,7 +10,7 @@ export const Container = styled.div`
   }
 `;
 
-export const A = styled.a`
+export const Link = styled.a`
   color: ${(props) => (props.active ? "var(--blue)" : props.theme.text)};
   transition: color ease-in-out 0.2s;
   cursor: pointer;

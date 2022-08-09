@@ -1,16 +1,20 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { ThemeContext } from "styled-components";
+import Switch from "react-switch";
 
 //components
 import { Li } from "./Li";
 import { Logo } from "./Logo";
+import { LiSocial } from "./LiSocial";
 import { MobileLinks } from "./MobileLinks";
 import { OpenIcon, CloseIcon } from "./Icons";
-import { DesktopSocialLinks } from "./DesktopSocialLinks";
 
 //styles
 import * as S from "./styles";
 
 export const Navbar = ({ toggleTheme }) => {
+  const { title } = useContext(ThemeContext);
+
   const [open, setOpen] = useState(false);
   const [navbar, setNavbar] = useState(false);
 
@@ -35,16 +39,45 @@ export const Navbar = ({ toggleTheme }) => {
       <S.Nav>
         <Logo />
 
-        <S.UlContainer>
+        <S.NavigationDesktop>
           <Li className="desktop" />
-        </S.UlContainer>
+        </S.NavigationDesktop>
 
-        <DesktopSocialLinks toggleTheme={toggleTheme} />
+        <S.NavigationContainer>
+          <S.SocialLinksContainer>
+            <LiSocial
+              className="desktop"
+              icon="bi bi-linkedin"
+              url="https://www.linkedin.com/in/rafaelalmendraa/"
+            />
 
-        <S.NavigationMobile>
-          {open ? closeNavbar : openNavbar}
-          {open && <MobileLinks closeMenu={() => setOpen(false)} />}
-        </S.NavigationMobile>
+            <LiSocial
+              className="desktop"
+              icon="bi bi-github"
+              url="https://github.com/Rafaelalmendra"
+            />
+
+            <Switch
+              width={40}
+              height={20}
+              onColor="#053d52"
+              handleDiameter={24}
+              checkedIcon={false}
+              offColor="#d0d4d6"
+              uncheckedIcon={false}
+              onChange={toggleTheme}
+              onHandleColor="#597393"
+              checked={title === "dark"}
+              offHandleColor="#32C5FF"
+              boxShadow="0px 1px 5px rgba(0, 0, 0, 0.4)"
+            />
+          </S.SocialLinksContainer>
+
+          <S.NavigationMobile>
+            {open ? closeNavbar : openNavbar}
+            {open && <MobileLinks closeMenu={() => setOpen(false)} />}
+          </S.NavigationMobile>
+        </S.NavigationContainer>
       </S.Nav>
     </S.Header>
   );

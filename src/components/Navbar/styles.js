@@ -20,7 +20,7 @@ export const Nav = styled.nav`
   padding: 32px;
 `;
 
-export const UlContainer = styled.ul`
+export const NavigationDesktop = styled.ul`
   display: flex;
   align-items: center;
   gap: 2.5rem;
@@ -43,6 +43,11 @@ export const UlContainer = styled.ul`
   @media (max-width: 575.98px) {
     gap: 1.3rem;
   }
+`;
+
+export const NavigationContainer = styled.div`
+  display: flex;
+  gap: 1.4rem;
 `;
 
 export const NavigationMobile = styled.div`
@@ -70,4 +75,9 @@ export const UlLinks = styled.ul`
       color: var(--blue);
     }
   }
+`;
+
+export const SocialLinksContainer = styled.div`
+  display: flex;
+  gap: 1.875rem;
 `;

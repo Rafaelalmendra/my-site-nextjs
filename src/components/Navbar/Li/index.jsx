@@ -36,9 +36,9 @@ export const Li = ({ className, ...props }) => {
       {links.map((link) => (
         <li key={link.id} className={`${className} black-font`} {...props}>
           <Link href={link.url}>
-            <S.A active={router.pathname === link.url ? "active" : ""}>
+            <S.Link active={router.pathname === link.url ? "active" : ""}>
               {link.name}
-            </S.A>
+            </S.Link>
           </Link>
         </li>
       ))}
