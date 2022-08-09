@@ -8,6 +8,10 @@ export const TitleProjects = styled.div`
   gap: 1rem;
   margin-bottom: 2rem;
 
+  @media (max-width: 850px) {
+    justify-content: center;
+  }
+
   h2 {
     font-size: 2.4rem;
     font-weight: 600;
@@ -23,9 +27,7 @@ export const TitleProjects = styled.div`
     gap: 1.875rem;
 
     @media (max-width: 850px) {
-      gap: 0.875rem;
-      align-items: center;
-      justify-content: right;
+      display: none;
     }
 
     a {

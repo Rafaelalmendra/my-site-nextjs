@@ -41,7 +41,7 @@ export const Details = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 2.8rem;
+  margin-top: 1.8rem;
 
   @media (max-width: 850px) {
     align-items: start;
@@ -85,7 +85,7 @@ export const Techs = styled.div`
   }
 `;
 
-export const Text = styled.div`
+export const Description = styled.p`
   max-width: 35.5rem;
 
   line-height: 1.4rem;

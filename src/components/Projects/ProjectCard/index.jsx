@@ -12,7 +12,7 @@ import FigmaIcon from "../../../assets/icons/figma.svg";
 export const ProjectCard = ({ data }) => (
   <>
     {data?.allProjects.map((project) => (
-      <S.ProjectContainer data-aos="zoom-in" id={project?.title}>
+      <S.ProjectContainer id={project?.title}>
         <S.ProjectImage>
           <S.TagContainer>
             <Tag
@@ -26,6 +26,7 @@ export const ProjectCard = ({ data }) => (
             alt={project?.image.alt}
             width={1124}
             height={431}
+            loading="eager"
           />
         </S.ProjectImage>
 
@@ -33,9 +34,9 @@ export const ProjectCard = ({ data }) => (
           <div>
             <h3>{project?.title}</h3>
           </div>
-          <S.Text>
-            <p>{project?.description}</p>
-          </S.Text>
+          <S.Description
+            dangerouslySetInnerHTML={{ __html: project?.description }}
+          />
         </S.NameAndDescription>
 
         <S.Details>
@@ -46,11 +47,11 @@ export const ProjectCard = ({ data }) => (
           </S.Techs>
           <S.LinkAndRepository>
             <a href={project?.deploy} target="_blank" rel="noopener noreferrer">
-              <i className="bi bi-globe"></i>
+              <i className="bi bi-globe" />
             </a>
 
             <a href={project?.github} target="_blank" rel="noopener noreferrer">
-              <i className="bi bi-github"></i>
+              <i className="bi bi-github" />
             </a>
 
             <a href={project?.figma} target="_blank" rel="noopener noreferrer">
