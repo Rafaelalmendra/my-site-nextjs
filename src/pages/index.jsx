@@ -28,7 +28,7 @@ const Home = () => (
         <S.InfosContainer>
           {/* <S.InfosTextLink>
             <i className="bi bi-building" />
-            <a href="https://liqi.com.br" target="_blank" rel="noreferrer">
+            <a href="" target="_blank" rel="noreferrer">
               <span></span>
             </a>
           </S.InfosTextLink> */}

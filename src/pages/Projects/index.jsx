@@ -34,7 +34,9 @@ const Projects = () => {
 
         <HeaderProjects data={data} />
 
-        <ProjectCard data={data} />
+        {data?.allProjects.map((project) => (
+          <ProjectCard project={project} key={project.id} />
+        ))}
 
         <Divider />
 

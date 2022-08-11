@@ -46,8 +46,10 @@ const Post = () => {
         </S.ImageContainer>
 
         <S.Techs>
-          {post?.technologies?.map((tech) => (
-            <span className="tech-blog">{tech?.technologie}</span>
+          {post?.technologies?.map((tech, index) => (
+            <span key={index} className="tech-blog">
+              {tech?.technologie}
+            </span>
           ))}
         </S.Techs>
 

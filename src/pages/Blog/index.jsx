@@ -35,7 +35,7 @@ const Blog = () => {
 
         <S.ContainerCards>
           {data?.allPosts.map((post) => (
-            <Link href={`/Blog/${post.slug}`}>
+            <Link key={post.slug} href={`/Blog/${post.slug}`}>
               <a>
                 <CardPost
                   title={post.title}
