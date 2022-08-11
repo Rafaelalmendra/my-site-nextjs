@@ -36,6 +36,10 @@ export const ProjectImage = styled.div`
     height: 160px;
   }
 
+  img {
+    transition: all 0.3s ease-in-out;
+  }
+
   &:hover,
   .imageLink:hover {
     .imageLink {
