@@ -20,6 +20,22 @@ export const ProjectImage = styled.div`
   height: 431px;
   border-radius: 10px;
 
+  @media (max-width: 994px) {
+    height: 370px;
+  }
+
+  @media (max-width: 854px) {
+    height: 300px;
+  }
+
+  @media (max-width: 640px) {
+    height: 200px;
+  }
+
+  @media (max-width: 480px) {
+    height: 160px;
+  }
+
   &:hover,
   .imageLink:hover {
     .imageLink {
@@ -46,14 +62,6 @@ export const ProjectImage = styled.div`
       font-size: 1.6rem;
       font-weight: 500;
     }
-  }
-
-  img {
-    transition: all 0.3s ease-in-out;
-  }
-
-  @media (max-width: 575.98px) {
-    min-width: 100%;
   }
 `;
 
