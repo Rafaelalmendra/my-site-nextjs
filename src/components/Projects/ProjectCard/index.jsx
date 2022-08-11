@@ -14,20 +14,26 @@ export const ProjectCard = ({ data }) => (
     {data?.allProjects.map((project) => (
       <S.ProjectContainer id={project?.title}>
         <S.ProjectImage>
-          <S.TagContainer>
-            <Tag
-              text={project.ismyproject ? "Autoral" : "Curso"}
-              color={project.ismyproject ? "var(--blue)" : "var(--yellow)"}
-            />
-          </S.TagContainer>
+          <a href={project?.deploy} target="_blank" rel="noopener noreferrer">
+            <S.TagContainer>
+              <Tag
+                text={project.ismyproject ? "Autoral" : "Curso"}
+                color={project.ismyproject ? "var(--blue)" : "var(--yellow)"}
+              />
+            </S.TagContainer>
 
-          <Image
-            src={project?.image.url}
-            alt={project?.image.alt}
-            width={1124}
-            height={431}
-            loading="eager"
-          />
+            <div className="imageLink">
+              <p>
+                Acessar deploy <i className="bi bi-globe" />
+              </p>
+            </div>
+
+            <Image
+              src={project?.image.url}
+              alt={project?.image.alt}
+              layout="fill"
+            />
+          </a>
         </S.ProjectImage>
 
         <S.NameAndDescription>

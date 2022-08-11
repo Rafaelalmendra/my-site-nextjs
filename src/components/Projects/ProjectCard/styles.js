@@ -16,9 +16,40 @@ export const ProjectContainer = styled.div`
 
 export const ProjectImage = styled.div`
   position: relative;
+  width: 100%;
+  height: 431px;
+  border-radius: 10px;
+
+  &:hover,
+  .imageLink:hover {
+    .imageLink {
+      display: flex;
+    }
+
+    img {
+      transform: scale(1.12);
+      filter: brightness(0.4);
+    }
+  }
+
+  .imageLink {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+
+    p {
+      color: var(--white);
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+  }
 
   img {
-    border-radius: 0.6rem;
+    transition: all 0.3s ease-in-out;
   }
 
   @media (max-width: 575.98px) {
