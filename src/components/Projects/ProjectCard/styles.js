@@ -158,12 +158,16 @@ export const LinkAndRepository = styled.div`
   }
 
   svg {
-    //scale zoom
     transform: scale(0.95);
+
+    path {
+      stroke: ${(props) => props.theme.text};
+    }
 
     @media (max-width: 850px) {
       transform: scale(0.75);
     }
+
     &:hover {
       path {
         transition: stroke 0.2s ease-in-out;
