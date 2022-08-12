@@ -33,7 +33,7 @@ export const ProjectImage = styled.div`
   }
 
   @media (max-width: 480px) {
-    height: 160px;
+    height: 148px;
   }
 
   img {
