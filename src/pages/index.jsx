@@ -72,8 +72,8 @@ const Home = () => (
           <Image
             layout="fill"
             data-aos="zoom-in"
-            src={"/images/profile.png"}
-            alt="Foto de perfil Rafael de Sousa Almendra"
+            src={"/images/profile-image.svg"}
+            alt="Foto de perfil de Rafael Almendra"
           />
         </S.ImageProfile>
       </S.ImageAbout>

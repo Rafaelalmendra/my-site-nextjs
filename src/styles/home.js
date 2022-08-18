@@ -151,6 +151,7 @@ export const ReactIcon = styled.div`
   min-width: 8rem;
   transform: translateY(0);
   animation: float 3s ease-in-out infinite;
+
   @media (max-width: 850px) {
     display: none;
   }
@@ -158,16 +159,18 @@ export const ReactIcon = styled.div`
 
 export const ImageProfile = styled.div`
   position: relative;
-  width: 340px;
+  width: 342px;
   height: 366px;
 
   img {
     border-radius: 10px;
+    object-fit: cover;
   }
 
   @media (max-width: 850px) {
-    width: 158px;
-    height: 166px;
+    width: 168px;
+    height: 168px;
+
     display: flex;
     justify-content: center;
     margin-bottom: 2rem;
