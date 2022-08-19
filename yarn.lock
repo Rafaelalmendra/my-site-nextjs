@@ -192,6 +192,11 @@
     "@babel/helper-validator-identifier" "^7.15.7"
     to-fast-properties "^2.0.0"
 
+"@bradgarropy/next-google-analytics@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@bradgarropy/next-google-analytics/-/next-google-analytics-1.0.2.tgz#057b77d77f590939da4dce3575255b1f37411910"
+  integrity sha512-Xhli9NkdJbmvs1QNAcC9At3w/GIlXunVIMQzcAYfVP8tQSX3Q4un0doZfQknNvRz+QO6we+8lDE4/dMOio0vzQ==
+
 "@emotion/is-prop-valid@^0.8.2", "@emotion/is-prop-valid@^0.8.8":
   version "0.8.8"
   resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-0.8.8.tgz#db28b1c4368a259b60a97311d6a952d4fd01ac1a"

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
+import Script from "next/script";
 import { ApolloProvider } from "@apollo/client";
+import GoogleAnalytics from "@bradgarropy/next-google-analytics";
 
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -29,17 +31,39 @@ const MyApp = ({ Component, pageProps }) => {
   };
 
   return (
-    <ApolloProvider client={client}>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
+    <>
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+      />
 
-        <ScrollButton />
+      <Script strategy="afterInteractive" id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+          page_path: window.location.pathname,
+          });
+        `}
+      </Script>
 
-        <Navbar toggleTheme={toggleTheme} />
+      <GoogleAnalytics
+        measurementId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}
+      />
 
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </ApolloProvider>
+      <ApolloProvider client={client}>
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+
+          <ScrollButton />
+
+          <Navbar toggleTheme={toggleTheme} />
+
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </ApolloProvider>
+    </>
   );
 };
 
