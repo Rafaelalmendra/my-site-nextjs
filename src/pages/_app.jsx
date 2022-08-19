@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
-import Script from "next/script";
 import { ApolloProvider } from "@apollo/client";
-import GoogleAnalytics from "@bradgarropy/next-google-analytics";
+import { useRouter } from "next/router";
 
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -13,6 +12,7 @@ import client from "src/services/dato-cms";
 
 //components
 import { Navbar } from "src/components/Navbar";
+import { Analytics } from "src/components/Analytics";
 import { ScrollButton } from "src/components/ScrollButton";
 
 //styles
@@ -20,11 +20,24 @@ import GlobalStyle from "src/styles/global";
 import { lightTheme, darkTheme } from "src/styles/theme";
 
 const MyApp = ({ Component, pageProps }) => {
+  const router = useRouter();
   const [theme, setTheme] = useState(darkTheme);
 
   useEffect(() => {
     Aos.init({ duration: 700, offset: 0 });
   }, []);
+
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      gtag.pageview(url);
+    };
+
+    router.events.on("routeChangeComplete", handleRouteChange);
+
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
 
   const toggleTheme = () => {
     setTheme(theme.title === "dark" ? lightTheme : darkTheme);
@@ -32,26 +45,6 @@ const MyApp = ({ Component, pageProps }) => {
 
   return (
     <>
-      <Script
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-      />
-
-      <Script strategy="afterInteractive" id="google-analytics">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-          page_path: window.location.pathname,
-          });
-        `}
-      </Script>
-
-      <GoogleAnalytics
-        measurementId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}
-      />
-
       <ApolloProvider client={client}>
         <ThemeProvider theme={theme}>
           <GlobalStyle />
@@ -59,6 +52,8 @@ const MyApp = ({ Component, pageProps }) => {
           <ScrollButton />
 
           <Navbar toggleTheme={toggleTheme} />
+
+          <Analytics />
 
           <Component {...pageProps} />
         </ThemeProvider>
