@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { appWithTranslation } from "next-i18next";
 import { ThemeProvider } from "styled-components";
 import { ApolloProvider } from "@apollo/client";
-import { useRouter } from "next/router";
 
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -62,4 +63,4 @@ const MyApp = ({ Component, pageProps }) => {
   );
 };
 
-export default MyApp;
+export default appWithTranslation(MyApp);
