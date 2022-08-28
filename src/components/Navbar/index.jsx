@@ -5,6 +5,7 @@ import Switch from "react-switch";
 //components
 import { Li } from "./Li";
 import { Logo } from "./Logo";
+import { Locales } from "../Locales";
 import { LiSocial } from "./LiSocial";
 import { MobileLinks } from "./MobileLinks";
 import { OpenIcon, CloseIcon } from "./Icons";
@@ -45,6 +46,8 @@ export const Navbar = ({ toggleTheme }) => {
 
         <S.NavigationContainer>
           <S.SocialLinksContainer>
+            <Locales />
+
             <LiSocial
               className="desktop"
               icon="bi bi-linkedin"

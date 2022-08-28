@@ -2,11 +2,10 @@ import styled from "styled-components";
 
 export const Header = styled.header`
   position: fixed;
-  z-index: 1000;
+  z-index: 100;
   top: 0;
 
   width: 100%;
-  overflow: hidden;
 `;
 
 export const Nav = styled.nav`

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
 import { appWithTranslation } from "next-i18next";
 import { ThemeProvider } from "styled-components";
 import { ApolloProvider } from "@apollo/client";
@@ -9,7 +8,7 @@ import "aos/dist/aos.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 //services
-import client from "src/services/dato-cms";
+import { client } from "src/services/dato-cms";
 
 //components
 import { Navbar } from "src/components/Navbar";
@@ -21,24 +20,24 @@ import GlobalStyle from "src/styles/global";
 import { lightTheme, darkTheme } from "src/styles/theme";
 
 const MyApp = ({ Component, pageProps }) => {
-  const router = useRouter();
+  //const router = useRouter();
   const [theme, setTheme] = useState(darkTheme);
 
   useEffect(() => {
     Aos.init({ duration: 700, offset: 0 });
   }, []);
 
-  useEffect(() => {
-    const handleRouteChange = (url) => {
-      gtag.pageview(url);
-    };
+  // useEffect(() => {
+  //   const handleRouteChange = (url) => {
+  //     gtag.pageview(url);
+  //   };
 
-    router.events.on("routeChangeComplete", handleRouteChange);
+  //   router.events.on("routeChangeComplete", handleRouteChange);
 
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
-  }, [router.events]);
+  //   return () => {
+  //     router.events.off("routeChangeComplete", handleRouteChange);
+  //   };
+  // }, [router.events]);
 
   const toggleTheme = () => {
     setTheme(theme.title === "dark" ? lightTheme : darkTheme);
