@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslation } from "next-i18next";
 
 //components
 import { Button } from "src/components/Button";
@@ -7,22 +8,31 @@ import { Button } from "src/components/Button";
 //styles
 import * as S from "./styles";
 
-export const ProjectFooter = () => (
-  <S.Container>
-    <S.Text>
-      <h2>Quer entrar em contato comigo?</h2>
+export const ProjectFooter = () => {
+  const { t } = useTranslation();
 
-      <Link href="/Contact">
-        <a>
-          <Button>Vamos lá</Button>
-        </a>
-      </Link>
-    </S.Text>
+  return (
+    <S.Container>
+      <S.Text>
+        <h2>{t("contactFooter")}</h2>
 
-    <S.Vector>
-      <Image src={"/images/footer.svg"} alt="" width={455} height={255} />
-    </S.Vector>
-  </S.Container>
-);
+        <Link href="/Contact">
+          <a>
+            <Button>{t("letsGo")}</Button>
+          </a>
+        </Link>
+      </S.Text>
+
+      <S.Vector>
+        <Image
+          src={"/images/footer.svg"}
+          alt="vetor do footer"
+          width={455}
+          height={255}
+        />
+      </S.Vector>
+    </S.Container>
+  );
+};
 
 export default ProjectFooter;

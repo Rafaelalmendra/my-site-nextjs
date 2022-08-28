@@ -1,35 +1,36 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 
 //styles
 import * as S from "./styles";
 
-//mock
-const links = [
-  {
-    id: 1,
-    url: "/",
-    name: "Home",
-  },
-  {
-    id: 2,
-    url: "/Projects",
-    name: "Projetos",
-  },
-  {
-    id: 3,
-    url: "/Blog",
-    name: "Blog",
-  },
-  {
-    id: 5,
-    url: "/Contact",
-    name: <S.ButtonContact>Contato</S.ButtonContact>,
-  },
-];
-
 export const Li = ({ className, ...props }) => {
   const router = useRouter();
+  const { t } = useTranslation();
+
+  const links = [
+    {
+      id: 1,
+      url: "/",
+      name: "Home",
+    },
+    {
+      id: 2,
+      url: "/Projects",
+      name: t("projects"),
+    },
+    {
+      id: 3,
+      url: "/Blog",
+      name: "Blog",
+    },
+    {
+      id: 5,
+      url: "/Contact",
+      name: <S.ButtonContact>{t("contact")}</S.ButtonContact>,
+    },
+  ];
 
   return (
     <S.Container>

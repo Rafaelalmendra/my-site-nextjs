@@ -1,9 +1,14 @@
+import { useTranslation } from "next-i18next";
+
+//styles
 import * as S from "./styles";
 
 export const HeaderProjects = ({ data }) => {
+  const { t } = useTranslation();
+
   return (
     <S.TitleProjects data-aos="fade-down">
-      <h2>PROJETOS</h2>
+      <h2>{t("projects")}</h2>
 
       <ul>
         {data?.allProjects.map((project) => (

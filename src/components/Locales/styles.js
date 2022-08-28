@@ -39,7 +39,7 @@ export const LocalesOpenContainer = styled.div`
 export const Locale = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.875rem;
 
   cursor: pointer;
 

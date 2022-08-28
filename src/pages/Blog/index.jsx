@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 //hooks
 import { useGetAllPosts } from "src/hooks/useGetPosts";
@@ -13,6 +15,7 @@ import { LoadingScreen } from "src/components/LoadingScreen";
 import * as S from "styles/blog";
 
 const Blog = () => {
+  const { t } = useTranslation();
   const { data, loading, error } = useGetAllPosts();
 
   if (loading) {
@@ -31,7 +34,7 @@ const Blog = () => {
           content="Conheça meus artigos sobre programação."
         />
 
-        <S.Title>Bem vindo(a) ao meu Blog 👋</S.Title>
+        <S.Title>{t("welcomeToMyBlog")} 👋</S.Title>
 
         <S.ContainerCards>
           {data?.allPosts.map((post) => (
@@ -54,3 +57,11 @@ const Blog = () => {
 };
 
 export default Blog;
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+}

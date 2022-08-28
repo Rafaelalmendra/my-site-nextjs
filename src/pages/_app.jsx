@@ -20,24 +20,11 @@ import GlobalStyle from "src/styles/global";
 import { lightTheme, darkTheme } from "src/styles/theme";
 
 const MyApp = ({ Component, pageProps }) => {
-  //const router = useRouter();
   const [theme, setTheme] = useState(darkTheme);
 
   useEffect(() => {
     Aos.init({ duration: 700, offset: 0 });
   }, []);
-
-  // useEffect(() => {
-  //   const handleRouteChange = (url) => {
-  //     gtag.pageview(url);
-  //   };
-
-  //   router.events.on("routeChangeComplete", handleRouteChange);
-
-  //   return () => {
-  //     router.events.off("routeChangeComplete", handleRouteChange);
-  //   };
-  // }, [router.events]);
 
   const toggleTheme = () => {
     setTheme(theme.title === "dark" ? lightTheme : darkTheme);

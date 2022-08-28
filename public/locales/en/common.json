@@ -2,5 +2,17 @@
   "about": "About me",
   "myDescription": "I'm a Front-end developer passionate about technology, programming and design.",
   "accessCurriculum": "Access curriculum",
-  "projects": "Projects"
+  "projects": "Projects",
+  "welcomeToMyBlog": "Welcome to my blog",
+  "contact": "Contact",
+  "contactFooter": "Want to contact me?",
+  "letsGo": "Lets go",
+  "sendMessage": "Send a message",
+  "name": "Name",
+  "emailAddress": "Email address",
+  "typeMessage": "Type your message...",
+  "submit": "Submit",
+  "backBlog": "Back to blog",
+  "authorial": "Authorial",
+  "course": "Course"
 }

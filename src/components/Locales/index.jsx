@@ -1,5 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 
 //styles
 import * as S from "./styles";
@@ -20,13 +23,32 @@ const languages = [
 ];
 
 export const Locales = () => {
+  const { i18n } = useTranslation();
+  const { pathname, locales, locale } = useRouter();
   const [openFlags, setOpenFlags] = useState(false);
+  const [activeLanguage, setActiveLanguage] = useState(languages[0]);
+
+  useEffect(() => {
+    const activeLocale = locales?.find((item) => item === locale);
+    const activeLanguage = languages.find((item) => item.name === activeLocale);
+
+    setActiveLanguage(activeLanguage);
+  }, [locale, locales]);
+
+  const handleChangeLanguage = (language) => {
+    setActiveLanguage(language);
+    i18n.changeLanguage(language.name);
+  };
 
   return (
     <>
       <S.LocalesContainer onClick={() => setOpenFlags(!openFlags)}>
         <S.ImageFlagContainer>
-          <Image layout="fill" src={ptFlag} alt="Bandeira do Brasil" />
+          <Image
+            layout="fill"
+            src={activeLanguage?.image}
+            alt={`Bandeira do ${activeLanguage?.name}`}
+          />
         </S.ImageFlagContainer>
 
         {!openFlags ? (
@@ -39,17 +61,19 @@ export const Locales = () => {
       {openFlags && (
         <S.LocalesOpenContainer>
           {languages.map((language) => (
-            <S.Locale key={language?.name}>
-              <S.FlagImage>
-                <Image
-                  layout="fill"
-                  src={language?.image}
-                  alt={`Bandeira do ${language?.name}`}
-                />
-              </S.FlagImage>
+            <Link key={language?.name} href={pathname} locale={language?.name}>
+              <S.Locale onClick={() => handleChangeLanguage(language)}>
+                <S.FlagImage>
+                  <Image
+                    layout="fill"
+                    src={language?.image}
+                    alt={`Bandeira do ${language?.name}`}
+                  />
+                </S.FlagImage>
 
-              <p>{language?.name}</p>
-            </S.Locale>
+                <p>{language?.name}</p>
+              </S.Locale>
+            </Link>
           ))}
         </S.LocalesOpenContainer>
       )}

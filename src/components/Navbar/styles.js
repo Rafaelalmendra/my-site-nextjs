@@ -79,4 +79,8 @@ export const UlLinks = styled.ul`
 export const SocialLinksContainer = styled.div`
   display: flex;
   gap: 1.875rem;
+
+  @media (max-width: 850px) {
+    gap: 0.4rem;
+  }
 `;

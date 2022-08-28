@@ -2,5 +2,17 @@
   "about": "Sobre mim",
   "myDescription": "Sou desenvolvedor Front-end apaixonado por tecnologia, programação e design.",
   "accessCurriculum": "Acessar currículo",
-  "projects": "Projetos"
+  "projects": "Projetos",
+  "welcomeToMyBlog": "Bem vindo(a) ao meu Blog",
+  "contact": "Contato",
+  "contactFooter": "Quer entrar em contato comigo?",
+  "letsGo": "Vamos lá",
+  "sendMessage": "Enviar uma mensagem",
+  "name": "Nome",
+  "emailAddress": "Endereço de e-mail",
+  "typeMessage": "Digite sua mensagem...",
+  "submit": "Enviar",
+  "backBlog": "Voltar para o Blog",
+  "authorial": "Autoral",
+  "course": "Curso"
 }

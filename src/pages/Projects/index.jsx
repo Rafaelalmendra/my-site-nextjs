@@ -1,3 +1,6 @@
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
 //hooks
 import { useGetProjects } from "src/hooks/useGetProjects";
 
@@ -14,6 +17,7 @@ import { HeaderProjects } from "src/components/Projects/HeaderProjects";
 import * as S from "styles/projects";
 
 const Projects = () => {
+  const { t } = useTranslation();
   const { data, loading, error } = useGetProjects();
 
   if (loading) {
@@ -28,7 +32,7 @@ const Projects = () => {
     <Layout paddingTop>
       <S.Container>
         <HeadSeo
-          title="Projetos | Rafael Almendra"
+          title={`${t("projects")} | Rafael Almendra`}
           content="Conheça alguns dos meus projetos"
         />
 
@@ -47,3 +51,11 @@ const Projects = () => {
 };
 
 export default Projects;
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+}

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useTranslation } from "next-i18next";
 
 //components
 import { Tag } from "src/components/Tag";
@@ -10,13 +11,15 @@ import * as S from "./styles";
 import FigmaIcon from "../../../assets/icons/figma.svg";
 
 export const ProjectCard = ({ project }) => {
+  const { t } = useTranslation();
+
   return (
     <S.ProjectContainer id={project?.title}>
       <S.ProjectImage>
         <a href={project?.deploy} target="_blank" rel="noopener noreferrer">
           <S.TagContainer>
             <Tag
-              text={project.ismyproject ? "Autoral" : "Curso"}
+              text={project.ismyproject ? t("authorial") : t("course")}
               color={project.ismyproject ? "var(--blue)" : "var(--yellow)"}
             />
           </S.TagContainer>
