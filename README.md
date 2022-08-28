@@ -23,6 +23,7 @@ My website was created in order to demonstrate my skills and share my knowledge.
 - Dato CMS
 - Graphql
 - Apollo Client
+- I18n
 
 <br>
 
