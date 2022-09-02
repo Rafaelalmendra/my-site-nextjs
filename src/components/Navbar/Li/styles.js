@@ -13,6 +13,10 @@ export const Container = styled.div`
 export const Link = styled.a`
   transition: color ease-in-out 0.2s;
   cursor: pointer;
+  ${(props) =>
+    props.active && {
+      color: "var(--blue)",
+    }}
 
   &:hover {
     color: var(--blue);
