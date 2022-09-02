@@ -11,7 +11,6 @@ export const Container = styled.div`
 `;
 
 export const Link = styled.a`
-  color: ${(props) => (props.active ? "var(--blue)" : props.theme.text)};
   transition: color ease-in-out 0.2s;
   cursor: pointer;
 
@@ -20,8 +19,11 @@ export const Link = styled.a`
   }
 
   button {
-    color: ${(props) => (props.active ? "var(--white)" : props.theme.text)};
-    background-color: ${(props) => (props.active ? "var(--blue)" : "")};
+    ${(props) =>
+      props.active && {
+        backgroundColor: "var(--blue)",
+        color: "var(--white)",
+      }}
   }
 `;
 

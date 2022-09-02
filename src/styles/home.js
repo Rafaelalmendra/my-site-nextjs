@@ -110,11 +110,6 @@ export const InfosText = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
-
-  span {
-    color: ${(props) =>
-      props.theme.title === "dark" ? "#DEDEDE" : "var(--black)"};
-  }
 `;
 
 export const InfosTextLink = styled.div`

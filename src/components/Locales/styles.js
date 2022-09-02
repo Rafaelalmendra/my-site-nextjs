@@ -29,11 +29,11 @@ export const LocalesOpenContainer = styled.div`
   flex-direction: column;
   gap: 1rem;
 
-  margin-top: 2.375rem;
+  margin-top: 7.675rem;
   padding: 0.75rem 1rem;
 
   border-radius: 0.5rem;
-  background: var(--white);
+  background: ${(props) => props.theme.text};
 `;
 
 export const Locale = styled.div`
@@ -44,7 +44,7 @@ export const Locale = styled.div`
   cursor: pointer;
 
   p {
-    color: var(--purple-black);
+    color: ${(props) => props.theme.background};
     font-size: 0.875rem;
   }
 

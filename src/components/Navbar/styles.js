@@ -78,7 +78,17 @@ export const UlLinks = styled.ul`
 
 export const SocialLinksContainer = styled.div`
   display: flex;
+  align-items: center;
   gap: 1.875rem;
+
+  i {
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  .light {
+    font-size: 1.4rem;
+  }
 
   @media (max-width: 850px) {
     gap: 0.4rem;
