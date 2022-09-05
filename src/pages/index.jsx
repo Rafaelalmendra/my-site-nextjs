@@ -28,12 +28,12 @@ const Home = () => {
           <p>{t("myDescription")}</p>
 
           <S.InfosContainer>
-            {/* <S.InfosTextLink>
-            <i className="bi bi-building" />
-            <a href="" target="_blank" rel="noreferrer">
-              <span></span>
-            </a>
-          </S.InfosTextLink> */}
+            <S.InfosTextLink>
+              <i className="bi bi-building" />
+              <a href="https://neogrid.com" target="_blank" rel="noreferrer">
+                <span>Neogrid</span>
+              </a>
+            </S.InfosTextLink>
 
             <S.InfosText>
               <i className="bi bi-envelope" />
