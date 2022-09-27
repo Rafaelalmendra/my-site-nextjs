@@ -117,7 +117,7 @@ export const Techs = styled.div`
 
     font-size: 0.9rem;
     border: 1px solid;
-    border-radius: 26px;
+    border-radius: 1.625rem;
 
     @media (max-width: 575.98px) {
       min-width: 6rem;

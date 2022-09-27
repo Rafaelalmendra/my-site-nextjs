@@ -7,7 +7,7 @@ export const HeaderProjects = ({ data }) => {
   const { t } = useTranslation();
 
   return (
-    <S.TitleProjects data-aos="fade-down">
+    <S.TitleProjects>
       <h2>{t("projects")}</h2>
 
       <ul>

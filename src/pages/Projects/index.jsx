@@ -8,21 +8,18 @@ import { useGetProjects } from "src/hooks/useGetProjects";
 import { Layout } from "src/components/Layout";
 import { HeadSeo } from "src/components/HeadSeo";
 import { Divider } from "src/components/Dividers";
-import { LoadingScreen } from "src/components/LoadingScreen";
 import { ProjectCard } from "src/components/Projects/ProjectCard";
 import { ProjectFooter } from "src/components/Projects/ProjectFooter";
 import { HeaderProjects } from "src/components/Projects/HeaderProjects";
+import { HeaderProjectsSkeleton } from "src/components/Skeleton/HeaderProjects";
 
 //styles
 import * as S from "styles/projects";
+import { CardsProjectsSkeleton } from "src/components/Skeleton/CardProjects";
 
 const Projects = () => {
   const { t } = useTranslation();
   const { data, loading, error } = useGetProjects();
-
-  if (loading) {
-    return <LoadingScreen />;
-  }
 
   if (error) {
     console.error(error);
@@ -35,12 +32,15 @@ const Projects = () => {
           title={`${t("projects")} | Rafael Almendra`}
           content="Conheça alguns dos meus projetos"
         />
+        {loading ? <HeaderProjectsSkeleton /> : <HeaderProjects data={data} />}
 
-        <HeaderProjects data={data} />
-
-        {data?.allProjects.map((project) => (
-          <ProjectCard project={project} key={project.id} />
-        ))}
+        {loading ? (
+          <CardsProjectsSkeleton cards={3} />
+        ) : (
+          data?.allProjects.map((project) => (
+            <ProjectCard project={project} key={project.id} />
+          ))
+        )}
 
         <Divider />
 

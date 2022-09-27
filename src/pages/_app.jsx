@@ -3,6 +3,7 @@ import { appWithTranslation } from "next-i18next";
 import { ThemeProvider } from "styled-components";
 import { ApolloProvider } from "@apollo/client";
 import { parseCookies, setCookie } from "nookies";
+import { SkeletonTheme } from "react-loading-skeleton";
 
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -18,6 +19,7 @@ import { ScrollButton } from "src/components/ScrollButton";
 
 //styles
 import GlobalStyle from "src/styles/global";
+import "react-loading-skeleton/dist/skeleton.css";
 import { lightTheme, darkTheme } from "src/styles/theme";
 
 const MyApp = ({ Component, pageProps }) => {
@@ -44,7 +46,10 @@ const MyApp = ({ Component, pageProps }) => {
   };
 
   return (
-    <>
+    <SkeletonTheme
+      baseColor={theme.title === "dark" ? "#353535" : "#e0e0e0"}
+      highlightColor={theme.title === "dark" ? "#525252" : "#f7f7f7"}
+    >
       <ApolloProvider client={client}>
         <ThemeProvider theme={theme}>
           <GlobalStyle />
@@ -58,7 +63,7 @@ const MyApp = ({ Component, pageProps }) => {
           <Component {...pageProps} />
         </ThemeProvider>
       </ApolloProvider>
-    </>
+    </SkeletonTheme>
   );
 };
 
