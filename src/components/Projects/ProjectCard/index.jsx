@@ -70,7 +70,7 @@ export const ProjectCard = ({ project }) => {
             </a>
           )}
 
-          {project?.repository && (
+          {project?.github && (
             <a href={project?.github} target="_blank" rel="noopener noreferrer">
               <i className="bi bi-github" />
             </a>
