@@ -9,7 +9,7 @@ import { useGetAllPosts } from "src/hooks/useGetPosts";
 import { Layout } from "src/components/Layout";
 import { HeadSeo } from "src/components/HeadSeo";
 import { CardPost } from "src/components/Blog/CardPost";
-import { LoadingScreen } from "src/components/LoadingScreen";
+import { CardPostSkeleton } from "src/components/Skeleton/Blog/CardPost";
 
 //styles
 import * as S from "styles/blog";
@@ -17,10 +17,6 @@ import * as S from "styles/blog";
 const Blog = () => {
   const { t } = useTranslation();
   const { data, loading, error } = useGetAllPosts();
-
-  if (loading) {
-    return <LoadingScreen />;
-  }
 
   if (error) {
     console.error(error);
@@ -37,19 +33,23 @@ const Blog = () => {
         <S.Title>{t("welcomeToMyBlog")} 👋</S.Title>
 
         <S.ContainerCards>
-          {data?.allPosts.map((post) => (
-            <Link key={post.slug} href={`/Blog/${post.slug}`}>
-              <a>
-                <CardPost
-                  title={post.title}
-                  thumbnail={post.thumbnail?.url}
-                  author={post.author}
-                  date={post.date}
-                  technologies={post.technologies}
-                />
-              </a>
-            </Link>
-          ))}
+          {loading ? (
+            <CardPostSkeleton cards={3} />
+          ) : (
+            data?.allPosts.map((post) => (
+              <Link key={post.slug} href={`/Blog/${post.slug}`}>
+                <a>
+                  <CardPost
+                    title={post.title}
+                    thumbnail={post.thumbnail?.url}
+                    author={post.author}
+                    date={post.date}
+                    technologies={post.technologies}
+                  />
+                </a>
+              </Link>
+            ))
+          )}
         </S.ContainerCards>
       </S.Container>
     </Layout>

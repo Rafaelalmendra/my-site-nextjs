@@ -11,11 +11,11 @@ import { Divider } from "src/components/Dividers";
 import { ProjectCard } from "src/components/Projects/ProjectCard";
 import { ProjectFooter } from "src/components/Projects/ProjectFooter";
 import { HeaderProjects } from "src/components/Projects/HeaderProjects";
-import { HeaderProjectsSkeleton } from "src/components/Skeleton/HeaderProjects";
+import { CardsProjectsSkeleton } from "src/components/Skeleton/Projects/CardProjects";
+import { HeaderProjectsSkeleton } from "src/components/Skeleton/Projects/HeaderProjects";
 
 //styles
 import * as S from "styles/projects";
-import { CardsProjectsSkeleton } from "src/components/Skeleton/CardProjects";
 
 const Projects = () => {
   const { t } = useTranslation();
