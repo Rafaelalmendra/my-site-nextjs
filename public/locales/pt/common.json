@@ -14,5 +14,7 @@
   "submit": "Enviar",
   "backBlog": "Voltar para o Blog",
   "authorial": "Autoral",
-  "course": "Curso"
+  "course": "Curso",
+  "acessDeploy": "Acessar deploy",
+  "noImage": "Nenhuma imagem encontrada"
 }

@@ -219,3 +219,21 @@ export const LinkAndRepository = styled.div`
     }
   }
 `;
+
+export const NoImage = styled.div`
+  width: 100%;
+  height: 431px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+  background: var(--grey);
+
+  p {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--white);
+  }
+`;
