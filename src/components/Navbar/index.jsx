@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { parseCookies } from "nookies";
-import Switch from "react-switch";
 
 //components
 import { Li } from "./Li";

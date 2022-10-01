@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { parseCookies } from "nookies";
+import { toast, ToastContainer } from "react-toastify";
 
 //hooks
 import { useGetAllPosts } from "src/hooks/useGetPosts";
@@ -16,10 +18,11 @@ import * as S from "styles/blog";
 
 const Blog = () => {
   const { t } = useTranslation();
+  const cookies = parseCookies();
   const { data, loading, error } = useGetAllPosts();
 
   if (error) {
-    console.error(error);
+    toast.error(t("errorFetching"));
   }
 
   return (
@@ -28,6 +31,10 @@ const Blog = () => {
         <HeadSeo
           title="Blog | Rafael Almendra"
           content="Conheça meus artigos sobre programação."
+        />
+
+        <ToastContainer
+          theme={cookies.userTheme === "light" ? "light" : "dark"}
         />
 
         <S.Title>{t("welcomeToMyBlog")} 👋</S.Title>

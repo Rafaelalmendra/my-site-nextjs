@@ -1,5 +1,7 @@
+import { parseCookies } from "nookies";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { toast, ToastContainer } from "react-toastify";
 
 //hooks
 import { useGetProjects } from "src/hooks/useGetProjects";
@@ -19,10 +21,11 @@ import * as S from "styles/projects";
 
 const Projects = () => {
   const { t } = useTranslation();
+  const cookies = parseCookies();
   const { data, loading, error } = useGetProjects();
 
   if (error) {
-    console.error(error);
+    toast.error(t("errorFetching"));
   }
 
   return (
@@ -32,6 +35,11 @@ const Projects = () => {
           title={`${t("projects")} | Rafael Almendra`}
           content="Conheça alguns dos meus projetos"
         />
+
+        <ToastContainer
+          theme={cookies.userTheme === "light" ? "light" : "dark"}
+        />
+
         {loading ? <HeaderProjectsSkeleton /> : <HeaderProjects data={data} />}
 
         {loading ? (

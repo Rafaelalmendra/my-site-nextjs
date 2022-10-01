@@ -19,6 +19,7 @@ import { ScrollButton } from "src/components/ScrollButton";
 
 //styles
 import GlobalStyle from "src/styles/global";
+import "react-toastify/dist/ReactToastify.css";
 import "react-loading-skeleton/dist/skeleton.css";
 import { lightTheme, darkTheme } from "src/styles/theme";
 

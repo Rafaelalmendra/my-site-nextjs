@@ -37,7 +37,7 @@ export const Locales = () => {
 
   const handleChangeLanguage = (language) => {
     setActiveLanguage(language);
-    i18n.changeLanguage(language.name);
+    i18n?.changeLanguage(language?.name);
   };
 
   return (

@@ -16,5 +16,6 @@
   "authorial": "Authorial",
   "course": "Course",
   "acessDeploy": "Access deploy",
-  "noImage": "No image found"
+  "noImage": "No image found",
+  "errorFetching": "An error occurred while fetching information"
 }
