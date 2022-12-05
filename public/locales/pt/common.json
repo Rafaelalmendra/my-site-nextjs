@@ -17,5 +17,6 @@
   "course": "Curso",
   "acessDeploy": "Acessar deploy",
   "noImage": "Nenhuma imagem encontrada",
-  "errorFetching": "Ocorreu um erro ao buscar informações"
+  "errorFetching": "Ocorreu um erro ao buscar informações",
+  "backToBlog": "Voltar para o Blog"
 }
