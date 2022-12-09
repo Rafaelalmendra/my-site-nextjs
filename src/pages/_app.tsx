@@ -22,6 +22,8 @@ import GlobalStyle from "styles/global";
 import "react-toastify/dist/ReactToastify.css";
 import "react-loading-skeleton/dist/skeleton.css";
 
+import { NextNProgress } from "components";
+
 const MyApp = ({ Component, pageProps }) => {
   const cookies = parseCookies();
   const [theme, setTheme] = useState(
@@ -46,20 +48,21 @@ const MyApp = ({ Component, pageProps }) => {
   };
 
   return (
-    <SkeletonTheme
-      baseColor={theme.title === "dark" ? "#353535" : "#e0e0e0"}
-      highlightColor={theme.title === "dark" ? "#525252" : "#f7f7f7"}
-    >
-      <ApolloProvider client={client}>
-        <ThemeProvider theme={theme}>
-          <GlobalStyle />
-          <ToastContainer />
-          <ScrollButton />
-          <Navbar toggleTheme={toggleTheme} />
+    <ApolloProvider client={client}>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <ToastContainer />
+        <ScrollButton />
+        <Navbar toggleTheme={toggleTheme} />
+        <NextNProgress options={{ showSpinner: false }} />
+        <SkeletonTheme
+          baseColor={theme.title === "dark" ? "#353535" : "#e0e0e0"}
+          highlightColor={theme.title === "dark" ? "#525252" : "#f7f7f7"}
+        >
           <Component {...pageProps} />
-        </ThemeProvider>
-      </ApolloProvider>
-    </SkeletonTheme>
+        </SkeletonTheme>
+      </ThemeProvider>
+    </ApolloProvider>
   );
 };
 

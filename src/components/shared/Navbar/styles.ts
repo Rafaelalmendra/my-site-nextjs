@@ -84,6 +84,11 @@ export const SocialLinksContainer = styled.div`
   i {
     font-size: 1.2rem;
     cursor: pointer;
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: var(--blue);
+    }
   }
 
   .light {

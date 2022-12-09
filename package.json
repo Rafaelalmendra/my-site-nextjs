@@ -1,8 +1,7 @@
 {
-  "name": "my-site-next",
+  "name": "rafaelalmendra.com",
   "version": "0.2.0",
   "description": "My website was created in order to demonstrate my skills and share my knowledge.",
-  "private": true,
   "license": "MIT",
   "author": {
     "name": "Rafael Almendra",
@@ -20,7 +19,6 @@
   },
   "dependencies": {
     "@apollo/client": "^3.5.10",
-    "@bradgarropy/next-google-analytics": "^1.0.2",
     "@prismicio/client": "^5.1.0",
     "aos": "^2.3.4",
     "apollo-link-http": "^1.5.17",
@@ -33,18 +31,17 @@
     "next-i18next": "^12.0.0",
     "next-images": "^1.8.2",
     "nookies": "^2.5.2",
+    "nprogress": "^0.2.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-hook-form": "^7.40.0",
     "react-loading-skeleton": "^3.1.0",
     "react-spinners": "^0.13.7",
-    "react-switch": "^6.0.0",
     "react-toastify": "^9.1.1",
-    "sass": "^1.43.4",
-    "scss": "^0.2.4",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
+    "@types/nprogress": "^0.2.0",
     "@types/node": "^18.7.23",
     "@types/react": "17.0.2",
     "@types/styled-components": "^5.1.26",

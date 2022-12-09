@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const LocalesContainer = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
 
@@ -8,6 +9,21 @@ export const LocalesContainer = styled.div`
   gap: 0.5rem;
 
   cursor: pointer;
+
+  .locales-open-container {
+    position: absolute;
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    margin-top: 7.675rem;
+    padding: 0.75rem 1rem;
+
+    border-radius: 0.5rem;
+    background: ${(props) => props.theme.text};
+  }
 `;
 
 export const ImageFlagContainer = styled.div`

@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
 import { useRouter } from "next/router";
+import Image from "next/image";
+import Link from "next/link";
 import { useTranslation } from "next-i18next";
+import { motion } from "framer-motion";
 
 //styles
 import * as S from "./styles";
@@ -44,25 +45,28 @@ export const Locales = () => {
   };
 
   return (
-    <>
-      <S.LocalesContainer onClick={() => setOpenFlags(!openFlags)}>
-        <S.ImageFlagContainer>
-          <Image
-            layout="fill"
-            src={activeLanguage?.image}
-            alt={`Bandeira do ${activeLanguage?.name}`}
-          />
-        </S.ImageFlagContainer>
+    <S.LocalesContainer onClick={() => setOpenFlags(!openFlags)}>
+      <S.ImageFlagContainer>
+        <Image
+          layout="fill"
+          src={activeLanguage?.image}
+          alt={`Bandeira do ${activeLanguage?.name}`}
+        />
+      </S.ImageFlagContainer>
 
-        {!openFlags ? (
-          <i className="bi bi-caret-down-fill" />
-        ) : (
-          <i className="bi bi-caret-up-fill" />
-        )}
-      </S.LocalesContainer>
+      {!openFlags ? (
+        <i className="bi bi-caret-down-fill" />
+      ) : (
+        <i className="bi bi-caret-up-fill" />
+      )}
 
       {openFlags && (
-        <S.LocalesOpenContainer>
+        <motion.div
+          className="locales-open-container"
+          initial={{ opacity: 0, y: -40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ type: "spring", duration: 0.4 }}
+        >
           {languages?.map((language) => (
             <Link key={language?.name} href={pathname} locale={language?.name}>
               <S.Locale onClick={() => handleChangeLanguage(language)}>
@@ -78,8 +82,8 @@ export const Locales = () => {
               </S.Locale>
             </Link>
           ))}
-        </S.LocalesOpenContainer>
+        </motion.div>
       )}
-    </>
+    </S.LocalesContainer>
   );
 };

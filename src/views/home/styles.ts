@@ -154,8 +154,8 @@ export const ReactIcon = styled.div`
 
 export const ImageProfile = styled.div`
   position: relative;
-  width: 342px;
-  height: 366px;
+  width: 280px;
+  height: 280px;
 
   img {
     border-radius: 10px;

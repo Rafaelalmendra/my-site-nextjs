@@ -66,7 +66,7 @@ export const HomeView = () => {
             <Image
               layout="fill"
               data-aos="zoom-in"
-              src={"/images/profile-image.svg"}
+              src={"/images/profile.jpg"}
               alt="Foto de perfil de Rafael Almendra"
             />
           </S.ImageProfile>
