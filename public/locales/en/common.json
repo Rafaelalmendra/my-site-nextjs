@@ -12,11 +12,13 @@
   "emailAddress": "Email address",
   "typeMessage": "Type your message...",
   "submit": "Submit",
+  "sending": "Sending",
   "backBlog": "Back to blog",
   "authorial": "Authorial",
   "course": "Course",
   "acessDeploy": "Access deploy",
   "noImage": "No image found",
   "errorFetching": "An error occurred while fetching information",
-  "backToBlog": "Back to blog"
+  "backToBlog": "Back to blog",
+  "sucessMessage": "Message sent successfully"
 }

@@ -7,7 +7,7 @@ import { Tag } from "components";
 //styles
 import * as S from "./styles";
 
-export const ProjectCard = ({ data }) => {
+export const CardProject = ({ data }) => {
   const { t } = useTranslation();
 
   return (

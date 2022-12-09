@@ -13,6 +13,7 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 0.6rem;
   padding: 1rem 2.125rem;
 
   font-size: ${(props) => (props.fontSize ? props.fontSize : "1.4rem")};

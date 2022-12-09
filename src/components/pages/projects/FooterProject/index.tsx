@@ -8,7 +8,7 @@ import { Button } from "components";
 //styles
 import * as S from "./styles";
 
-export const ProjectFooter = () => {
+export const FooterProject = () => {
   const { t } = useTranslation();
 
   return (
@@ -34,5 +34,3 @@ export const ProjectFooter = () => {
     </S.Container>
   );
 };
-
-export default ProjectFooter;

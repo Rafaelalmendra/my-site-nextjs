@@ -1,16 +1,20 @@
+import { ClipLoader } from "react-spinners";
+
 //styles
 import * as S from "./styles";
 
 interface ButtonProps {
+  loading?: boolean;
   children: React.ReactNode;
   width?: string;
   fontSize?: string;
-  backgroundColor?: string;
   mobileFontSize?: string;
+  backgroundColor?: string;
   type?: "button" | "submit" | "reset" | undefined;
 }
 
 export const Button = ({
+  loading,
   children,
   width,
   fontSize,
@@ -26,6 +30,9 @@ export const Button = ({
       backgroundColor={backgroundColor}
       mobileFontSize={mobileFontSize}
     >
+      {loading && (
+        <ClipLoader color="var(--white)" loading={loading} size={22} />
+      )}
       {children}
     </S.ButtonContainer>
   );

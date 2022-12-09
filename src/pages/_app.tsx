@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components";
 import { ApolloProvider } from "@apollo/client";
 import { parseCookies, setCookie } from "nookies";
 import { SkeletonTheme } from "react-loading-skeleton";
+import { ToastContainer } from "react-toastify";
 
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -52,11 +53,9 @@ const MyApp = ({ Component, pageProps }) => {
       <ApolloProvider client={client}>
         <ThemeProvider theme={theme}>
           <GlobalStyle />
-
+          <ToastContainer />
           <ScrollButton />
-
           <Navbar toggleTheme={toggleTheme} />
-
           <Component {...pageProps} />
         </ThemeProvider>
       </ApolloProvider>

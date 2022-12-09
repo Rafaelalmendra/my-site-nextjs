@@ -12,11 +12,13 @@
   "emailAddress": "Endereço de e-mail",
   "typeMessage": "Digite sua mensagem...",
   "submit": "Enviar",
+  "sending": "Enviando",
   "backBlog": "Voltar para o Blog",
   "authorial": "Autoral",
   "course": "Curso",
   "acessDeploy": "Acessar deploy",
   "noImage": "Nenhuma imagem encontrada",
   "errorFetching": "Ocorreu um erro ao buscar informações",
-  "backToBlog": "Voltar para o Blog"
+  "backToBlog": "Voltar para o Blog",
+  "sucessMessage": "Mensagem enviada com sucesso"
 }

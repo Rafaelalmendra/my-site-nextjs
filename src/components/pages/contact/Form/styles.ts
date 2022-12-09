@@ -49,6 +49,11 @@ export const Field = styled.div`
       border: 1px solid var(--blue);
     }
   }
+
+  span {
+    color: #ff3333;
+    margin-top: 1rem;
+  }
 `;
 
 export const TwoFields = styled.div`

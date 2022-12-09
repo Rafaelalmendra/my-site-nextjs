@@ -2,28 +2,23 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 //components
-import { Layout, HeadSeo, Form } from "components";
+import { HeadSeo } from "components";
 
-//styles
-import { Container, FormContainer } from "styles/contact";
+//views
+import { ContactView } from "views";
 
 const Contact = () => {
   const { t } = useTranslation();
 
   return (
-    <Layout>
-      <Container>
-        <HeadSeo
-          title={`${t("contact")} | Rafael Almendra`}
-          content="Entre em contato comigo através do formulário."
-        />
+    <>
+      <HeadSeo
+        title={`${t("contact")} | Rafael Almendra`}
+        content="Entre em contato comigo através do formulário."
+      />
 
-        <FormContainer>
-          <h1>{t("sendMessage")}</h1>
-          <Form />
-        </FormContainer>
-      </Container>
-    </Layout>
+      <ContactView />
+    </>
   );
 };
 
