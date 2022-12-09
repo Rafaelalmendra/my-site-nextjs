@@ -19,6 +19,7 @@ My website was created in order to demonstrate my skills and share my knowledge.
 ## 🧪 Technologies
 
 - Nextjs
+- Typescript
 - Styled Components
 - Dato CMS
 - Graphql
