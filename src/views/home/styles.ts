@@ -158,7 +158,7 @@ export const ImageProfile = styled.div`
   height: 280px;
 
   img {
-    border-radius: 10px;
+    border-radius: 4px;
     object-fit: cover;
   }
 
