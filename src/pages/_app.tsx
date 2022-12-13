@@ -36,9 +36,9 @@ const MyApp = ({ Component, pageProps }) => {
   );
 
   useEffect(() => {
-    TagManager.initialize({ gtmId: "GTM-M22CJR7" });
-
     Aos.init({ duration: 700, offset: 0 });
+
+    TagManager.initialize({ gtmId: process.env.NEXT_PUBLIC_GOOGLE_GTM_ID });
   }, []);
 
   const toggleTheme = () => {
