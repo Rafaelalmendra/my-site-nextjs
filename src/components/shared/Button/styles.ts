@@ -28,7 +28,12 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
   transition: 0.2s ease-in-out;
 
   &:hover {
-    filter: brightness(0.9);
+    background: var(--hover-blue);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background: var(--hover-blue);
   }
 
   @media (max-width: 850px) {

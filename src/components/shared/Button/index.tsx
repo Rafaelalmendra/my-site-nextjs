@@ -4,29 +4,32 @@ import { ClipLoader } from "react-spinners";
 import * as S from "./styles";
 
 interface ButtonProps {
-  loading?: boolean;
-  children: React.ReactNode;
   width?: string;
   fontSize?: string;
+  disabled?: boolean;
   mobileFontSize?: string;
   backgroundColor?: string;
+  loading?: boolean;
+  children: React.ReactNode;
   type?: "button" | "submit" | "reset" | undefined;
 }
 
 export const Button = ({
-  loading,
   children,
+  loading,
   width,
   fontSize,
-  type = "button",
+  disabled,
   backgroundColor,
   mobileFontSize,
+  type = "button",
 }: ButtonProps) => {
   return (
     <S.ButtonContainer
       type={type}
       width={width}
       fontSize={fontSize}
+      disabled={disabled}
       backgroundColor={backgroundColor}
       mobileFontSize={mobileFontSize}
     >

@@ -5,13 +5,14 @@ import { ApolloProvider } from "@apollo/client";
 import { parseCookies, setCookie } from "nookies";
 import { SkeletonTheme } from "react-loading-skeleton";
 import { ToastContainer } from "react-toastify";
+import TagManager from "react-gtm-module";
 
 import Aos from "aos";
 import "aos/dist/aos.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 //services
-import { client } from "services/dato-cms";
+import { client } from "services";
 
 //components
 import { Navbar, ScrollButton } from "components";
@@ -35,6 +36,8 @@ const MyApp = ({ Component, pageProps }) => {
   );
 
   useEffect(() => {
+    TagManager.initialize({ gtmId: "GTM-M22CJR7" });
+
     Aos.init({ duration: 700, offset: 0 });
   }, []);
 
