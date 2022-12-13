@@ -36,9 +36,9 @@ const MyApp = ({ Component, pageProps }) => {
   );
 
   useEffect(() => {
-    Aos.init({ duration: 700, offset: 0 });
+    TagManager.initialize({ gtmId: process.env.GOOGLE_GTM_ID });
 
-    TagManager.initialize({ gtmId: process.env.NEXT_PUBLIC_GOOGLE_GTM_ID });
+    Aos.init({ duration: 700, offset: 0 });
   }, []);
 
   const toggleTheme = () => {
