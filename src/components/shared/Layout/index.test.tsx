@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { Layout } from ".";
 
 describe("<Layout />", () => {
-  it("should render a Layout with children", () => {
+  it("should render a Layout with children", async () => {
     render(<Layout>children</Layout>);
 
     expect(screen.getByText("children")).toBeInTheDocument();
