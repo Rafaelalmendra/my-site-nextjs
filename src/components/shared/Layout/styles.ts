@@ -5,7 +5,7 @@ interface ContentProps {
   blogPost?: boolean;
 }
 
-export const Container = styled.div`
+export const Container = styled.section`
   min-height: 100vh;
   max-width: 100vw;
   overflow: hidden;
