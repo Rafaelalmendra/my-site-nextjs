@@ -34,11 +34,10 @@ const MyApp = ({ Component, pageProps }) => {
         : darkTheme
       : darkTheme
   );
-  useEffect(() => {
-    TagManager.initialize({ gtmId: "GTM-M22CJR7" });
-  }, []);
 
   useEffect(() => {
+    TagManager.initialize({ gtmId: "GTM-M22CJR7" });
+
     Aos.init({ duration: 700, offset: 0 });
   }, []);
 

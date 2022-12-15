@@ -4,11 +4,10 @@ interface ButtonContainerProps {
   width?: string;
   fontSize?: string;
   backgroundColor?: string;
-  mobileFontSize?: string;
 }
 
 export const ButtonContainer = styled.button<ButtonContainerProps>`
-  width: ${(props) => (props.width ? props.width : "204px")};
+  width: ${(props) => (props.width ? props.width : "auto")};
 
   display: flex;
   align-items: center;
@@ -38,7 +37,5 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
 
   @media (max-width: 850px) {
     width: 100%;
-    font-size: ${(props) =>
-      props.mobileFontSize ? props.mobileFontSize : "1.2rem"};
   }
 `;
