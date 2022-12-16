@@ -45,7 +45,7 @@ export const HomeView = () => {
 
           <Link href="/Projects">
             <a>
-              <Button loading>
+              <Button>
                 {t("projects")} <i className="bi bi-caret-right-fill" />
               </Button>
             </a>

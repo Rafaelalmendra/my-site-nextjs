@@ -69,7 +69,10 @@ export const Locales = () => {
         >
           {languages?.map((language) => (
             <Link key={language?.name} href={pathname} locale={language?.name}>
-              <S.Locale onClick={() => handleChangeLanguage(language)}>
+              <S.Locale
+                id="language"
+                onClick={() => handleChangeLanguage(language)}
+              >
                 <S.FlagImage>
                   <Image
                     layout="fill"
