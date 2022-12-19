@@ -44,15 +44,4 @@ describe("<Locales />", () => {
     fireEvent.click(document.querySelector("i.bi-caret-down-fill") as Element);
     expect(document.querySelector("i.bi-caret-up-fill")).toBeInTheDocument();
   });
-
-  it("should render a Locales with en flag", () => {
-    render(<Locales />);
-
-    fireEvent.click(document.querySelector("i.bi-caret-down-fill") as Element);
-    fireEvent.click(document.getElementById("language") as Element);
-
-    expect(
-      document.querySelector('img[alt="Bandeira do en"]')
-    ).toBeInTheDocument();
-  });
 });
