@@ -33,7 +33,7 @@ export const Li = styled.li<{ active?: boolean }>`
   ${(props) =>
     props.active && {
       a: {
-        color: "var(--white)",
+        color: props.theme.text,
         fontWeight: "500",
       },
     }}

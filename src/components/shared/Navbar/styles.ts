@@ -9,7 +9,7 @@ export const NavbarContainer = styled.nav`
 `;
 
 export const NavbarContent = styled.div`
-  height: 6rem;
+  height: 4.625rem;
 
   width: 100%;
 

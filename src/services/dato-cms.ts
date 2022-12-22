@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 const API_URL = "https://graphql.datocms.com/";
 const API_TOKEN = process.env.DATOCMS_READ_ONLY_API_TOKEN;
 
@@ -17,6 +19,7 @@ const fetchAPI = async (query, { variables }: any = {}) => {
   const json = await res.json();
   if (json.errors) {
     console.error(json.errors);
+    toast.error("Failed to fetch API");
     throw new Error("Failed to fetch API");
   }
 

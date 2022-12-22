@@ -20,24 +20,17 @@ export const ProjectImage = styled.div`
   height: 431px;
   border-radius: 10px;
 
-  @media (max-width: 994px) {
-    height: 370px;
-  }
-
-  @media (max-width: 854px) {
+  @media (max-width: 850px) {
     height: 300px;
   }
 
-  @media (max-width: 640px) {
-    height: 200px;
-  }
-
-  @media (max-width: 480px) {
-    height: 148px;
+  @media (max-width: 564px) {
+    height: 180px;
   }
 
   img {
-    transition: all 0.3s ease-in-out;
+    object-fit: cover;
+    transition: all 0.2s ease-in-out;
   }
 
   &:hover,
@@ -47,7 +40,7 @@ export const ProjectImage = styled.div`
     }
 
     img {
-      transform: scale(1.12);
+      transform: scale(1.04);
       filter: brightness(0.4);
     }
   }
@@ -62,8 +55,12 @@ export const ProjectImage = styled.div`
     z-index: 1;
 
     p {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+
       color: var(--white);
-      font-size: 1.6rem;
+      font-size: 1.2rem;
       font-weight: 500;
     }
   }
@@ -107,17 +104,18 @@ export const Techs = styled.div`
   }
 
   span {
-    height: 2rem;
-    min-width: 7rem;
+    height: 1.75rem;
+    min-width: 6rem;
 
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 0.875rem;
 
-    font-size: 0.9rem;
-    border: 1px solid;
+    font-size: 0.75rem;
+
     border-radius: 1.625rem;
+    border: 1px solid var(--grey);
 
     @media (max-width: 575.98px) {
       min-width: 6rem;
@@ -131,23 +129,19 @@ export const Techs = styled.div`
 export const Description = styled.p`
   max-width: 35.5rem;
 
+  color: var(--grey);
   line-height: 1.4rem;
   text-align: justify;
+  font-size: 0.875rem;
 
   @media (max-width: 850px) {
     max-width: 100%;
 
     text-align: justify;
-    font-size: var(--small-text);
   }
 
   @media (max-width: 575.98px) {
     justify-content: flex-start;
-
-    span {
-      width: 6rem;
-      font-size: 0.8rem;
-    }
   }
 `;
 
@@ -176,7 +170,7 @@ export const NameAndDescription = styled.div`
 export const LinkAndRepository = styled.div`
   display: flex;
   align-items: center;
-  gap: 1.6rem;
+  gap: 1.125rem;
 
   @media (max-width: 850px) {
     gap: 1.2rem;
@@ -187,36 +181,12 @@ export const LinkAndRepository = styled.div`
     font-size: 1.125rem;
   }
 
-  i {
-    font-size: 1.6rem;
+  svg {
+    color: ${(props) => props.theme.text};
     transition: color 0.2s ease-in-out;
 
     &:hover {
       color: var(--blue);
-    }
-
-    @media (max-width: 850px) {
-      font-size: 1.4rem;
-    }
-  }
-
-  img {
-    width: 100%;
-    transform: scale(0.95);
-
-    path {
-      stroke: ${(props) => props.theme.text};
-    }
-
-    @media (max-width: 850px) {
-      transform: scale(0.75);
-    }
-
-    &:hover {
-      path {
-        transition: stroke 0.2s ease-in-out;
-        stroke: var(--blue);
-      }
     }
   }
 `;

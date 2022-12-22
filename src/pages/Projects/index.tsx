@@ -4,10 +4,13 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 //components
 import { HeadSeo } from "components";
 
+//services
+import { getProjects } from "services";
+
 //views
 import { ProjectsView } from "views";
 
-const Projects = () => {
+const Projects = ({ projects }) => {
   const { t } = useTranslation();
 
   return (
@@ -17,7 +20,7 @@ const Projects = () => {
         content="Conheça alguns dos meus projetos"
       />
 
-      <ProjectsView />
+      <ProjectsView projects={projects} />
     </>
   );
 };
@@ -25,9 +28,12 @@ const Projects = () => {
 export default Projects;
 
 export async function getStaticProps({ locale }) {
+  const projects = await getProjects();
+
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common"])),
+      projects,
     },
   };
 }

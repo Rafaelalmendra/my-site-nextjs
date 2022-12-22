@@ -7,6 +7,9 @@ import { Tag } from "components";
 //styles
 import * as S from "./styles";
 
+//icons
+import { FigmaLogo, GithubLogo, Globe } from "phosphor-react";
+
 export const CardProject = ({ data }) => {
   const { t } = useTranslation();
 
@@ -28,7 +31,7 @@ export const CardProject = ({ data }) => {
 
             <div className="imageLink">
               <p>
-                {t("acessDeploy")} <i className="bi bi-globe" />
+                {t("acessDeploy")} <Globe size={28} />
               </p>
             </div>
             <Image
@@ -63,19 +66,19 @@ export const CardProject = ({ data }) => {
         <S.LinkAndRepository>
           {data?.deploy && (
             <a href={data?.deploy} target="_blank" rel="noopener noreferrer">
-              <i className="bi bi-globe" />
+              <Globe size={28} />
             </a>
           )}
 
           {data?.github && (
             <a href={data?.github} target="_blank" rel="noopener noreferrer">
-              <i className="bi bi-github" />
+              <GithubLogo size={28} weight="fill" />
             </a>
           )}
 
           {data?.figma && (
             <a href={data?.figma} target="_blank" rel="noopener noreferrer">
-              <img src="/images/icons/figma.svg" alt="" />
+              <FigmaLogo size={28} />
             </a>
           )}
         </S.LinkAndRepository>

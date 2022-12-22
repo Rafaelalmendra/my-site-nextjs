@@ -50,8 +50,8 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
                   : "/images/logo.svg"
               }
               alt="Logo Rafael Almendra"
-              width={46}
-              height={46}
+              width={38}
+              height={38}
             />
           </a>
         </Link>

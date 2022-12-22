@@ -77,7 +77,7 @@ export default createGlobalStyle<ThemeProps>`
   }
 
   ::-webkit-scrollbar {
-    width: 0.625rem;
+    width: 0.34rem;
   }
 
   ::-webkit-scrollbar-track {
@@ -85,7 +85,7 @@ export default createGlobalStyle<ThemeProps>`
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: var(--blue);
+    background-color: ${(props) => props.theme.text};
   }
 
   .active {

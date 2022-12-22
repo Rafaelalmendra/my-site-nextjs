@@ -1,20 +1,7 @@
-import { parseCookies } from "nookies";
-import { useTranslation } from "next-i18next";
-import { toast, ToastContainer } from "react-toastify";
-
-//hooks
-import { useGetProjects } from "hooks";
+import { useTranslation } from "react-i18next";
 
 //components
-import {
-  Layout,
-  Divider,
-  CardProject,
-  FooterProject,
-  HeaderProjects,
-  CardsProjectsSkeleton,
-  HeaderProjectsSkeleton,
-} from "components";
+import { Layout, CardProject } from "components";
 
 //types
 import { ProjectProps } from "types";
@@ -22,37 +9,27 @@ import { ProjectProps } from "types";
 //styles
 import * as S from "./styles";
 
-export const ProjectsView = () => {
+export const ProjectsView = ({ projects }) => {
   const { t } = useTranslation();
-  const cookies = parseCookies();
-  const { data, loading, error } = useGetProjects();
-
-  const dataProjects: ProjectProps[] = data?.allProjects;
-
-  if (error) {
-    toast.error(t("errorFetching"));
-  }
 
   return (
-    <Layout paddingTop>
+    <Layout>
       <S.Container>
-        <ToastContainer
-          theme={cookies.userTheme === "light" ? "light" : "dark"}
-        />
+        <S.TitleProjects>
+          <h2>{t("projects")}</h2>
 
-        {loading ? <HeaderProjectsSkeleton /> : <HeaderProjects data={data} />}
+          <ul>
+            {projects?.map((project: ProjectProps) => (
+              <li key={project?.id}>
+                <a href={`#${project?.title}`}>{project?.title}</a>
+              </li>
+            ))}
+          </ul>
+        </S.TitleProjects>
 
-        {loading ? (
-          <CardsProjectsSkeleton cards={3} />
-        ) : (
-          dataProjects?.map((project) => (
-            <CardProject data={project} key={project?.id} />
-          ))
-        )}
-
-        <Divider />
-
-        <FooterProject />
+        {projects?.map((project: ProjectProps) => (
+          <CardProject data={project} key={project?.id} />
+        ))}
       </S.Container>
     </Layout>
   );
