@@ -1,29 +1,20 @@
 import { createGlobalStyle } from "styled-components";
+import { ThemeProps } from "types";
 
-interface GlobalStyleProps {
-  theme: {
-    text: string;
-    background: string;
-  };
-}
-
-export default createGlobalStyle<GlobalStyleProps>`
+export default createGlobalStyle<ThemeProps>`
   :root {
     --header-height: 4.5rem;
+
     --blue: #32C5FF;
     --hover-blue: #2EB2E5;
     --yellow: #FFD818;
+    --link: #463FDF;
+
     --white: #FFFFFF;
     --black: #131219;
-    --light-black: #6D6D6D;
-    --grey: #ADADAD;
-    --link: #463FDF;
     --purple-black: #161B3D;
-    --small-title: 2.5rem;
-    --subtitle: 1.7rem;
-    --small-subtitle: 1.2rem;
-    --text: 1rem;
-    --small-text: 0.9rem;
+    --grey: #9B9C9C;
+    --light-black: #6D6D6D;
   }
 
   * {
@@ -42,23 +33,26 @@ export default createGlobalStyle<GlobalStyleProps>`
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 16rem;
+
     @media (max-width: 1080px) {
       font-size: 93.75%;
     }
+
     @media (max-width: 720px) {
       font-size: 87.5%;
     }
   }
 
   body, input, textarea, button  {
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.875rem;
-    font-weight: 400;
-    line-height: 1;
+    font-size: 1rem;
+    font-family: 'Manrope', sans-serif;
+
     color: ${(props) => props.theme.text};
     background: ${(props) => props.theme.background};
+
     border: none;
     -webkit-font-smoothing: antialiased;
+
     &:focus {
       border: 0 none;
       outline: 0;
@@ -72,6 +66,10 @@ export default createGlobalStyle<GlobalStyleProps>`
   button {
     border: none;
     cursor: pointer;
+  }
+
+  a {
+    text-decoration: none;
   }
 
   img {
@@ -93,22 +91,6 @@ export default createGlobalStyle<GlobalStyleProps>`
   .active {
     background: ${(props) => props.theme.background};
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
-  }
-
-  .global-button {
-    position: relative;
-    width: 13rem;
-    height: 4rem;
-    z-index: 1;
-    font-size: 1.7rem;
-    font-weight: 500;
-    color: #FFFFFF;
-    background-color: #32C5FF;
-    cursor: pointer;
-    border-radius: 0.65rem;
-    transition: 0.2s ease-in-out;
-    background-color: #2EB2E5;
-    transform: scale(1.05);
   }
 
   .loading {
@@ -207,38 +189,13 @@ export default createGlobalStyle<GlobalStyleProps>`
     }
   }
 
-  @media (max-width: 1199.98px) {
-    .margins-nav {
-      margin-left: 6rem;
-      margin-right: 6rem;
-    }
-  }
-
   @media (max-width: 850px) {
-    .margins-nav {
-      margin-left: 5rem;
-      margin-right: 5rem;
-    }
-
     .desktop, .link {
       display: none;
     }
   }
 
   @media (max-width: 575.98px) {
-    .margins-nav {
-      margin-left: 1.5rem;
-      margin-right: 1.5rem;
-    }
-
-    .global-button {
-      width: 10rem;
-      height: 3.4rem;
-      border-radius: 0.5rem;
-
-      font-size: 1.2rem;
-    }
-
     .section {
       padding: calc(4rem + 2rem) 0;
     }

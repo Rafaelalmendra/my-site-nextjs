@@ -1,6 +1,22 @@
 import * as S from "./styles";
 
-export const CardPost = ({ title, thumbnail, author, date, technologies }) => {
+interface CardPostProps {
+  title: string;
+  thumbnail: string;
+  author: string;
+  date: string;
+  technologies: {
+    technologie: string;
+  }[];
+}
+
+export const CardPost = ({
+  title,
+  thumbnail,
+  author,
+  date,
+  technologies,
+}: CardPostProps) => {
   return (
     <S.Post>
       <div>

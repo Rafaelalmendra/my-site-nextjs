@@ -8,3 +8,4 @@ export * from "./Locales";
 export * from "./Navbar";
 export * from "./Skeleton";
 export * from "./ProgressBar";
+export * from "./Card";

@@ -4,71 +4,60 @@ export const Container = styled.main`
   min-height: calc(100vh - 120px);
 
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  .bi-caret-right-fill {
-    color: var(--white);
-  }
+  flex-direction: column;
+  justify-content: center;
 
   @media (max-width: 850px) {
     flex-direction: column;
     justify-content: center;
-    margin: 1.4rem 0 0 0;
+    margin-top: 1.4rem;
   }
 `;
 
-export const TextAbout = styled.div`
-  a {
-    width: 100%;
-  }
-  h2 {
-    margin-bottom: 1.7rem;
+export const Header = styled.div`
+  margin-bottom: 2rem;
 
+  h2 {
     font-weight: 600;
-    font-size: 2.45rem;
-    text-transform: uppercase;
+    font-size: 2.375rem;
+    margin-bottom: 1.5rem;
 
     @media (max-width: 850px) {
       font-size: 2rem;
     }
   }
 
-  h3 {
-    margin-bottom: 0.6rem;
-    font-weight: 400;
-    font-size: 1.4rem;
-
-    @media (max-width: 850px) {
-      font-size: 1.2rem;
-    }
-  }
-
   p {
     max-width: 36rem;
-    margin-bottom: 1.6rem;
+    margin-bottom: 1.5rem;
 
     font-weight: 300;
-    line-height: 1.6rem;
-    font-size: var(--text);
-
-    opacity: 0.8;
+    font-size: 0.875rem;
+    color: var(--grey);
 
     @media (max-width: 850px) {
       width: 90%;
-
-      font-size: 0.875rem;
       text-align: center;
+      font-size: 0.875rem;
       line-height: 1.4rem;
+    }
+  }
+
+  svg {
+    transition: transform ease-in-out 0.2s;
+  }
+
+  button:hover {
+    svg {
+      transform: translateX(0.4rem);
     }
   }
 
   @media (max-width: 850px) {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
     justify-content: center;
-    order: 1;
 
     text-align: center;
 
@@ -78,96 +67,32 @@ export const TextAbout = styled.div`
   }
 `;
 
-export const CurriculumLink = styled.div`
-  font-weight: 300;
-  text-decoration: underline;
+export const SubtitleHeader = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+  gap: 0.375rem;
 
-  @media (max-width: 850px) {
-    margin-bottom: 1.7rem;
+  h3,
+  a {
+    font-size: 1.125rem;
+
+    @media (max-width: 850px) {
+      font-size: 1rem;
+    }
+  }
+
+  h3 {
+    font-weight: 400;
   }
 
   a {
-    transition: color 0.2s ease-in-out;
+    font-weight: 600;
+    transition: color ease-in-out 0.2s;
 
     &:hover {
       color: var(--blue);
+      text-decoration: underline;
     }
-  }
-`;
-
-export const InfosContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  margin-bottom: 2.938rem;
-
-  @media (max-width: 850px) {
-    align-items: center;
-  }
-`;
-
-export const InfosText = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-`;
-
-export const InfosTextLink = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  span {
-    color: ${(props) =>
-      props.theme.title === "dark" ? "#DEDEDE" : "var(--black)"};
-    transition: color ease-in-out 0.2s;
-  }
-
-  a {
-    text-decoration: underline;
-    transition: color ease-in-out 0.2s;
-  }
-
-  span:hover,
-  a:hover {
-    color: var(--blue);
-  }
-`;
-
-export const ImageAbout = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
-export const ReactIcon = styled.div`
-  z-index: 2;
-  left: 4.8rem;
-  position: relative;
-  min-width: 8rem;
-  transform: translateY(0);
-  animation: float 3s ease-in-out infinite;
-
-  @media (max-width: 850px) {
-    display: none;
-  }
-`;
-
-export const ImageProfile = styled.div`
-  position: relative;
-  width: 280px;
-  height: 280px;
-
-  img {
-    border-radius: 4px;
-    object-fit: cover;
-  }
-
-  @media (max-width: 850px) {
-    width: 168px;
-    height: 168px;
-
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2rem;
   }
 `;

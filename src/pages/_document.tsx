@@ -41,6 +41,13 @@ export default class MyDocument extends Document {
     return (
       <Html lang={this.props.__NEXT_DATA__.query.locale as string}>
         <Head>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+          />
+          <meta charSet="utf-8" />
           <Script
             id="gtm"
             strategy="afterInteractive"
@@ -53,13 +60,6 @@ export default class MyDocument extends Document {
             })(window,document,'script','dataLayer', 'GTM-M22CJR7);
           `,
             }}
-          />
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
-          <meta charSet="utf-8" />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
-            rel="stylesheet"
           />
           <link rel="shortcut icon" href="/images/logo.png" type="png" />
         </Head>

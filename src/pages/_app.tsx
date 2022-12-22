@@ -11,9 +11,6 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
-//services
-import { client } from "services";
-
 //components
 import { Navbar, ScrollButton } from "components";
 
@@ -51,21 +48,19 @@ const MyApp = ({ Component, pageProps }) => {
   };
 
   return (
-    <ApolloProvider client={client}>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <ToastContainer />
-        <ScrollButton />
-        <Navbar toggleTheme={toggleTheme} />
-        <NextNProgress options={{ showSpinner: false }} />
-        <SkeletonTheme
-          baseColor={theme.title === "dark" ? "#353535" : "#e0e0e0"}
-          highlightColor={theme.title === "dark" ? "#525252" : "#f7f7f7"}
-        >
-          <Component {...pageProps} />
-        </SkeletonTheme>
-      </ThemeProvider>
-    </ApolloProvider>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <ToastContainer />
+      <ScrollButton />
+      <Navbar toggleTheme={toggleTheme} />
+      <NextNProgress options={{ showSpinner: false }} />
+      <SkeletonTheme
+        baseColor={theme.title === "dark" ? "#353535" : "#e0e0e0"}
+        highlightColor={theme.title === "dark" ? "#525252" : "#f7f7f7"}
+      >
+        <Component {...pageProps} />
+      </SkeletonTheme>
+    </ThemeProvider>
   );
 };
 

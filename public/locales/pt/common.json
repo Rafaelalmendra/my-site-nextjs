@@ -1,6 +1,6 @@
 {
   "about": "Sobre mim",
-  "myDescription": "Sou desenvolvedor Front-end apaixonado por tecnologia, programação e design.",
+  "myDescription": "Sou um engenheiro de software apaixonado por tecnologia, programação e design.",
   "accessCurriculum": "Acessar currículo",
   "projects": "Projetos",
   "welcomeToMyBlog": "Bem vindo(a) ao meu Blog",
@@ -20,5 +20,7 @@
   "noImage": "Nenhuma imagem encontrada",
   "errorFetching": "Ocorreu um erro ao buscar informações",
   "backToBlog": "Voltar para o Blog",
-  "sucessMessage": "Mensagem enviada com sucesso"
+  "sucessMessage": "Mensagem enviada com sucesso",
+  "by": "Por",
+  "seeAll": "Ver todos"
 }

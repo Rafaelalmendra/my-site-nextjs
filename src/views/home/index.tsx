@@ -1,76 +1,43 @@
 import Link from "next/link";
-import Image from "next/image";
 import { useTranslation } from "next-i18next";
 
 //components
-import { Layout, Button } from "components";
+import { Layout, Button, ProjectsAndBlog } from "components";
 
 //styles
 import * as S from "./styles";
 
-export const HomeView = () => {
+//icons
+import { ArrowUpRight } from "phosphor-react";
+
+export const HomeView = ({ projects, postsBlog }) => {
   const { t } = useTranslation();
 
   return (
     <Layout>
       <S.Container>
-        <S.TextAbout data-aos="zoom-in">
-          <h2>{t("about")}</h2>
-          <h3>Rafael de Sousa Almendra</h3>
+        <S.Header>
+          <h2>Rafael Almendra</h2>
+
+          <S.SubtitleHeader>
+            <h3>Front-end Engineer at </h3>
+            <a href="https://neogrid.com" target="_blank" rel="noreferrer">
+              Neogrid
+            </a>
+          </S.SubtitleHeader>
+
           <p>{t("myDescription")}</p>
 
-          <S.InfosContainer>
-            <S.InfosTextLink>
-              <i className="bi bi-building" />
-              <a href="https://neogrid.com" target="_blank" rel="noreferrer">
-                <span>Neogrid</span>
-              </a>
-            </S.InfosTextLink>
-
-            <S.InfosText>
-              <i className="bi bi-envelope" />
-              <span>rafaelalmendra28@gmail.com</span>
-            </S.InfosText>
-
-            <S.CurriculumLink>
-              <a
-                href="https://drive.google.com/file/d/1Pt7ngkyQ-U-3nKnL0y1A2YEYDpXalyxq/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {t("accessCurriculum")}
-              </a>
-            </S.CurriculumLink>
-          </S.InfosContainer>
-
-          <Link href="/Projects">
+          <Link href="/About">
             <a>
-              <Button>
-                {t("projects")} <i className="bi bi-caret-right-fill" />
+              <Button variant="secondary" fontSize="1rem">
+                {t("about")} <ArrowUpRight size={22} />
               </Button>
             </a>
           </Link>
-        </S.TextAbout>
+        </S.Header>
 
-        <S.ImageAbout>
-          <S.ReactIcon data-aos="zoom-in">
-            <Image
-              src={"/images/react.svg"}
-              alt="Icone do Reactjs"
-              width={136}
-              height={136}
-            />
-          </S.ReactIcon>
-
-          <S.ImageProfile>
-            <Image
-              layout="fill"
-              data-aos="zoom-in"
-              src={"/images/profile.jpg"}
-              alt="Foto de perfil de Rafael Almendra"
-            />
-          </S.ImageProfile>
-        </S.ImageAbout>
+        <ProjectsAndBlog projects={projects} postsBlog={postsBlog} />
       </S.Container>
     </Layout>
   );

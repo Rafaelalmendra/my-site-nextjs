@@ -12,6 +12,7 @@ interface ButtonProps {
   fontSize?: string;
   className?: string;
   backgroundColor?: string;
+  variant?: "primary" | "secondary";
 }
 
 export const Button = ({
@@ -23,11 +24,13 @@ export const Button = ({
   className,
   backgroundColor,
   type = "button",
+  variant = "primary",
 }: ButtonProps) => {
   return (
     <S.ButtonContainer
       type={type}
       width={width}
+      variant={variant}
       fontSize={fontSize}
       disabled={disabled}
       className={className}

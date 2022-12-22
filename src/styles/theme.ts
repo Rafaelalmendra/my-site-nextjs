@@ -13,5 +13,5 @@ export const darkTheme = {
   blogText: "#FFFFFF",
   techText: "#131219",
   techBackground: "#FFFFFF",
-  background: "#1C2026",
+  background: "#08070B",
 };

@@ -1,6 +1,6 @@
 {
   "about": "About me",
-  "myDescription": "I'm a Front-end developer passionate about technology, programming and design.",
+  "myDescription": "I'm a software engineer passionate about technology, programming and design.",
   "accessCurriculum": "Access curriculum",
   "projects": "Projects",
   "welcomeToMyBlog": "Welcome to my blog",
@@ -20,5 +20,7 @@
   "noImage": "No image found",
   "errorFetching": "An error occurred while fetching information",
   "backToBlog": "Back to blog",
-  "sucessMessage": "Message sent successfully"
+  "sucessMessage": "Message sent successfully",
+  "by": "By",
+  "seeAll": "See all"
 }
