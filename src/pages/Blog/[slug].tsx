@@ -1,7 +1,11 @@
+import { NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 //components
 import { HeadSeo } from "components";
+
+//types
+import { BlogPostData } from "types";
 
 //services
 import { getFullPostBlog } from "services";
@@ -9,7 +13,11 @@ import { getFullPostBlog } from "services";
 //views
 import { PostView } from "views";
 
-const Post = ({ postBlog }) => {
+interface PostProps {
+  postBlog: BlogPostData;
+}
+
+const Post: NextPage<PostProps> = ({ postBlog }) => {
   return (
     <>
       <HeadSeo

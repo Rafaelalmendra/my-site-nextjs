@@ -1,3 +1,4 @@
+import { NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 //components
@@ -6,15 +7,23 @@ import { HeadSeo } from "components";
 //services
 import { getProjects, getAllPostsBlog } from "services";
 
+//types
+import { BlogPost, ProjectProps } from "types";
+
 //views
 import { HomeView } from "views";
 
-const Home = ({ projects, postsBlog }) => {
+interface HomeProps {
+  projects: ProjectProps[];
+  postsBlog: BlogPost[];
+}
+
+const Home: NextPage<HomeProps> = ({ projects, postsBlog }) => {
   return (
     <>
       <HeadSeo
         title="Home | Rafael Almendra"
-        content="Meu nome é Rafael, sou desenvolvedor Front-end apaixonado por tecnologia, programação e Design. Gosto de resolver problemas e ser desafiado."
+        content="Meu nome é Rafael, sou engenheiro de software apaixonado por tecnologia, programação e Design. Trabalho na Neogrid e faço bacharelado em sistemas de informação pela UniFacid Wyden. Tenho criatividade para resolver diferentes tipos de problemas."
       />
 
       <HomeView projects={projects} postsBlog={postsBlog} />

@@ -1,3 +1,4 @@
+import { NextPage } from "next";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
@@ -7,10 +8,17 @@ import { HeadSeo } from "components";
 //services
 import { getProjects } from "services";
 
+//types
+import { ProjectProps } from "types";
+
 //views
 import { ProjectsView } from "views";
 
-const Projects = ({ projects }) => {
+interface ProjectsProps {
+  projects: ProjectProps[];
+}
+
+const Projects: NextPage<ProjectsProps> = ({ projects }) => {
   const { t } = useTranslation();
 
   return (

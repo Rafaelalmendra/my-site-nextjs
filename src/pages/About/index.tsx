@@ -1,29 +1,25 @@
 import { NextPage } from "next";
-import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "react-i18next";
 
 //components
-import { HeadSeo } from "components";
+import { HeadSeo, Layout } from "components";
 
-//views
-import { ContactView } from "views";
-
-const Contact: NextPage = () => {
+const About: NextPage = () => {
   const { t } = useTranslation();
-
   return (
-    <>
+    <Layout>
       <HeadSeo
-        title={`${t("contact")} | Rafael Almendra`}
-        content="Entre em contato comigo através do formulário."
+        title={`${t("aboutMe")} | Rafael Almendra`}
+        content="Conheça um pouco sobre mim"
       />
 
-      <ContactView />
-    </>
+      <h1>About</h1>
+    </Layout>
   );
 };
 
-export default Contact;
+export default About;
 
 export async function getStaticProps({ locale }) {
   return {

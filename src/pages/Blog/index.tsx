@@ -1,3 +1,4 @@
+import { NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 //components
@@ -6,10 +7,17 @@ import { HeadSeo } from "components";
 //services
 import { getAllPostsBlog } from "services";
 
+//types
+import { BlogPost } from "types";
+
 //views
 import { BlogView } from "views";
 
-const Blog = ({ postsBlog }) => {
+interface BlogProps {
+  postsBlog: BlogPost[];
+}
+
+const Blog: NextPage<BlogProps> = ({ postsBlog }) => {
   return (
     <>
       <HeadSeo
