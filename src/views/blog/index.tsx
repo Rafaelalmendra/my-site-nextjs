@@ -1,13 +1,5 @@
-import Link from "next/link";
-import { useTranslation } from "next-i18next";
-import { parseCookies } from "nookies";
-import { toast, ToastContainer } from "react-toastify";
-
-//hooks
-import { useGetAllPosts } from "hooks";
-
 //components
-import { Layout, CardPost, CardPostSkeleton } from "components";
+import { Layout, Card } from "components";
 
 //types
 import { BlogPost } from "types";
@@ -15,44 +7,24 @@ import { BlogPost } from "types";
 //styles
 import * as S from "./styles";
 
-export const BlogView = () => {
-  const { t } = useTranslation();
-  const cookies = parseCookies();
-  const { data, loading, error } = useGetAllPosts();
-
-  const dataBlog: BlogPost[] = data?.allPosts;
-
-  if (error) {
-    toast.error(t("errorFetching"));
-  }
-
+export const BlogView = ({ postsBlog }) => {
   return (
     <Layout>
       <S.Container>
-        <ToastContainer
-          theme={cookies.userTheme === "light" ? "light" : "dark"}
-        />
-
-        <S.Title>{t("welcomeToMyBlog")} 👋</S.Title>
+        <h1>Blog</h1>
 
         <S.ContainerCards>
-          {loading ? (
-            <CardPostSkeleton cards={3} />
-          ) : (
-            dataBlog?.map((post) => (
-              <Link key={post?.slug} href={`/Blog/${post?.slug}`}>
-                <a>
-                  <CardPost
-                    date={post?.date}
-                    title={post?.title}
-                    author={post?.author}
-                    thumbnail={post?.thumbnail?.url}
-                    technologies={post?.technologies}
-                  />
-                </a>
-              </Link>
-            ))
-          )}
+          {postsBlog?.map((post: BlogPost) => (
+            <Card
+              blog
+              date={post?.date}
+              title={post?.title}
+              author={post?.author}
+              image={post?.thumbnail?.url}
+              technologies={post?.technologies}
+              link={post?.slug}
+            />
+          ))}
         </S.ContainerCards>
       </S.Container>
     </Layout>

@@ -23,6 +23,22 @@ export const Container = styled.div`
     margin-bottom: 1rem;
     border-radius: 8px;
   }
+
+  svg {
+    transition: transform ease-in-out 0.2s;
+  }
+
+  button {
+    color: ${(props) => props.theme.text};
+
+    &:hover {
+      color: var(--blue);
+
+      svg {
+        transform: translateX(-0.4rem);
+      }
+    }
+  }
 `;
 
 export const ImageContainer = styled.div`
@@ -44,13 +60,13 @@ export const Techs = styled.span`
   gap: 1rem;
 
   span {
-    min-width: 5.875rem;
-    height: 1.688rem;
+    min-width: 84px;
+    height: 18px;
 
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 0.875rem;
     margin-bottom: 1rem;
 
     font-weight: 500;
@@ -58,7 +74,7 @@ export const Techs = styled.span`
     text-transform: uppercase;
     color: ${(props) => props.theme.techText};
 
-    border-radius: 8.25rem;
+    border-radius: 4px;
     background: ${(props) => props.theme.techBackground};
 
     @media (max-width: 850px) {
@@ -67,23 +83,6 @@ export const Techs = styled.span`
 
       font-size: 0.7rem;
     }
-  }
-`;
-
-export const Return = styled.div`
-  margin-top: 2rem;
-  font-size: 1rem;
-  transition: font-size 0.2s ease-in-out;
-
-  &:hover {
-    font-size: 1.05rem;
-  }
-
-  a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
   }
 `;
 

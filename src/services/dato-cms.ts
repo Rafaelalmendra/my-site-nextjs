@@ -73,4 +73,38 @@ const getAllPostsBlog = async () => {
   return data.allPosts;
 };
 
-export { getProjects, getAllPostsBlog };
+const getFullPostBlog = async (slug) => {
+  const data = await fetchAPI(
+    `
+    query singlePost($slug: String!) {
+      allPosts(filter: { slug: { eq: $slug } }) {
+        id
+        slug
+        thumbnail {
+          url
+          alt
+        }
+        technologies {
+          technologie
+        }
+        title
+        author
+        authorImage {
+          url
+        }
+        date
+        content
+      }
+    }
+  `,
+    {
+      variables: {
+        slug,
+      },
+    }
+  );
+
+  return data.allPosts[0];
+};
+
+export { getProjects, getAllPostsBlog, getFullPostBlog };

@@ -1,32 +1,44 @@
-import { useRouter } from "next/router";
-
-//hooks
-import { useGetFullPost } from "hooks/useGetPosts";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 //components
 import { HeadSeo } from "components";
 
+//services
+import { getFullPostBlog } from "services";
+
 //views
 import { PostView } from "views";
 
-//types
-import { BlogPostData } from "types";
-
-const Post = () => {
-  const router = useRouter();
-  const slug = router?.query?.slug;
-
-  const { data } = useGetFullPost(slug);
-
-  const post: BlogPostData = data?.allPosts[0];
-
+const Post = ({ postBlog }) => {
   return (
     <>
-      <HeadSeo title={post?.title} content={post?.title} />
+      <HeadSeo
+        title={`${postBlog?.title} | Rafael Almendra`}
+        content={`${postBlog?.title} | Rafael Almendra`}
+      />
 
-      <PostView />
+      <PostView postBlog={postBlog} />
     </>
   );
 };
 
 export default Post;
+
+export async function getStaticPaths() {
+  return {
+    paths: [],
+    fallback: "blocking",
+  };
+}
+
+export async function getStaticProps({ params, locale }) {
+  const postBlog = await getFullPostBlog(params.slug);
+
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+      postBlog,
+    },
+    revalidate: 60 * 60 * 24, // 24 hours
+  };
+}

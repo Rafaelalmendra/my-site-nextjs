@@ -35,5 +35,6 @@ export async function getStaticProps({ locale }) {
       ...(await serverSideTranslations(locale, ["common"])),
       projects,
     },
+    revalidate: 60 * 60 * 24, // 24 hours
   };
 }
