@@ -31,10 +31,10 @@ export const TitleSection = styled.p<{ active?: boolean }>`
   color: var(--grey);
   transition: color 0.2s ease-in-out;
 
-  ${(props) => props.active && `color: var(--white); font-weight: 500;`}
+  ${(props) => props.active && { color: props.theme.text, fontWeight: 500 }};
 
   &:hover {
-    color: var(--white);
+    color: ${(props) => props.theme.text};
   }
 `;
 
@@ -42,8 +42,7 @@ export const CardList = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2.625rem;
-  margin-top: 1.75rem;
-  margin: 1.75rem 0 2.375rem 0;
+  margin: 1.75rem 0 3rem 0;
 
   @media (max-width: 850px) {
     grid-template-columns: 1fr;

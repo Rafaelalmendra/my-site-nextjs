@@ -1,38 +1,33 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  position: fixed;
-  z-index: 10;
-  top: 0;
-  left: 0;
+  position: relative;
 
-  width: 100vw;
-  min-height: 100vh;
+  .mobile-links {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    width: 100vw;
+    min-height: 100vh;
 
-  background: ${(props) => props.theme.background};
-  transition: 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: ${(props) => props.theme.background};
+  }
 `;
 
-export const UlLinks = styled.ul`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  gap: 2.313rem;
+export const Close = styled.div`
+  position: absolute;
+  z-index: 1000;
 
-  font-size: 2.125rem;
-  font-weight: 500;
+  top: 2rem;
+  right: 2rem;
 
-  li {
-    transition: 0.2s ease-in-out;
-
-    &:hover {
-      color: var(--blue);
-    }
-  }
+  font-size: 2.6rem;
+  cursor: pointer;
 `;

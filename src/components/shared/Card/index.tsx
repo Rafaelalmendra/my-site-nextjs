@@ -1,26 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
 
+//types
+import { CardProps } from "types";
+
 //styles
 import * as S from "./styles";
 
 //icons
 import { ArrowRight } from "phosphor-react";
 import { useTranslation } from "next-i18next";
-
-interface CardProps {
-  image: string;
-  title: string;
-  description?: string;
-  link: string;
-
-  blog?: boolean;
-  author?: string;
-  date?: string;
-  technologies?: {
-    technologie: string;
-  }[];
-}
 
 export const Card = ({
   title,

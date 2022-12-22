@@ -1,16 +1,19 @@
 import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import { parseCookies } from "nookies";
+import { useMediaQuery } from "react-responsive";
 
 //components
-import { Li } from "./Li";
-import { Logo } from "./Logo";
-import { Locales } from "../Locales";
-import { LiSocial } from "./LiSocial";
+import { Links } from "./Links";
 import { MobileLinks } from "./MobileLinks";
-import { OpenIcon, CloseIcon } from "./Icons";
 
 //styles
 import * as S from "./styles";
+
+//icons
+import { List } from "phosphor-react";
+import { ThemeNavbar } from "./ThemeNavbar";
 
 interface NavbarProps {
   toggleTheme: () => void;
@@ -18,6 +21,7 @@ interface NavbarProps {
 
 export const Navbar = ({ toggleTheme }: NavbarProps) => {
   const cookies = parseCookies();
+  const isMobile = useMediaQuery({ query: "(max-width: 850px)" });
 
   const [open, setOpen] = useState<boolean>(false);
   const [navbar, setNavbar] = useState<boolean>(false);
@@ -34,57 +38,36 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
     window.addEventListener("scroll", changeBackground);
   }
 
-  const openNavbar = <OpenIcon onClick={() => setOpen(!open)} />;
-
-  const closeNavbar = <CloseIcon onClick={() => setOpen(!open)} />;
-
   return (
-    <S.Header className={navbar ? "active" : ""}>
-      <S.Nav>
-        <Logo />
+    <S.NavbarContainer className={navbar ? "active" : ""}>
+      <S.NavbarContent>
+        <Link href="/">
+          <a>
+            <Image
+              src={
+                cookies.userTheme === "dark"
+                  ? "/images/logo-dark-mode.svg"
+                  : "/images/logo.svg"
+              }
+              alt="Logo Rafael Almendra"
+              width={46}
+              height={46}
+            />
+          </a>
+        </Link>
 
-        <S.NavigationDesktop>
-          <Li className="desktop" />
-        </S.NavigationDesktop>
+        {!isMobile && <Links />}
 
         <S.NavigationContainer>
-          <S.SocialLinksContainer>
-            <Locales />
+          <ThemeNavbar toggleTheme={toggleTheme} />
 
-            <LiSocial
-              className="desktop"
-              icon="bi bi-linkedin"
-              url="https://www.linkedin.com/in/rafaelalmendraa/"
-            />
+          {isMobile && !open && (
+            <List size={28} onClick={() => setOpen(!open)} />
+          )}
 
-            <LiSocial
-              className="desktop"
-              icon="bi bi-github"
-              url="https://github.com/Rafaelalmendra"
-            />
-
-            {cookies.userTheme === "light" && (
-              <i
-                onClick={toggleTheme}
-                className="bi bi-brightness-high-fill light"
-              />
-            )}
-
-            {cookies.userTheme === "dark" && (
-              <i onClick={toggleTheme} className="bi bi-moon-fill" />
-            )}
-
-            {!cookies.userTheme && (
-              <i onClick={toggleTheme} className="bi bi-moon-fill" />
-            )}
-          </S.SocialLinksContainer>
-
-          <S.NavigationMobile>
-            {open ? closeNavbar : openNavbar}
-            {open && <MobileLinks closeMenu={() => setOpen(false)} />}
-          </S.NavigationMobile>
+          {isMobile && open && <MobileLinks closeMenu={() => setOpen(!open)} />}
         </S.NavigationContainer>
-      </S.Nav>
-    </S.Header>
+      </S.NavbarContent>
+    </S.NavbarContainer>
   );
 };
