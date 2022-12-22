@@ -74,9 +74,7 @@ export const ContactView = () => {
                       },
                     })}
                   />
-                  {errors?.name && (
-                    <span className="error">{errors?.name?.message}</span>
-                  )}
+                  {errors?.name && <span>{errors?.name?.message}</span>}
                 </S.Field>
 
                 <S.Field>
@@ -92,15 +90,12 @@ export const ContactView = () => {
                       },
                     })}
                   />
-                  {errors?.email && (
-                    <span className="error">{errors?.email?.message}</span>
-                  )}
+
+                  {errors?.email && <span>{errors?.email?.message}</span>}
                 </S.Field>
               </S.TwoFields>
 
-              <S.Field
-                style={{ marginTop: "2.0625rem", marginBottom: "2.0625rem" }}
-              >
+              <S.Field style={{ marginBottom: "1.5rem" }}>
                 <label htmlFor="message">{t("typeMessage")}</label>
                 <textarea
                   id="message"
@@ -112,9 +107,7 @@ export const ContactView = () => {
                     },
                   })}
                 />
-                {errors?.message && (
-                  <span className="error">{errors?.message?.message}</span>
-                )}
+                {errors?.message && <span>{errors?.message?.message}</span>}
               </S.Field>
 
               <Button type="submit" loading={loading}>

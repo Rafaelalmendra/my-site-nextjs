@@ -21,7 +21,7 @@ export const FormContainer = styled.div`
 `;
 
 export const FormContent = styled.div`
-  margin-top: 3.1875rem;
+  margin-top: 1rem;
 
   form {
     display: flex;
@@ -35,7 +35,8 @@ export const Field = styled.div`
   width: 100%;
 
   label {
-    font-size: 1.2rem;
+    font-size: 0.875rem;
+    color: var(--grey);
     margin-top: 1rem;
 
     @media (max-width: 445px) {
@@ -72,7 +73,7 @@ export const Field = styled.div`
 
   span {
     color: #ff3333;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
   }
 `;
 

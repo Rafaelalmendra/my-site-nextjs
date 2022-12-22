@@ -24,7 +24,7 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
       align-items: center;
       justify-content: center;
       gap: 0.6rem;
-      padding: 1rem 2.125rem;
+      padding: 0.875rem 1.875rem;
 
       font-weight: 500;
       border-radius: 4px;
