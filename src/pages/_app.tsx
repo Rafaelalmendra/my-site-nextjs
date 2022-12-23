@@ -11,7 +11,7 @@ import "aos/dist/aos.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 //components
-import { Navbar, ScrollButton } from "components";
+import { Footer, Navbar, ScrollButton } from "components";
 
 //styles
 import { lightTheme, darkTheme } from "styles/theme";
@@ -59,6 +59,7 @@ const MyApp = ({ Component, pageProps }) => {
       >
         <Component {...pageProps} />
       </SkeletonTheme>
+      <Footer />
     </ThemeProvider>
   );
 };

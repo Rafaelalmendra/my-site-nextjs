@@ -15,7 +15,6 @@ export const Container = styled.div`
 
 export const Li = styled.li<{ active?: boolean }>`
   font-size: 1rem;
-  text-transform: uppercase;
 
   @media (max-width: 850px) {
     font-size: 1.375rem;

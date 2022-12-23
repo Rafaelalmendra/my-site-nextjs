@@ -27,7 +27,7 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
   const [navbar, setNavbar] = useState<boolean>(false);
 
   const changeBackground = () => {
-    if (window.scrollY >= 80) {
+    if (window.scrollY >= 50) {
       setNavbar(true);
     } else {
       setNavbar(false);

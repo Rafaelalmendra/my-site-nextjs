@@ -5,15 +5,15 @@ interface ContentProps {
   blogPost?: boolean;
 }
 
-export const Container = styled.section`
+export const Container = styled.section<ContentProps>`
   min-height: 100vh;
   max-width: 100vw;
   overflow: hidden;
 
-  padding: 6rem 40px 40px 40px;
+  padding: 6rem 2.5rem 2.5rem 2.5rem;
 
   @media (max-width: 850px) {
-    padding: 6rem 20px 20px;
+    padding: 6rem 1.25rem 1.25rem;
   }
 `;
 

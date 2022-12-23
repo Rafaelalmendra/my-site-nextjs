@@ -20,7 +20,7 @@ export const Header = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
-  border-bottom: 1px solid #242a32;
+  border-bottom: 1px solid var(--dark-grey);
 
   cursor: pointer;
 `;

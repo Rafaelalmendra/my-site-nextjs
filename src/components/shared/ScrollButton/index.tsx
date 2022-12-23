@@ -35,7 +35,7 @@ export const ScrollButton = () => {
       onClick={scrollButtonTop}
       style={{ display: visible ? "flex" : "none" }}
     >
-      <ArrowUp size={24} />
+      <ArrowUp size={24} color="var(--white)" />
     </S.Container>
   );
 };

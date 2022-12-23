@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const LocalesContainer = styled.div`
-  position: relative;
   display: flex;
   align-items: center;
 
@@ -16,10 +15,9 @@ export const LocalesContainer = styled.div`
 
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-
-    margin-top: 7.675rem;
-    padding: 0.75rem 1rem;
+    gap: 0.5rem;
+    top: -46px;
+    padding: 8px 12px;
 
     border-radius: 0.5rem;
     background: ${(props) => props.theme.text};

@@ -5,24 +5,19 @@ import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import { motion } from "framer-motion";
 
+//mocks
+import { languages } from "mocks";
+
 //styles
 import * as S from "./styles";
+
+//icons
+import { CaretDown, CaretUp } from "phosphor-react";
 
 interface LanguageProps {
   name: string;
   image: string;
 }
-
-const languages = [
-  {
-    name: "pt",
-    image: "/images/flags/pt-flag.png",
-  },
-  {
-    name: "en",
-    image: "/images/flags/en-flag.png",
-  },
-];
 
 export const Locales = () => {
   const { i18n } = useTranslation();
@@ -55,15 +50,15 @@ export const Locales = () => {
       </S.ImageFlagContainer>
 
       {!openFlags ? (
-        <i className="bi bi-caret-down-fill" />
+        <CaretDown size={22} weight="bold" />
       ) : (
-        <i className="bi bi-caret-up-fill" />
+        <CaretUp size={22} weight="bold" />
       )}
 
       {openFlags && (
         <motion.div
           className="locales-open-container"
-          initial={{ opacity: 0, y: -40 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ type: "spring", duration: 0.4 }}
         >

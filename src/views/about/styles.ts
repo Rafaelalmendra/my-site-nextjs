@@ -100,7 +100,7 @@ export const ImageContainer = styled.div`
 export const Divider = styled.div`
   width: 100%;
   height: 1px;
-  background: #242a32;
+  background: var(--dark-grey);
   margin: 1.375rem 0;
 `;
 
