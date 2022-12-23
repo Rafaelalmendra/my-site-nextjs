@@ -44,15 +44,25 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
         <Link href="/">
           <a>
             <div className="logo-container">
-              <Image
-                src={
-                  cookies.userTheme === "dark"
-                    ? "/images/logo-dark-mode.svg"
-                    : "/images/logo.svg"
-                }
-                alt="Logo Rafael Almendra"
-                layout="fill"
-              />
+              {!cookies?.userTheme && (
+                <Image
+                  src="/images/logo-dark-mode.svg"
+                  alt="Logo Rafael Almendra"
+                  layout="fill"
+                />
+              )}
+
+              {cookies?.userTheme && (
+                <Image
+                  src={
+                    cookies.userTheme === "dark"
+                      ? "/images/logo-dark-mode.svg"
+                      : "/images/logo.svg"
+                  }
+                  alt="Logo Rafael Almendra"
+                  layout="fill"
+                />
+              )}
             </div>
           </a>
         </Link>
