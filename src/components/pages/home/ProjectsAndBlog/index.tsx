@@ -43,7 +43,7 @@ export const ProjectsAndBlog = ({ projects, postsBlog }) => {
 
       {active === t("projects") && (
         <S.CardList>
-          {projects?.slice(0, 3)?.map((project: ProjectProps) => (
+          {projects?.map((project: ProjectProps) => (
             <Card
               key={project?.id}
               image={project?.image?.url}
@@ -57,7 +57,7 @@ export const ProjectsAndBlog = ({ projects, postsBlog }) => {
 
       {active === "Blog" && (
         <S.CardList>
-          {postsBlog?.slice(0, 3)?.map((post: BlogPost) => (
+          {postsBlog?.map((post: BlogPost) => (
             <Card
               blog
               key={post?.slug}

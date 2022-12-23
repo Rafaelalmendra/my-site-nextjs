@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslation } from "next-i18next";
 
 //types
 import { CardProps } from "types";
@@ -9,7 +10,6 @@ import * as S from "./styles";
 
 //icons
 import { ArrowRight } from "phosphor-react";
-import { useTranslation } from "next-i18next";
 
 export const Card = ({
   title,
@@ -29,7 +29,13 @@ export const Card = ({
         <a href={link} target="_blank" rel="noreferrer">
           <S.Container>
             <S.ImageContainer>
-              <Image src={image} alt="" layout="fill" />
+              <Image
+                src={image}
+                alt={title}
+                layout="fill"
+                placeholder="blur"
+                blurDataURL={image}
+              />
             </S.ImageContainer>
 
             <S.Content>
@@ -48,7 +54,13 @@ export const Card = ({
           <a>
             <S.ContainerBlog>
               <S.ImageContainerBlog>
-                <Image src={image} alt="" layout="fill" />
+                <Image
+                  src={image}
+                  alt={title}
+                  layout="fill"
+                  placeholder="blur"
+                  blurDataURL={image}
+                />
               </S.ImageContainerBlog>
 
               <S.ContentBlog>

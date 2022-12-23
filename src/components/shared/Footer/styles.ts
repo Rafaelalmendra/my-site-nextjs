@@ -9,7 +9,11 @@ export const Container = styled.div`
   justify-content: center;
   background: var(--dark-grey);
 
-  padding: 0 32px;
+  padding: 0 2rem;
+
+  @media (max-width: 850px) {
+    padding: 0 1.25rem;
+  }
 `;
 
 export const Content = styled.div`

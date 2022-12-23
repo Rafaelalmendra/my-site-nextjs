@@ -8,7 +8,7 @@ export const Container = styled.div`
   padding-top: 3.6rem;
 
   @media (max-width: 850px) {
-    padding-top: 1.5rem;
+    padding: 1.5rem 0;
   }
 
   h1 {

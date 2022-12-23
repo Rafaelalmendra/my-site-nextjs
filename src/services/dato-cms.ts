@@ -26,6 +26,25 @@ const fetchAPI = async (query, { variables }: any = {}) => {
   return json.data;
 };
 
+const getRecentProjects = async () => {
+  const data = await fetchAPI(`
+    {
+      allProjects(first: 3) {
+        id
+        image {
+          url
+          alt
+        }
+        title
+        description
+        deploy
+      }
+    }
+  `);
+
+  return data.allProjects;
+};
+
 const getProjects = async () => {
   const data = await fetchAPI(`
     {
@@ -49,6 +68,28 @@ const getProjects = async () => {
   `);
 
   return data.allProjects;
+};
+
+const getRecentsPostsBlog = async () => {
+  const data = await fetchAPI(`
+    {
+      allPosts(first: 3) {
+        slug
+        thumbnail {
+          url
+          alt
+        }
+        technologies {
+          technologie
+        }
+        author
+        date
+        title
+      }
+    }
+  `);
+
+  return data.allPosts;
 };
 
 const getAllPostsBlog = async () => {
@@ -107,4 +148,10 @@ const getFullPostBlog = async (slug) => {
   return data.allPosts[0];
 };
 
-export { getProjects, getAllPostsBlog, getFullPostBlog };
+export {
+  getRecentProjects,
+  getProjects,
+  getRecentsPostsBlog,
+  getAllPostsBlog,
+  getFullPostBlog,
+};

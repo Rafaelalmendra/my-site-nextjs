@@ -16,7 +16,11 @@ export const NavbarContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 32px;
+  padding: 2rem;
+
+  @media (max-width: 850px) {
+    padding: 1.25rem;
+  }
 `;
 
 export const NavigationContainer = styled.div`

@@ -5,7 +5,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { HeadSeo } from "components";
 
 //services
-import { getProjects, getAllPostsBlog } from "services";
+import { getRecentProjects, getRecentsPostsBlog } from "services";
 
 //types
 import { BlogPost, ProjectProps } from "types";
@@ -34,8 +34,8 @@ const Home: NextPage<HomeProps> = ({ projects, postsBlog }) => {
 export default Home;
 
 export async function getStaticProps({ locale }) {
-  const projects = await getProjects();
-  const postsBlog = await getAllPostsBlog();
+  const projects = await getRecentProjects();
+  const postsBlog = await getRecentsPostsBlog();
 
   return {
     props: {

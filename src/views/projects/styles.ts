@@ -9,6 +9,10 @@ export const Container = styled.div`
   align-items: center;
 
   padding-top: 3.6rem;
+
+  @media (max-width: 850px) {
+    padding: 1.5rem 0;
+  }
 `;
 
 export const TitleProjects = styled.div`

@@ -33,9 +33,11 @@ export const AboutView = () => {
           <S.ImageContainer>
             <div className="profile">
               <Image
+                layout="fill"
                 src="/images/profile.svg"
                 alt="Imagem de perfil Rafael Almendra"
-                layout="fill"
+                placeholder="blur"
+                blurDataURL="/images/profile.svg"
               />
             </div>
           </S.ImageContainer>
