@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useTranslation } from "react-i18next";
 
 //components
-import { Layout, Comments, Author, DividerTwo, Button } from "components";
+import { Layout, Comments, Author, Button } from "components";
 
 //styles
 import * as S from "./styles";
@@ -44,7 +44,7 @@ export const PostView = ({ postBlog }) => {
 
         <S.Content dangerouslySetInnerHTML={{ __html: postBlog?.content }} />
 
-        <DividerTwo />
+        <S.Divider />
 
         <Comments />
 

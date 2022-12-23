@@ -5,12 +5,12 @@ export const Container = styled.main`
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  padding-top: 3.6rem;
 
   @media (max-width: 850px) {
     flex-direction: column;
     justify-content: flex-start;
-    margin-top: 1.4rem;
+    padding-top: 1.5rem;
   }
 `;
 

@@ -5,11 +5,12 @@ export const Container = styled.div`
 
   display: flex;
   flex-direction: column;
+  padding-top: 3.6rem;
 
   @media (max-width: 850px) {
     flex-direction: column;
     justify-content: center;
-    margin-top: 1.4rem;
+    padding-top: 1.5rem;
   }
 `;
 
@@ -17,7 +18,6 @@ export const Header = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 3.6rem;
 
   @media (max-width: 850px) {
     flex-direction: column;

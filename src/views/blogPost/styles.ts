@@ -5,8 +5,11 @@ export const Container = styled.div`
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
+
+  @media (max-width: 850px) {
+    padding-top: 1.5rem;
+  }
 
   h1 {
     font-size: 2.8rem;
@@ -122,4 +125,11 @@ export const Content = styled.div`
       width: 100%;
     }
   }
+`;
+
+export const Divider = styled.div`
+  width: 100%;
+  height: 1px;
+  margin: 1.5rem 0;
+  background: var(--grey);
 `;

@@ -16,7 +16,7 @@ export const ProjectsView = ({ projects }) => {
     <Layout>
       <S.Container>
         <S.TitleProjects>
-          <h2>{t("projects")}</h2>
+          <h1>{t("projects")}</h1>
 
           <ul>
             {projects?.map((project: ProjectProps) => (

@@ -23,12 +23,12 @@ export const TitleProjects = styled.div`
     justify-content: flex-start;
   }
 
-  h2 {
+  h1 {
     font-size: 2.4rem;
     font-weight: 600;
 
     @media (max-width: 850px) {
-      font-size: 1.6rem;
+      font-size: 2rem;
     }
   }
 

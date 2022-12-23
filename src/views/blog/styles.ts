@@ -4,13 +4,21 @@ export const Container = styled.div`
   min-height: calc(100vh - 120px);
 
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  padding-top: 3.6rem;
+
+  @media (max-width: 850px) {
+    padding-top: 1.5rem;
+  }
 
   h1 {
     font-weight: 600;
     font-size: 2.375rem;
     margin-bottom: 1.5rem;
+
+    @media (max-width: 850px) {
+      font-size: 2rem;
+    }
   }
 `;
 
@@ -21,10 +29,7 @@ export const ContainerCards = styled.main`
   grid-gap: 2.625rem;
 
   @media (max-width: 850px) {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 4rem;
+    grid-template-columns: 1fr;
   }
 
   a {

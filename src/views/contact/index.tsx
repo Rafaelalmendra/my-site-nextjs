@@ -54,7 +54,7 @@ export const ContactView = () => {
         />
 
         <S.FormContainer>
-          <h1>{t("sendMessage")}</h1>
+          <h1>{t("contact")}</h1>
 
           <S.FormContent>
             <form onSubmit={handleSubmit(onSubmit)}>
