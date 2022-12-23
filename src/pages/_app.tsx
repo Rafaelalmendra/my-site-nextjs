@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { appWithTranslation } from "next-i18next";
 import { ThemeProvider } from "styled-components";
-import { ApolloProvider } from "@apollo/client";
 import { parseCookies, setCookie } from "nookies";
 import { SkeletonTheme } from "react-loading-skeleton";
 import { ToastContainer } from "react-toastify";
