@@ -14,12 +14,13 @@ export const Footer = () => {
       <S.Content>
         <Link href="/">
           <a>
-            <Image
-              src="/images/logo-dark-mode.svg"
-              alt="Logo Rafael Almendra"
-              width={34}
-              height={34}
-            />
+            <div className="logo-container">
+              <Image
+                src="/images/logo-dark-mode.svg"
+                alt="Logo Rafael Almendra"
+                layout="fill"
+              />
+            </div>
           </a>
         </Link>
 

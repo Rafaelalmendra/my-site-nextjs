@@ -43,16 +43,17 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
       <S.NavbarContent>
         <Link href="/">
           <a>
-            <Image
-              src={
-                cookies.userTheme === "dark"
-                  ? "/images/logo-dark-mode.svg"
-                  : "/images/logo.svg"
-              }
-              alt="Logo Rafael Almendra"
-              width={38}
-              height={38}
-            />
+            <div className="logo-container">
+              <Image
+                src={
+                  cookies.userTheme === "dark"
+                    ? "/images/logo-dark-mode.svg"
+                    : "/images/logo.svg"
+                }
+                alt="Logo Rafael Almendra"
+                layout="fill"
+              />
+            </div>
           </a>
         </Link>
 

@@ -21,6 +21,16 @@ export const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  .logo-container {
+    position: relative;
+    width: 34px;
+    height: 34px;
+
+    img {
+      object-fit: contain;
+    }
+  }
 `;
 
 export const LanguageAndSocials = styled.div`

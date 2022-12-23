@@ -21,6 +21,16 @@ export const NavbarContent = styled.div`
   @media (max-width: 850px) {
     padding: 1.25rem;
   }
+
+  .logo-container {
+    position: relative;
+    width: 38px;
+    height: 38px;
+
+    img {
+      object-fit: contain;
+    }
+  }
 `;
 
 export const NavigationContainer = styled.div`
