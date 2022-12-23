@@ -9,13 +9,18 @@ export const Container = styled.main`
 
   @media (max-width: 850px) {
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     margin-top: 1.4rem;
   }
 `;
 
 export const Header = styled.div`
   margin-bottom: 2rem;
+
+  @media (max-width: 850px) {
+    display: flex;
+    flex-direction: column;
+  }
 
   h2 {
     font-weight: 600;
@@ -37,7 +42,7 @@ export const Header = styled.div`
 
     @media (max-width: 850px) {
       width: 90%;
-      text-align: center;
+      text-align: left;
       font-size: 0.875rem;
       line-height: 1.4rem;
     }
@@ -50,19 +55,6 @@ export const Header = styled.div`
   button:hover {
     svg {
       transform: translateX(0.4rem);
-    }
-  }
-
-  @media (max-width: 850px) {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-
-    text-align: center;
-
-    p {
-      max-width: 25rem;
     }
   }
 `;

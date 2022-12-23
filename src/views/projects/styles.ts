@@ -20,7 +20,7 @@ export const TitleProjects = styled.div`
   margin-bottom: 2rem;
 
   @media (max-width: 850px) {
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   h2 {

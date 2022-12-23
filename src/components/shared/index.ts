@@ -1,6 +1,5 @@
 export * from "./ScrollButton";
 export * from "./Button";
-export * from "./Dividers";
 export * from "./HeadSeo";
 export * from "./Layout";
 export * from "./LoadingScreen";

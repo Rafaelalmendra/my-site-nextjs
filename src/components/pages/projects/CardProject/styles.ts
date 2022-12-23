@@ -9,6 +9,10 @@ export const ProjectContainer = styled.div`
   flex-direction: column;
   margin-bottom: 3rem;
 
+  @media (max-width: 850px) {
+    margin-bottom: 1rem;
+  }
+
   &:last-child {
     margin-bottom: 0;
   }

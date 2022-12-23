@@ -1,8 +1,10 @@
 import { useState } from "react";
-import Image from "next/image";
 
 //styles
 import * as S from "./styles";
+
+//icons
+import { ArrowUp } from "phosphor-react";
 
 export const ScrollButton = () => {
   const [visible, setVisible] = useState<boolean>(false);
@@ -29,18 +31,11 @@ export const ScrollButton = () => {
   }
 
   return (
-    <S.Container>
-      <button
-        onClick={scrollButtonTop}
-        style={{ display: visible ? "inline" : "none" }}
-      >
-        <Image
-          src={"/images/top.svg"}
-          alt="Botão de voltar ao topo"
-          width={50}
-          height={50}
-        />
-      </button>
+    <S.Container
+      onClick={scrollButtonTop}
+      style={{ display: visible ? "flex" : "none" }}
+    >
+      <ArrowUp size={24} />
     </S.Container>
   );
 };

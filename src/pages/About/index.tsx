@@ -2,20 +2,24 @@ import { NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "react-i18next";
 
+//views
+import { AboutView } from "views";
+
 //components
-import { HeadSeo, Layout } from "components";
+import { HeadSeo } from "components";
 
 const About: NextPage = () => {
   const { t } = useTranslation();
+
   return (
-    <Layout>
+    <>
       <HeadSeo
         title={`${t("aboutMe")} | Rafael Almendra`}
         content="Conheça um pouco sobre mim"
       />
 
-      <h1>About</h1>
-    </Layout>
+      <AboutView />
+    </>
   );
 };
 
