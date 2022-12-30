@@ -12,7 +12,7 @@ import * as S from "./styles";
 import { ArrowLeft } from "phosphor-react";
 
 export const PostView = ({ postBlog }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("common");
 
   return (
     <Layout paddingTop blogPost>

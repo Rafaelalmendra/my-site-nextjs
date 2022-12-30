@@ -15,7 +15,7 @@ import * as S from "./styles";
 import { ArrowUpRight } from "phosphor-react";
 
 export const ProjectsAndBlog = ({ projects, postsBlog }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("common");
   const [active, setActive] = useState<string>(t("projects"));
 
   const sections = [

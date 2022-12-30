@@ -11,7 +11,7 @@ import { technologies, career } from "mocks";
 import * as S from "./styles";
 
 export const AboutView = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("common");
 
   return (
     <Layout>

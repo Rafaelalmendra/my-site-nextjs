@@ -11,7 +11,7 @@ import * as S from "./styles";
 import { ArrowUpRight } from "phosphor-react";
 
 export const HomeView = ({ projects, postsBlog }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("common");
 
   return (
     <Layout>

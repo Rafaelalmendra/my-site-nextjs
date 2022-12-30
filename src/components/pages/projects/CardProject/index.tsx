@@ -11,7 +11,7 @@ import * as S from "./styles";
 import { FigmaLogo, GithubLogo, Globe } from "phosphor-react";
 
 export const CardProject = ({ data }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("common");
 
   return (
     <S.ProjectContainer id={data?.title}>

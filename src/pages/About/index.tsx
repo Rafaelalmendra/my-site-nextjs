@@ -9,7 +9,7 @@ import { AboutView } from "views";
 import { HeadSeo } from "components";
 
 const About: NextPage = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("common");
 
   return (
     <>

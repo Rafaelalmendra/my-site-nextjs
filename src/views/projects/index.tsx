@@ -10,7 +10,7 @@ import { ProjectProps } from "types";
 import * as S from "./styles";
 
 export const ProjectsView = ({ projects }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("common");
 
   return (
     <Layout>

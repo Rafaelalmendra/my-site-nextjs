@@ -21,7 +21,7 @@ export const Card = ({
   date,
   technologies,
 }: CardProps) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("common");
 
   return (
     <>

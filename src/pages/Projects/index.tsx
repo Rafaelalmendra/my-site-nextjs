@@ -19,7 +19,7 @@ interface ProjectsProps {
 }
 
 const Projects: NextPage<ProjectsProps> = ({ projects }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("common");
 
   return (
     <>

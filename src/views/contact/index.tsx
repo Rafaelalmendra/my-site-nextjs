@@ -17,7 +17,7 @@ interface FormDataProps {
 }
 
 export const ContactView = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("common");
   const {
     reset,
     register,
