@@ -10,6 +10,7 @@ export interface ProjectProps {
   figma: string;
   ismyproject: boolean;
   description: string;
+  shortDescription: string;
   technologies: {
     technologie: string;
   }[];

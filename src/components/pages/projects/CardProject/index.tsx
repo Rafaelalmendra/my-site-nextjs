@@ -24,7 +24,7 @@ export const CardProject = ({ data }) => {
           <a href={data?.deploy} target="_blank" rel="noopener noreferrer">
             <S.TagContainer>
               <Tag
-                text={data.ismyproject ? t("authorial") : t("course")}
+                text={data.ismyproject ? t("authorial") : t("client")}
                 color={data.ismyproject ? "var(--blue)" : "var(--yellow)"}
               />
             </S.TagContainer>
@@ -47,6 +47,13 @@ export const CardProject = ({ data }) => {
         <S.NameAndDescription>
           <div>
             <h3>{data?.title}</h3>
+            {data?.technologies && (
+              <S.Techs>
+                {data?.technologies?.map((tech, index) => (
+                  <span key={index}>{tech?.technologie}</span>
+                ))}
+              </S.Techs>
+            )}
           </div>
           <S.Description
             dangerouslySetInnerHTML={{ __html: data?.description }}
@@ -55,14 +62,6 @@ export const CardProject = ({ data }) => {
       )}
 
       <S.Details>
-        {data?.technologies && (
-          <S.Techs>
-            {data?.technologies?.map((tech, index) => (
-              <span key={index}>{tech?.technologie}</span>
-            ))}
-          </S.Techs>
-        )}
-
         <S.LinkAndRepository>
           {data?.deploy && (
             <a href={data?.deploy} target="_blank" rel="noopener noreferrer">

@@ -43,6 +43,6 @@ export async function getStaticProps({ locale }) {
       projects,
       postsBlog,
     },
-    revalidate: 60 * 60 * 24, // 24 hours
+    revalidate: 300000,
   };
 }

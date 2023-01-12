@@ -22,7 +22,7 @@ export const ProjectImage = styled.div`
   position: relative;
   width: 100%;
   height: 431px;
-  border-radius: 10px;
+  border-radius: 0.625rem;
 
   @media (max-width: 850px) {
     height: 300px;
@@ -83,9 +83,9 @@ export const TagContainer = styled.div`
 export const Details = styled.div`
   width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 1.8rem;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-top: 1.375rem;
 
   @media (max-width: 850px) {
     align-items: start;
@@ -100,6 +100,7 @@ export const Techs = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
+  margin-top: 22px;
 
   @media (max-width: 850px) {
     max-width: 100%;
@@ -130,13 +131,32 @@ export const Techs = styled.div`
   }
 `;
 
-export const Description = styled.p`
+export const Description = styled.div`
   max-width: 35.5rem;
 
   color: var(--grey);
   line-height: 1.4rem;
   text-align: justify;
-  font-size: 0.875rem;
+  font-size: 14px;
+
+  h6 {
+    color: var(--white);
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  p,
+  strong {
+    color: var(--grey);
+    line-height: 1.4rem;
+    text-align: justify;
+    font-size: 14px;
+  }
+
+  strong {
+    color: #b8b6b6;
+    font-weight: 600;
+  }
 
   @media (max-width: 850px) {
     max-width: 100%;
@@ -163,7 +183,7 @@ export const NameAndDescription = styled.div`
 
   h3 {
     font-weight: 500;
-    font-size: var(--subtitle);
+    font-size: 1.125rem;
 
     @media (max-width: 850px) {
       font-size: var(--small-subtitle);

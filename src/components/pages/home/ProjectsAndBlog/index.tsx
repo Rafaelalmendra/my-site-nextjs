@@ -48,7 +48,7 @@ export const ProjectsAndBlog = ({ projects, postsBlog }) => {
               key={project?.id}
               image={project?.image?.url}
               title={project?.title}
-              description={project?.description}
+              description={project?.shortDescription}
               link={project?.deploy}
             />
           ))}

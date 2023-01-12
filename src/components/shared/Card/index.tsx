@@ -42,7 +42,7 @@ export const Card = ({
               <h6>{title}</h6>
               <p>{description}</p>
               <p className="link">
-                letmeask-efccf.web.app <ArrowRight size={22} />
+                {link} <ArrowRight size={22} />
               </p>
             </S.Content>
           </S.Container>

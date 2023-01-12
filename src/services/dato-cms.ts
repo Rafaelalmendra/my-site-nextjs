@@ -36,7 +36,7 @@ const getRecentProjects = async () => {
           alt
         }
         title
-        description
+        shortDescription
         deploy
       }
     }
