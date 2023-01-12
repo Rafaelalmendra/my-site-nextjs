@@ -140,7 +140,7 @@ export const Description = styled.div`
   font-size: 14px;
 
   h6 {
-    color: var(--white);
+    color: ${(props) => props.theme.text};
     font-weight: 500;
     font-size: 16px;
   }
