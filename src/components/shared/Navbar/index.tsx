@@ -73,7 +73,11 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
           <ThemeNavbar toggleTheme={toggleTheme} />
 
           {isMobile && !open && (
-            <List size={28} onClick={() => setOpen(!open)} />
+            <List
+              size={28}
+              onClick={() => setOpen(!open)}
+              style={{ marginLeft: "1.125rem" }}
+            />
           )}
 
           {isMobile && open && <MobileLinks closeMenu={() => setOpen(!open)} />}

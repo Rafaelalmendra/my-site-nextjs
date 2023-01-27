@@ -19,7 +19,7 @@ export const ThemeNavbar = ({ toggleTheme }: NavbarProps) => {
       )}
 
       {!cookies.userTheme && (
-        <i onClick={toggleTheme} className="bi bi-moon-fill" />
+        <Moon onClick={toggleTheme} size={28} weight="fill" />
       )}
     </>
   );
