@@ -158,6 +158,15 @@ export const Description = styled.div`
     font-weight: 600;
   }
 
+  a {
+    color: var(--white);
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: var(--blue);
+    }
+  }
+
   @media (max-width: 850px) {
     max-width: 100%;
 
