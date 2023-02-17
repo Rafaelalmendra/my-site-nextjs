@@ -114,7 +114,7 @@ const getAllPostsBlog = async () => {
   return data.allPosts;
 };
 
-const getFullPostBlog = async (slug) => {
+const getFullPostBlog = async (slug: string) => {
   const data = await fetchAPI(
     `
     query singlePost($slug: String!) {

@@ -40,7 +40,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params, locale }) {
-  const postBlog = await getFullPostBlog(params.slug);
+  const postBlog = await getFullPostBlog(params?.slug);
 
   return {
     props: {
