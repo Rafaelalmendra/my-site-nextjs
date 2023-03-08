@@ -25,11 +25,13 @@ export const CardProject = ({
 }: ProjectProps) => {
   const { t } = useTranslation("common");
 
+  console.log("image", image);
+
   return (
     <S.ProjectContainer id={title}>
-      {!!image?.url ? (
-        <a href={deploy} target="_blank" rel="noopener noreferrer">
-          <S.ProjectImage>
+      {!!image.url ? (
+        <S.ProjectImage>
+          <a href={deploy} target="_blank" rel="noopener noreferrer">
             <S.TagContainer>
               <Tag
                 text={ismyproject ? t("authorial") : t("client")}
@@ -43,8 +45,8 @@ export const CardProject = ({
               </p>
             </div>
             <Image src={image?.url} alt={image?.alt} layout="fill" />
-          </S.ProjectImage>
-        </a>
+          </a>
+        </S.ProjectImage>
       ) : (
         <S.NoImage>
           <p>{t("noImage")}</p>

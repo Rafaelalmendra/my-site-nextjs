@@ -15,6 +15,7 @@ interface ProjectsProps {
 
 export const ProjectsView = ({ data }: ProjectsProps) => {
   const { t } = useTranslation("common");
+  console.log(data);
 
   return (
     <Layout>
