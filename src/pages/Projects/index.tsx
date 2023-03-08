@@ -2,16 +2,16 @@ import { NextPage } from "next";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-//components
+// components
 import { HeadSeo } from "components";
 
-//services
+// services
 import { getProjects } from "services";
 
-//types
+// types
 import { ProjectProps } from "types";
 
-//views
+// views
 import { ProjectsView } from "views";
 
 interface ProjectsProps {
@@ -28,7 +28,7 @@ const Projects: NextPage<ProjectsProps> = ({ projects }) => {
         content="Conheça alguns dos meus projetos"
       />
 
-      <ProjectsView projects={projects} />
+      <ProjectsView data={projects} />
     </>
   );
 };
@@ -36,7 +36,7 @@ const Projects: NextPage<ProjectsProps> = ({ projects }) => {
 export default Projects;
 
 export async function getStaticProps({ locale }) {
-  const projects = await getProjects();
+  const projects: ProjectProps[] = await getProjects();
 
   return {
     props: {

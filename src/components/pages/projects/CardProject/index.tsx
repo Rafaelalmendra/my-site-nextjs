@@ -1,31 +1,39 @@
 import Image from "next/image";
 import { useTranslation } from "next-i18next";
 
-//components
+// components
 import { Tag } from "components";
 
-//styles
+// types
+import { ProjectProps } from "types";
+
+// styles
 import * as S from "./styles";
 
-//icons
+// icons
 import { FigmaLogo, GithubLogo, Globe } from "phosphor-react";
 
-export const CardProject = ({ data }) => {
+export const CardProject = ({
+  title,
+  image,
+  ismyproject,
+  technologies,
+  description,
+  github,
+  figma,
+  deploy,
+}: ProjectProps) => {
   const { t } = useTranslation("common");
 
   return (
-    <S.ProjectContainer id={data?.title}>
-      {!data?.image?.url ? (
-        <S.NoImage>
-          <p>{t("noImage")}</p>
-        </S.NoImage>
-      ) : (
-        <S.ProjectImage>
-          <a href={data?.deploy} target="_blank" rel="noopener noreferrer">
+    <S.ProjectContainer id={title}>
+      {!!image?.url ? (
+        <a href={deploy} target="_blank" rel="noopener noreferrer">
+          <S.ProjectImage>
             <S.TagContainer>
               <Tag
-                text={data.ismyproject ? t("authorial") : t("client")}
-                color={data.ismyproject ? "var(--blue)" : "var(--yellow)"}
+                text={ismyproject ? t("authorial") : t("client")}
+                color={ismyproject ? "var(--blue)" : "var(--yellow)"}
               />
             </S.TagContainer>
 
@@ -34,49 +42,47 @@ export const CardProject = ({ data }) => {
                 {t("acessDeploy")} <Globe size={28} />
               </p>
             </div>
-            <Image
-              src={data?.image?.url}
-              alt={data?.image?.alt}
-              layout="fill"
-            />
-          </a>
-        </S.ProjectImage>
+            <Image src={image?.url} alt={image?.alt} layout="fill" />
+          </S.ProjectImage>
+        </a>
+      ) : (
+        <S.NoImage>
+          <p>{t("noImage")}</p>
+        </S.NoImage>
       )}
 
-      {data?.title && (
+      {!!title && (
         <S.NameAndDescription>
           <div>
-            <h3>{data?.title}</h3>
-            {data?.technologies && (
+            <h3>{title}</h3>
+            {technologies && (
               <S.Techs>
-                {data?.technologies?.map((tech, index) => (
+                {technologies?.map((tech, index) => (
                   <span key={index}>{tech?.technologie}</span>
                 ))}
               </S.Techs>
             )}
           </div>
-          <S.Description
-            dangerouslySetInnerHTML={{ __html: data?.description }}
-          />
+          <S.Description dangerouslySetInnerHTML={{ __html: description }} />
         </S.NameAndDescription>
       )}
 
       <S.Details>
         <S.LinkAndRepository>
-          {data?.deploy && (
-            <a href={data?.deploy} target="_blank" rel="noopener noreferrer">
+          {!!deploy && (
+            <a href={deploy} target="_blank" rel="noopener noreferrer">
               <Globe size={28} />
             </a>
           )}
 
-          {data?.github && (
-            <a href={data?.github} target="_blank" rel="noopener noreferrer">
+          {!!github && (
+            <a href={github} target="_blank" rel="noopener noreferrer">
               <GithubLogo size={28} weight="fill" />
             </a>
           )}
 
-          {data?.figma && (
-            <a href={data?.figma} target="_blank" rel="noopener noreferrer">
+          {!!figma && (
+            <a href={figma} target="_blank" rel="noopener noreferrer">
               <FigmaLogo size={28} />
             </a>
           )}

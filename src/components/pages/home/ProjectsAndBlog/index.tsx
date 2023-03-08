@@ -14,7 +14,12 @@ import * as S from "./styles";
 //icons
 import { ArrowUpRight } from "phosphor-react";
 
-export const ProjectsAndBlog = ({ projects, postsBlog }) => {
+interface HomeViewProps {
+  projects: ProjectProps[];
+  postsBlog: BlogPost[];
+}
+
+export const ProjectsAndBlog = ({ projects, postsBlog }: HomeViewProps) => {
   const { t } = useTranslation("common");
   const [active, setActive] = useState<string>(t("projects"));
 
@@ -43,7 +48,7 @@ export const ProjectsAndBlog = ({ projects, postsBlog }) => {
 
       {active === t("projects") && (
         <S.CardList>
-          {projects?.map((project: ProjectProps) => (
+          {projects?.map((project) => (
             <Card
               key={project?.id}
               image={project?.image?.url}
@@ -57,7 +62,7 @@ export const ProjectsAndBlog = ({ projects, postsBlog }) => {
 
       {active === "Blog" && (
         <S.CardList>
-          {postsBlog?.map((post: BlogPost) => (
+          {postsBlog?.map((post) => (
             <Card
               blog
               key={post?.slug}

@@ -1,16 +1,24 @@
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
 
-//components
+// components
 import { Layout, Button, ProjectsAndBlog } from "components";
 
-//styles
+// types
+import { BlogPost, ProjectProps } from "types";
+
+// styles
 import * as S from "./styles";
 
-//icons
+// icons
 import { ArrowUpRight } from "phosphor-react";
 
-export const HomeView = ({ projects, postsBlog }) => {
+interface HomeViewProps {
+  projects: ProjectProps[];
+  postsBlog: BlogPost[];
+}
+
+export const HomeView = ({ projects, postsBlog }: HomeViewProps) => {
   const { t } = useTranslation("common");
 
   return (
