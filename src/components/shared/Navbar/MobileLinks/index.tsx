@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 
-//components
+// components
 import { Links } from "../Links";
 
-//styles
+// styles
 import * as S from "./styles";
 
-//icons
+// icons
 import { X } from "phosphor-react";
 
 interface MobileLinksProps {

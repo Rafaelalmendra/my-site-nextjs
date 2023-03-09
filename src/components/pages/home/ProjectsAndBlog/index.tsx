@@ -2,16 +2,19 @@ import { useState } from "react";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
 
-//components
+// components
 import { Button, Card } from "components";
 
-//types
+// mocks
+import { HomeSectionsMock } from "mocks";
+
+// types
 import { ProjectProps, BlogPost } from "types";
 
-//styles
+// styles
 import * as S from "./styles";
 
-//icons
+// icons
 import { ArrowUpRight } from "phosphor-react";
 
 interface HomeViewProps {
@@ -21,16 +24,8 @@ interface HomeViewProps {
 
 export const ProjectsAndBlog = ({ projects, postsBlog }: HomeViewProps) => {
   const { t } = useTranslation("common");
+  const { sections } = HomeSectionsMock();
   const [active, setActive] = useState<string>(t("projects"));
-
-  const sections = [
-    {
-      title: t("projects"),
-    },
-    {
-      title: "Blog",
-    },
-  ];
 
   return (
     <S.Container>

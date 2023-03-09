@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-//mocks
+// mocks
 import { LinksNavbar } from "mocks";
 
-//styles
+// styles
 import * as S from "./styles";
 
 interface LiProps {

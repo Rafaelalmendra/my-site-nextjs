@@ -1,11 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 
-//components
+// components
 import { Locales } from "../Locales";
 
-//styles
+// styles
 import * as S from "./styles";
+
+// icons
 import { GithubLogo, LinkedinLogo } from "phosphor-react";
 
 export const Footer = () => {

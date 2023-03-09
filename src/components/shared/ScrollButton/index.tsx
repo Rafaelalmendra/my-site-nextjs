@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-//styles
+// styles
 import * as S from "./styles";
 
-//icons
+// icons
 import { ArrowUp } from "phosphor-react";
 
 export const ScrollButton = () => {
-  const [visible, setVisible] = useState<boolean>(false);
+  const [visible, setVisible] = useState(false);
 
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;

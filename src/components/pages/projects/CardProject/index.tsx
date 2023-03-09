@@ -25,8 +25,6 @@ export const CardProject = ({
 }: ProjectProps) => {
   const { t } = useTranslation("common");
 
-  console.log("image", image);
-
   return (
     <S.ProjectContainer id={title}>
       {!!image.url ? (

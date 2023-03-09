@@ -1,16 +1,16 @@
 import { NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-//components
+// components
 import { HeadSeo } from "components";
 
-//types
+// types
 import { BlogPostData } from "types";
 
-//services
+// services
 import { getFullPostBlog } from "services";
 
-//views
+// views
 import { PostView } from "views";
 
 interface PostProps {

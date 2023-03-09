@@ -1,6 +1,6 @@
 import { ClipLoader } from "react-spinners";
 
-//styles
+// styles
 import * as S from "./styles";
 
 interface ButtonProps {
@@ -44,6 +44,7 @@ export const Button = ({
           className="loading-spinner"
         />
       )}
+
       {children}
     </S.ButtonContainer>
   );

@@ -2,13 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { useTranslation } from "next-i18next";
 
-//types
+// types
 import { CardProps } from "types";
 
-//styles
+// styles
 import * as S from "./styles";
 
-//icons
+// icons
 import { ArrowRight } from "phosphor-react";
 
 export const Card = ({
@@ -49,7 +49,7 @@ export const Card = ({
         </a>
       )}
 
-      {blog && (
+      {!!blog && (
         <Link href={`/Blog/${link}`}>
           <a>
             <S.ContainerBlog>
@@ -65,6 +65,7 @@ export const Card = ({
 
               <S.ContentBlog>
                 <h6>{title}</h6>
+
                 <S.AuthorAndDate>
                   <p>
                     {t("by")} {author}

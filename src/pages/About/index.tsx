@@ -2,10 +2,10 @@ import { NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "react-i18next";
 
-//views
+// views
 import { AboutView } from "views";
 
-//components
+// components
 import { HeadSeo } from "components";
 
 const About: NextPage = () => {

@@ -1,6 +1,6 @@
 import Skeleton from "react-loading-skeleton";
 
-//styles
+// styles
 import * as S from "./styles";
 
 export const HeaderProjectsSkeleton = () => {

@@ -1,4 +1,4 @@
-//styles
+// styles
 import * as S from "./styles";
 
 interface LayoutProps {

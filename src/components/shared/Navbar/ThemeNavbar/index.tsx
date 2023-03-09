@@ -1,4 +1,6 @@
 import { parseCookies } from "nookies";
+
+// icons
 import { Moon, SunDim } from "phosphor-react";
 
 interface NavbarProps {

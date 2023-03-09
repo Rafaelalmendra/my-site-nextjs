@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import Router from "next/router";
 import NProgress from "nprogress";
 
-//types
+// types
 import { ProgressBarProps } from "types";
 
 export function NextNProgress({

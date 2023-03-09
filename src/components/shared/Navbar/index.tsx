@@ -4,16 +4,16 @@ import Image from "next/image";
 import { parseCookies } from "nookies";
 import { useMediaQuery } from "react-responsive";
 
-//components
+// components
 import { Links } from "./Links";
 import { MobileLinks } from "./MobileLinks";
 
-//styles
+// styles
 import * as S from "./styles";
-
-//icons
-import { List } from "phosphor-react";
 import { ThemeNavbar } from "./ThemeNavbar";
+
+// icons
+import { List } from "phosphor-react";
 
 interface NavbarProps {
   toggleTheme: () => void;
@@ -23,8 +23,8 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
   const cookies = parseCookies();
   const isMobile = useMediaQuery({ query: "(max-width: 850px)" });
 
-  const [open, setOpen] = useState<boolean>(false);
-  const [navbar, setNavbar] = useState<boolean>(false);
+  const [open, setOpen] = useState(false);
+  const [navbar, setNavbar] = useState(false);
 
   const changeBackground = () => {
     if (window.scrollY >= 50) {
