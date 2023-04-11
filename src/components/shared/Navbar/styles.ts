@@ -36,4 +36,8 @@ export const NavbarContent = styled.div`
 export const NavigationContainer = styled.div`
   display: flex;
   gap: 1.4rem;
+
+  svg {
+    cursor: pointer;
+  }
 `;
