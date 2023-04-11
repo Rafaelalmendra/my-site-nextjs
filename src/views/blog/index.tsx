@@ -1,10 +1,10 @@
-//components
+// components
 import { Layout, Card } from "components";
 
-//types
+// types
 import { BlogPost } from "types";
 
-//styles
+// styles
 import * as S from "./styles";
 
 export const BlogView = ({ postsBlog }) => {
@@ -14,15 +14,15 @@ export const BlogView = ({ postsBlog }) => {
         <h1>Blog</h1>
 
         <S.ContainerCards>
-          {postsBlog?.map((post: BlogPost) => (
+          {postsBlog.map((post: BlogPost) => (
             <Card
               blog
-              date={post?.date}
-              title={post?.title}
-              author={post?.author}
-              image={post?.thumbnail?.url}
-              technologies={post?.technologies}
-              link={post?.slug}
+              date={post.date}
+              title={post.title}
+              author={post.author}
+              image={post.thumbnail.url}
+              technologies={post.technologies}
+              link={post.slug}
             />
           ))}
         </S.ContainerCards>

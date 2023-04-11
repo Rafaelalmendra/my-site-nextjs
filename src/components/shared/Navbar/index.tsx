@@ -16,14 +16,14 @@ import { ThemeNavbar } from "./ThemeNavbar";
 import { List } from "phosphor-react";
 
 interface NavbarProps {
-  toggleTheme: () => void;
+  handleTheme: () => void;
 }
 
-export const Navbar = ({ toggleTheme }: NavbarProps) => {
+export const Navbar = ({ handleTheme }: NavbarProps) => {
   const cookies = parseCookies();
   const isMobile = useMediaQuery({ query: "(max-width: 850px)" });
 
-  const [open, setOpen] = useState(false);
+  const [openMobileNavbar, setOpenMobileNavbar] = useState(false);
   const [navbar, setNavbar] = useState(false);
 
   const changeBackground = () => {
@@ -44,7 +44,7 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
         <Link href="/">
           <a>
             <div className="logo-container">
-              {!cookies?.userTheme && (
+              {!cookies.userTheme && (
                 <Image
                   src="/images/logo-dark-mode.svg"
                   alt="Logo Rafael Almendra"
@@ -52,7 +52,7 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
                 />
               )}
 
-              {cookies?.userTheme && (
+              {!!cookies.userTheme && (
                 <Image
                   src={
                     cookies.userTheme === "dark"
@@ -70,17 +70,21 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
         {!isMobile && <Links />}
 
         <S.NavigationContainer>
-          <ThemeNavbar toggleTheme={toggleTheme} />
+          <ThemeNavbar handleTheme={handleTheme} />
 
-          {isMobile && !open && (
+          {!!isMobile && !openMobileNavbar && (
             <List
               size={28}
-              onClick={() => setOpen(!open)}
+              onClick={() => setOpenMobileNavbar(!openMobileNavbar)}
               style={{ marginLeft: "1.125rem" }}
             />
           )}
 
-          {isMobile && open && <MobileLinks closeMenu={() => setOpen(!open)} />}
+          {!!isMobile && !!openMobileNavbar && (
+            <MobileLinks
+              closeMenu={() => setOpenMobileNavbar(!openMobileNavbar)}
+            />
+          )}
         </S.NavigationContainer>
       </S.NavbarContent>
     </S.NavbarContainer>

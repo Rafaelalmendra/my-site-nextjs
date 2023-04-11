@@ -29,7 +29,7 @@ export const Locales = () => {
   );
 
   useEffect(() => {
-    const activeLocale = locales?.find((item) => item === locale);
+    const activeLocale = locales.find((item) => item === locale);
     const activeLanguage = languages.find((item) => item.name === activeLocale);
 
     setActiveLanguage(activeLanguage);
@@ -37,7 +37,7 @@ export const Locales = () => {
 
   const handleChangeLanguage = (language: LanguageProps) => {
     setActiveLanguage(language);
-    i18n?.changeLanguage(language?.name);
+    i18n.changeLanguage(language.name);
   };
 
   return (
@@ -45,8 +45,8 @@ export const Locales = () => {
       <S.ImageFlagContainer>
         <Image
           layout="fill"
-          src={activeLanguage?.image}
-          alt={`Bandeira do ${activeLanguage?.name}`}
+          src={activeLanguage.image}
+          alt={`Bandeira do ${activeLanguage.name}`}
         />
       </S.ImageFlagContainer>
 
@@ -63,8 +63,8 @@ export const Locales = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ type: "spring", duration: 0.4 }}
         >
-          {languages?.map((language) => (
-            <Link key={language?.name} href={pathname} locale={language?.name}>
+          {languages.map((language) => (
+            <Link key={language.name} href={pathname} locale={language.name}>
               <S.Locale
                 id="language"
                 onClick={() => handleChangeLanguage(language)}
@@ -72,12 +72,12 @@ export const Locales = () => {
                 <S.FlagImage>
                   <Image
                     layout="fill"
-                    src={language?.image}
-                    alt={`Bandeira do ${language?.name}`}
+                    src={language.image}
+                    alt={`Bandeira do ${language.name}`}
                   />
                 </S.FlagImage>
 
-                <p>{language?.name}</p>
+                <p>{language.name}</p>
               </S.Locale>
             </Link>
           ))}

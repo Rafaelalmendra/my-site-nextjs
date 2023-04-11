@@ -19,7 +19,7 @@ interface HomeViewProps {
 }
 
 export const HomeView = ({ projects, postsBlog }: HomeViewProps) => {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation();
 
   return (
     <Layout>

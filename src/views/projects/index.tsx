@@ -15,7 +15,6 @@ interface ProjectsProps {
 
 export const ProjectsView = ({ data }: ProjectsProps) => {
   const { t } = useTranslation("common");
-  console.log(data);
 
   return (
     <Layout>
@@ -24,9 +23,9 @@ export const ProjectsView = ({ data }: ProjectsProps) => {
           <h1>{t("projects")}</h1>
 
           <ul>
-            {data?.map((project) => (
-              <li key={project?.id}>
-                <a href={`#${project?.title}`}>{project?.title}</a>
+            {data.map((project) => (
+              <li key={project.id}>
+                <a href={`#${project.title}`}>{project.title}</a>
               </li>
             ))}
           </ul>
@@ -34,17 +33,17 @@ export const ProjectsView = ({ data }: ProjectsProps) => {
 
         {data.map((project) => (
           <CardProject
-            key={project?.id}
-            id={project?.id}
-            image={project?.image}
-            title={project?.title}
-            description={project?.description}
-            shortDescription={project?.shortDescription}
-            ismyproject={project?.ismyproject}
-            technologies={project?.technologies}
-            deploy={project?.deploy}
-            figma={project?.figma}
-            github={project?.github}
+            key={project.id}
+            id={project.id}
+            image={project.image}
+            title={project.title}
+            description={project.description}
+            shortDescription={project.shortDescription}
+            ismyproject={project.ismyproject}
+            technologies={project.technologies}
+            deploy={project.deploy}
+            figma={project.figma}
+            github={project.github}
           />
         ))}
       </S.Container>

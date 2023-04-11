@@ -9,7 +9,7 @@ import { HeadSeo } from "components";
 import { ContactView } from "views";
 
 const Contact: NextPage = () => {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation();
 
   return (
     <>

@@ -13,7 +13,7 @@ export const CardPostSkeleton = ({ cards }: CardPostSkeletonProps) => {
       {Array(cards)
         .fill(0)
         .map((_, index) => (
-          <Skeleton className="card" />
+          <Skeleton key={index} className="card" />
         ))}
     </S.Container>
   );

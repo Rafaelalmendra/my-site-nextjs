@@ -1,57 +1,48 @@
 import { useEffect, useState } from "react";
 import { appWithTranslation } from "next-i18next";
-import { ThemeProvider } from "styled-components";
-import { parseCookies, setCookie } from "nookies";
-import { SkeletonTheme } from "react-loading-skeleton";
 import { ToastContainer } from "react-toastify";
-import TagManager from "react-gtm-module";
+import { SkeletonTheme } from "react-loading-skeleton";
 
+// theme
+import { ThemeProvider } from "styled-components";
+import { lightTheme, darkTheme } from "styles";
+
+// components
+import { Footer, Navbar, ScrollButton, NextNProgress } from "components";
+
+// types
+import { ThemeProps } from "types";
+
+// utils
+import { changeTheme, verifyTheme } from "utils";
+
+// animations
 import Aos from "aos";
 import "aos/dist/aos.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
 
-//components
-import { Footer, Navbar, ScrollButton } from "components";
-
-//styles
-import { lightTheme, darkTheme } from "styles/theme";
+// styles
 import GlobalStyle from "styles/global";
 import "react-toastify/dist/ReactToastify.css";
 import "react-loading-skeleton/dist/skeleton.css";
 
-import { NextNProgress } from "components";
-
 const MyApp = ({ Component, pageProps }) => {
-  const cookies = parseCookies();
-  const [theme, setTheme] = useState(
-    cookies.userTheme
-      ? cookies.userTheme === "light"
-        ? lightTheme
-        : darkTheme
-      : darkTheme
-  );
+  const [theme, setTheme] = useState<ThemeProps>(verifyTheme);
 
   useEffect(() => {
-    TagManager.initialize({ gtmId: "GTM-M22CJR7" });
-
     Aos.init({ duration: 700, offset: 0 });
   }, []);
 
-  const toggleTheme = () => {
-    setCookie(null, "userTheme", theme.title === "dark" ? "light" : "dark", {
-      maxAge: 30 * 24 * 60 * 60,
-      path: "/",
-    });
-
+  const handleTheme = () => {
+    changeTheme(theme);
     setTheme(theme.title === "dark" ? lightTheme : darkTheme);
   };
 
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
+      <GlobalStyle theme={theme} />
       <ToastContainer />
       <ScrollButton />
-      <Navbar toggleTheme={toggleTheme} />
+      <Navbar handleTheme={handleTheme} />
       <NextNProgress options={{ showSpinner: false }} />
       <SkeletonTheme
         baseColor={theme.title === "dark" ? "#353535" : "#e0e0e0"}

@@ -2,47 +2,56 @@ import Link from "next/link";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 
-//components
+// components
 import { Layout, Comments, Author, Button } from "components";
 
-//styles
+// types
+import { BlogPostData } from "types";
+
+// styles
 import * as S from "./styles";
 
-//icons
+// icons
 import { ArrowLeft } from "phosphor-react";
 
-export const PostView = ({ postBlog }) => {
-  const { t } = useTranslation("common");
+interface PostViewProps {
+  data: BlogPostData;
+}
+
+export const PostView = ({ data }: PostViewProps) => {
+  const { t } = useTranslation();
 
   return (
     <Layout paddingTop blogPost>
       <S.Container>
         <S.ImageContainer>
           <Image
-            src={postBlog?.thumbnail?.url}
-            alt={postBlog?.thumbnail?.alt}
+            src={data.thumbnail.url}
+            alt={data.thumbnail.alt}
             width={1920}
             height={1080}
           />
         </S.ImageContainer>
 
-        <S.Techs>
-          {postBlog?.technologies?.map((tech, index) => (
-            <span key={index} className="tech-blog">
-              {tech?.technologie}
-            </span>
-          ))}
-        </S.Techs>
+        {data.technologies.length > 0 && (
+          <S.Techs>
+            {data.technologies.map((tech, index) => (
+              <span key={index} className="tech-blog">
+                {tech.technologie}
+              </span>
+            ))}
+          </S.Techs>
+        )}
 
         <Author
-          author={postBlog?.author}
-          authorImage={postBlog?.authorImage?.url}
-          date={postBlog?.date}
+          author={data.author}
+          authorImage={data.authorImage.url}
+          date={data.date}
         />
 
-        <h1>{postBlog?.title}</h1>
+        <h1>{data.title}</h1>
 
-        <S.Content dangerouslySetInnerHTML={{ __html: postBlog?.content }} />
+        <S.Content dangerouslySetInnerHTML={{ __html: data.content }} />
 
         <S.Divider />
 

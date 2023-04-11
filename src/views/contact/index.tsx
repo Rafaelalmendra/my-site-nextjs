@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { useTranslation } from "next-i18next";
-import axios from "axios";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { toast } from "react-toastify";
+import axios from "axios";
 
-//components
+// components
 import { Button, Layout, HeadSeo } from "components";
 
-//styles
+// styles
 import * as S from "./styles";
 
 interface FormDataProps {
@@ -17,7 +17,7 @@ interface FormDataProps {
 }
 
 export const ContactView = () => {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation();
   const {
     reset,
     register,
@@ -39,7 +39,7 @@ export const ContactView = () => {
       reset();
     } catch (error) {
       console.error(error);
-      toast.error(error?.message);
+      toast.error(error.message);
     } finally {
       setLoading(false);
     }
@@ -74,7 +74,7 @@ export const ContactView = () => {
                       },
                     })}
                   />
-                  {errors?.name && <span>{errors?.name?.message}</span>}
+                  {errors.name && <span>{errors.name?.message}</span>}
                 </S.Field>
 
                 <S.Field>
@@ -91,7 +91,7 @@ export const ContactView = () => {
                     })}
                   />
 
-                  {errors?.email && <span>{errors?.email?.message}</span>}
+                  {errors.email && <span>{errors.email?.message}</span>}
                 </S.Field>
               </S.TwoFields>
 
@@ -107,7 +107,7 @@ export const ContactView = () => {
                     },
                   })}
                 />
-                {errors?.message && <span>{errors?.message?.message}</span>}
+                {errors.message && <span>{errors.message?.message}</span>}
               </S.Field>
 
               <Button type="submit" loading={loading}>

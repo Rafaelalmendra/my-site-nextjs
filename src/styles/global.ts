@@ -1,7 +1,13 @@
 import { createGlobalStyle } from "styled-components";
+
+// types
 import { ThemeProps } from "types";
 
-export default createGlobalStyle<ThemeProps>`
+interface GlobalProps {
+  theme: ThemeProps;
+}
+
+export default createGlobalStyle<GlobalProps>`
   :root {
     --blue: #32C5FF;
     --hover-blue: #2EB2E5;

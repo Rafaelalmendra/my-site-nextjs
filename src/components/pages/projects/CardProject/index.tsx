@@ -42,7 +42,7 @@ export const CardProject = ({
                 {t("acessDeploy")} <Globe size={28} />
               </p>
             </div>
-            <Image src={image?.url} alt={image?.alt} layout="fill" />
+            <Image src={image.url} alt={image.alt} layout="fill" />
           </a>
         </S.ProjectImage>
       ) : (
@@ -55,15 +55,19 @@ export const CardProject = ({
         <S.NameAndDescription>
           <div>
             <h3>{title}</h3>
-            {technologies && (
+
+            {!!technologies && (
               <S.Techs>
-                {technologies?.map((tech, index) => (
-                  <span key={index}>{tech?.technologie}</span>
+                {technologies.map((tech, index) => (
+                  <span key={index}>{tech.technologie}</span>
                 ))}
               </S.Techs>
             )}
           </div>
-          <S.Description dangerouslySetInnerHTML={{ __html: description }} />
+
+          {!!description && (
+            <S.Description dangerouslySetInnerHTML={{ __html: description }} />
+          )}
         </S.NameAndDescription>
       )}
 

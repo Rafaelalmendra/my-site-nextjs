@@ -21,7 +21,7 @@ export const Card = ({
   date,
   technologies,
 }: CardProps) => {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation();
 
   return (
     <>
@@ -40,7 +40,7 @@ export const Card = ({
 
             <S.Content>
               <h6>{title}</h6>
-              <p>{description}</p>
+              {!!description && <p>{description}</p>}
               <p className="link">
                 {link} <ArrowRight size={22} />
               </p>
@@ -66,18 +66,22 @@ export const Card = ({
               <S.ContentBlog>
                 <h6>{title}</h6>
 
-                <S.AuthorAndDate>
-                  <p>
-                    {t("by")} {author}
-                  </p>
-                  <p>{date}</p>
-                </S.AuthorAndDate>
+                {!!author && !!date && (
+                  <S.AuthorAndDate>
+                    <p>
+                      {t("by")} {author}
+                    </p>
+                    <p>{date}</p>
+                  </S.AuthorAndDate>
+                )}
 
-                <S.TechListBlog>
-                  {technologies?.map((tech, index) => (
-                    <S.Tech key={index}>{tech?.technologie}</S.Tech>
-                  ))}
-                </S.TechListBlog>
+                {technologies?.length > 0 && (
+                  <S.TechListBlog>
+                    {technologies?.map((tech, index) => (
+                      <S.Tech key={index}>{tech?.technologie}</S.Tech>
+                    ))}
+                  </S.TechListBlog>
+                )}
               </S.ContentBlog>
             </S.ContainerBlog>
           </a>

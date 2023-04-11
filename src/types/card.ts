@@ -3,7 +3,6 @@ export interface CardProps {
   title: string;
   description?: string;
   link: string;
-
   blog?: boolean;
   author?: string;
   date?: string;

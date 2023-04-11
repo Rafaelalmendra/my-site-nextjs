@@ -23,18 +23,19 @@ interface HomeViewProps {
 }
 
 export const ProjectsAndBlog = ({ projects, postsBlog }: HomeViewProps) => {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation();
   const { sections } = HomeSectionsMock();
+
   const [active, setActive] = useState<string>(t("projects"));
 
   return (
     <S.Container>
       <S.Header>
-        {sections?.map((section) => (
+        {sections.map((section) => (
           <S.TitleSection
-            key={section?.title}
-            active={section?.title === active}
-            onClick={() => setActive(section?.title)}
+            key={section.title}
+            active={section.title === active}
+            onClick={() => setActive(section.title)}
           >
             {section?.title}
           </S.TitleSection>
@@ -43,13 +44,13 @@ export const ProjectsAndBlog = ({ projects, postsBlog }: HomeViewProps) => {
 
       {active === t("projects") && (
         <S.CardList>
-          {projects?.map((project) => (
+          {projects.map((project) => (
             <Card
-              key={project?.id}
-              image={project?.image?.url}
-              title={project?.title}
-              description={project?.shortDescription}
-              link={project?.deploy}
+              key={project.id}
+              image={project.image.url}
+              title={project.title}
+              description={project.shortDescription}
+              link={project.deploy}
             />
           ))}
         </S.CardList>
@@ -57,16 +58,16 @@ export const ProjectsAndBlog = ({ projects, postsBlog }: HomeViewProps) => {
 
       {active === "Blog" && (
         <S.CardList>
-          {postsBlog?.map((post) => (
+          {postsBlog.map((post) => (
             <Card
               blog
-              key={post?.slug}
-              image={post?.thumbnail?.url}
-              title={post?.title}
-              author={post?.author}
-              date={post?.date}
-              link={post?.slug}
-              technologies={post?.technologies}
+              key={post.slug}
+              image={post.thumbnail.url}
+              title={post.title}
+              author={post.author}
+              date={post.date}
+              link={post.slug}
+              technologies={post.technologies}
             />
           ))}
         </S.CardList>

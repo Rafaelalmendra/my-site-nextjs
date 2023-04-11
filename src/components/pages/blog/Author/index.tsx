@@ -1,3 +1,4 @@
+import { useTranslation } from "next-i18next";
 import Image from "next/image";
 
 // styles
@@ -10,6 +11,8 @@ interface AuthorProps {
 }
 
 export const Author = ({ authorImage, author, date }: AuthorProps) => {
+  const { t } = useTranslation();
+
   return (
     <>
       {!!authorImage && (
@@ -21,7 +24,7 @@ export const Author = ({ authorImage, author, date }: AuthorProps) => {
       {!!author && !!date && (
         <S.AuthorAndDate>
           <span>
-            por <strong>{author}</strong>
+            {t("by")} <strong>{author}</strong>
           </span>
           <span>{date}</span>
         </S.AuthorAndDate>

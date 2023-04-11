@@ -19,9 +19,9 @@ export const Links = ({ onClick }: LiProps) => {
     <S.Container onClick={onClick}>
       <ul>
         {links.map((link) => (
-          <S.Li key={link?.id} active={router?.pathname === link?.url}>
-            <Link href={link?.url}>
-              <a>{link?.name}</a>
+          <S.Li key={link.id} active={router.pathname === link.url}>
+            <Link href={link.url}>
+              <a>{link.name}</a>
             </Link>
           </S.Li>
         ))}

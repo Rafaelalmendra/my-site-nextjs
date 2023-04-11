@@ -1,11 +1,11 @@
 import { NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-//components
-import { HeadSeo } from "components";
-
 //services
 import { getRecentProjects, getRecentsPostsBlog } from "services";
+
+//components
+import { HeadSeo } from "components";
 
 //types
 import { BlogPost, ProjectProps } from "types";

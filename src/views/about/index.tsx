@@ -1,17 +1,17 @@
 import Image from "next/image";
 import { useTranslation } from "next-i18next";
 
-//components
+// components
 import { Layout, Career } from "components";
 
-//mocks
+// mocks
 import { technologies, career } from "mocks";
 
-//styles
+// styles
 import * as S from "./styles";
 
 export const AboutView = () => {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation();
 
   return (
     <Layout>
@@ -23,11 +23,13 @@ export const AboutView = () => {
 
             <p className="my-stacks">{t("myStacks")}</p>
 
-            <S.TechList>
-              {technologies.map((tech) => (
-                <span>- {tech?.name}</span>
-              ))}
-            </S.TechList>
+            {technologies.length > 0 && (
+              <S.TechList>
+                {technologies.map((tech) => (
+                  <span>- {tech.name}</span>
+                ))}
+              </S.TechList>
+            )}
           </S.TextContainer>
 
           <S.ImageContainer>
@@ -48,18 +50,20 @@ export const AboutView = () => {
         <S.CareerContainer>
           <h2>{t("career")}</h2>
 
-          <S.CareerList>
-            {career?.map((job) => (
-              <Career
-                key={job?.id}
-                title={job?.title}
-                company={job?.company}
-                companyLink={job?.companyLink}
-                date={job?.date}
-                skills={job?.skills}
-              />
-            ))}
-          </S.CareerList>
+          {career.length > 0 && (
+            <S.CareerList>
+              {career.map((job) => (
+                <Career
+                  key={job.id}
+                  title={job.title}
+                  company={job.company}
+                  companyLink={job.companyLink}
+                  date={job.date}
+                  skills={job.skills}
+                />
+              ))}
+            </S.CareerList>
+          )}
         </S.CareerContainer>
       </S.Container>
     </Layout>

@@ -21,11 +21,11 @@ const Post: NextPage<PostProps> = ({ postBlog }) => {
   return (
     <>
       <HeadSeo
-        title={`${postBlog?.title} | Rafael Almendra`}
-        content={`${postBlog?.title} | Rafael Almendra`}
+        title={`${postBlog.title} | Rafael Almendra`}
+        content={`${postBlog.title} | Rafael Almendra`}
       />
 
-      <PostView postBlog={postBlog} />
+      <PostView data={postBlog} />
     </>
   );
 };
@@ -40,7 +40,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params, locale }) {
-  const postBlog = await getFullPostBlog(params?.slug);
+  const postBlog = await getFullPostBlog(params.slug);
 
   return {
     props: {
