@@ -16,7 +16,6 @@
     "test": "jest --watchAll"
   },
   "dependencies": {
-    "aos": "^2.3.4",
     "axios": "^1.2.1",
     "babel-plugin-inline-react-svg": "^2.0.1",
     "framer-motion": "^5.0.0",
@@ -45,7 +44,6 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "12.1.2",
     "@testing-library/user-event": "^14.4.3",
-    "@types/aos": "^3.0.4",
     "@types/jest": "^29.2.4",
     "@types/node": "^18.7.23",
     "@types/nprogress": "^0.2.0",

@@ -17,10 +17,6 @@ import { ThemeProps } from "types";
 // utils
 import { changeTheme, verifyTheme } from "utils";
 
-// animations
-import Aos from "aos";
-import "aos/dist/aos.css";
-
 // styles
 import GlobalStyle from "styles/global";
 import "react-toastify/dist/ReactToastify.css";
@@ -32,7 +28,6 @@ const MyApp = ({ Component, pageProps }) => {
   const [theme, setTheme] = useState<ThemeProps>(verifyTheme);
 
   useEffect(() => {
-    Aos.init({ duration: 700, offset: 0 });
     TagManager.initialize({ gtmId: GOOGLE_TAG_MANEGER_ID });
   }, []);
 
