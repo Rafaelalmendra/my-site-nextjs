@@ -12,7 +12,8 @@ interface ButtonProps {
   fontSize?: string;
   className?: string;
   backgroundColor?: string;
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "tertiary";
+  onClick?: () => void;
 }
 
 export const Button = ({
@@ -25,6 +26,7 @@ export const Button = ({
   backgroundColor,
   type = "button",
   variant = "primary",
+  onClick,
 }: ButtonProps) => {
   return (
     <S.ButtonContainer
@@ -35,6 +37,7 @@ export const Button = ({
       disabled={disabled}
       className={className}
       backgroundColor={backgroundColor}
+      onClick={onClick}
     >
       {loading && (
         <ClipLoader

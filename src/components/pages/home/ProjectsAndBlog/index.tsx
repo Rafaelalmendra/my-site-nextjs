@@ -75,7 +75,7 @@ export const ProjectsAndBlog = ({ projects, postsBlog }: HomeViewProps) => {
 
       <Link href={active === "Blog" ? "/Blog" : "/Projects"}>
         <a>
-          <Button variant="secondary" fontSize="1rem">
+          <Button variant="tertiary" fontSize="1rem">
             {t("seeAll")} <ArrowUpRight size={22} />
           </Button>
         </a>

@@ -1,9 +1,10 @@
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 
 // components
-import { Layout, Comments, Author, Button } from "components";
+import { Layout, Author, Button, AddComment } from "components";
 
 // types
 import { BlogPostData } from "types";
@@ -20,6 +21,12 @@ interface PostViewProps {
 
 export const PostView = ({ data }: PostViewProps) => {
   const { t } = useTranslation();
+
+  const [commentsOpenModal, setCommentsOpenModal] = useState(true);
+
+  const handleCloseCommentsModal = () => {
+    setCommentsOpenModal(false);
+  };
 
   return (
     <Layout paddingTop blogPost>
@@ -55,15 +62,20 @@ export const PostView = ({ data }: PostViewProps) => {
 
         <S.Divider />
 
-        <Comments />
-
         <Link href="/Blog">
           <a>
-            <Button variant="secondary" fontSize="1rem">
+            <Button variant="tertiary" fontSize="1rem">
               <ArrowLeft size={22} /> {t("backToBlog")}
             </Button>
           </a>
         </Link>
+
+        <S.Divider />
+
+        <AddComment
+          isOpen={commentsOpenModal}
+          handleClose={handleCloseCommentsModal}
+        />
       </S.Container>
     </Layout>
   );

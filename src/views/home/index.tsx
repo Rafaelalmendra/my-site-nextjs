@@ -38,7 +38,7 @@ export const HomeView = ({ projects, postsBlog }: HomeViewProps) => {
 
           <Link href="/About">
             <a>
-              <Button variant="secondary" fontSize="1rem">
+              <Button variant="tertiary" fontSize="1rem">
                 {t("aboutMe")} <ArrowUpRight size={22} />
               </Button>
             </a>

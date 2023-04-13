@@ -4,7 +4,7 @@ interface ButtonContainerProps {
   width?: string;
   fontSize?: string;
   backgroundColor?: string;
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "tertiary";
 }
 
 export const ButtonContainer = styled.button<ButtonContainerProps>`
@@ -31,6 +31,7 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
       color: var(--white);
 
       &:hover {
+        color: var(--white) !important;
         background: var(--hover-blue);
       }
 
@@ -42,6 +43,33 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
 
   ${(props) =>
     props.variant === "secondary" &&
+    `
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.875rem 1.875rem;
+
+    border: 1px solid var(--grey);
+    background: none;
+    border-radius: 4px;
+
+    font-weight: 500;
+    color: var(--grey) !important;
+
+    &:hover {
+      border-color: var(--white);
+      color: var(--white) !important;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      background: var(--black);
+    }
+  `}
+
+${(props) =>
+    props.variant === "tertiary" &&
     `
       display: flex;
       align-items: center;

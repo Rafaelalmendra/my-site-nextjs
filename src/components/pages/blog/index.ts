@@ -1,2 +1,2 @@
 export * from "./Author";
-export * from "./Comments";
+export * from "./AddComment";

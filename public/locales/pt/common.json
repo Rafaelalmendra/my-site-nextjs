@@ -26,5 +26,9 @@
   "sucessMessage": "Mensagem enviada com sucesso",
   "by": "Por",
   "seeAll": "Ver todos",
-  "client": "Cliente"
+  "client": "Cliente",
+  "confirm": "Confirmar",
+  "cancel": "Cancelar",
+  "yourName": "Seu nome",
+  "comment": "Comentário"
 }

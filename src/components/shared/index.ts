@@ -8,3 +8,4 @@ export * from "./Skeleton";
 export * from "./ProgressBar";
 export * from "./Card";
 export * from "./Footer";
+export * from "./Modal";
