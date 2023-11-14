@@ -16,6 +16,7 @@
     "test": "jest --watchAll"
   },
   "dependencies": {
+    "@bigheads/core": "^0.3.3",
     "axios": "^1.2.1",
     "babel-plugin-inline-react-svg": "^2.0.1",
     "firebase": "^9.19.1",

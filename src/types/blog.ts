@@ -12,6 +12,7 @@ export interface BlogPost {
 }
 
 export interface BlogPostData {
+  slug: string;
   title: string;
   date: string;
   author: string;

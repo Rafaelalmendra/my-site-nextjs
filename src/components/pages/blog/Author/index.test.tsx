@@ -12,7 +12,7 @@ describe("Author", () => {
       />
     );
 
-    expect(screen.getByText("por")).toBeInTheDocument();
+    expect(screen.getByText("by")).toBeInTheDocument();
     expect(screen.getByText("Rafael")).toBeInTheDocument();
     expect(screen.getByText("2021-08-01")).toBeInTheDocument();
   });

@@ -6,8 +6,10 @@ import { Modal } from "components";
 
 // styles
 import * as S from "./styles";
+import { writeToDatabase } from "utils/database";
 
 interface AddCommentProps {
+  slug: string;
   isOpen: boolean;
   handleClose: () => void;
 }
@@ -17,7 +19,7 @@ interface FormDataProps {
   comment: string;
 }
 
-export const AddComment = ({ isOpen, handleClose }: AddCommentProps) => {
+export const AddComment = ({ slug, isOpen, handleClose }: AddCommentProps) => {
   const { t } = useTranslation();
   const {
     reset,
@@ -26,7 +28,15 @@ export const AddComment = ({ isOpen, handleClose }: AddCommentProps) => {
     formState: { errors },
   } = useForm<FormDataProps>();
 
-  const onSubmit: SubmitHandler<FormDataProps> = async (data) => {};
+  const onSubmit: SubmitHandler<FormDataProps> = async (data) => {
+    await writeToDatabase({
+      data,
+      path: `comments/${slug}`,
+    });
+
+    reset();
+    handleClose();
+  };
 
   return (
     <Modal
@@ -53,7 +63,7 @@ export const AddComment = ({ isOpen, handleClose }: AddCommentProps) => {
         </S.Field>
 
         <S.Field>
-          <label htmlFor="name">{t("comment")}</label>
+          <label htmlFor="message">{t("comment")}</label>
           <textarea
             id="message"
             {...register("comment", {

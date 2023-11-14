@@ -1,10 +1,9 @@
 import { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 
 // components
-import { Layout, Author, Button, AddComment } from "components";
+import { Layout, Author, Button, AddComment, CommentCard } from "components";
 
 // types
 import { BlogPostData } from "types";
@@ -12,17 +11,19 @@ import { BlogPostData } from "types";
 // styles
 import * as S from "./styles";
 
-// icons
-import { ArrowLeft } from "phosphor-react";
-
 interface PostViewProps {
   data: BlogPostData;
 }
 
 export const PostView = ({ data }: PostViewProps) => {
   const { t } = useTranslation();
+  console.log("data", data);
 
-  const [commentsOpenModal, setCommentsOpenModal] = useState(true);
+  const [commentsOpenModal, setCommentsOpenModal] = useState(false);
+
+  const handleOpenCommentsModal = () => {
+    setCommentsOpenModal(true);
+  };
 
   const handleCloseCommentsModal = () => {
     setCommentsOpenModal(false);
@@ -62,17 +63,21 @@ export const PostView = ({ data }: PostViewProps) => {
 
         <S.Divider />
 
-        <Link href="/Blog">
-          <a>
-            <Button variant="tertiary" fontSize="1rem">
-              <ArrowLeft size={22} /> {t("backToBlog")}
-            </Button>
-          </a>
-        </Link>
+        <S.CommentsContainer>
+          <S.CommentsHeader>
+            <Button onClick={handleOpenCommentsModal}>{t("addComment")}</Button>
+            <p>
+              {1} {t("comment")}
+            </p>
+          </S.CommentsHeader>
 
-        <S.Divider />
+          <S.CommentsContent>
+            <CommentCard />
+          </S.CommentsContent>
+        </S.CommentsContainer>
 
         <AddComment
+          slug={data.slug}
           isOpen={commentsOpenModal}
           handleClose={handleCloseCommentsModal}
         />

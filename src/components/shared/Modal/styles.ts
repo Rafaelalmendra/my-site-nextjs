@@ -41,7 +41,7 @@ export const Modal = styled.div<{ isOpen: boolean }>`
   border-radius: 4px;
 
   background-color: var(--dark-grey);
-  animation: ${({ isOpen }) => (isOpen ? fadeIn : fadeOut)} 0.8s ease-in-out;
+  animation: ${({ isOpen }) => (isOpen ? fadeIn : fadeOut)} 0.4s ease-in-out;
 
   @media (max-width: 768px) {
     width: 100%;

@@ -12,7 +12,7 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
 
   background-color: ${(props) =>
     props.backgroundColor ? props.backgroundColor : "var(--blue)"};
-  font-size: ${(props) => (props.fontSize ? props.fontSize : "1.4rem")};
+  font-size: ${(props) => (props.fontSize ? props.fontSize : "1rem")};
 
   cursor: pointer;
   transition: 0.2s ease-in-out;
@@ -24,11 +24,11 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
       align-items: center;
       justify-content: center;
       gap: 0.6rem;
-      padding: 0.875rem 1.875rem;
+      padding: 0.875rem 1.5rem;
 
       font-weight: 500;
       border-radius: 4px;
-      color: var(--white);
+      color: var(--white) !important;
 
       &:hover {
         color: var(--white) !important;
@@ -48,7 +48,7 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
     align-items: center;
     justify-content: center;
     gap: 0.6rem;
-    padding: 0.875rem 1.875rem;
+    padding: 0.875rem 1.5rem;
 
     border: 1px solid var(--grey);
     background: none;

@@ -33,8 +33,7 @@ export const Field = styled.div`
   textarea {
     height: 140px;
     margin-top: 1rem;
-    padding-left: 0.875rem;
-    padding: 0.875rem 0.875rem 0.875rem 0.875rem;
+    padding: 14px;
     border: 1px solid var(--grey);
     border-radius: 4px;
     background: none;
