@@ -40,6 +40,6 @@ export async function getStaticProps({ locale }) {
       ...(await serverSideTranslations(locale, ["common"])),
       postsBlog,
     },
-    revalidate: 60 * 5,
+    revalidate: 3600,
   };
 }

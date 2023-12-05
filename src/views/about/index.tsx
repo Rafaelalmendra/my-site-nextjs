@@ -46,7 +46,7 @@ export const AboutView = () => {
         </S.Header>
 
         <S.Divider />
-
+        {/*
         <S.CareerContainer>
           <h2>{t("career")}</h2>
 
@@ -64,7 +64,7 @@ export const AboutView = () => {
               ))}
             </S.CareerList>
           )}
-        </S.CareerContainer>
+        </S.CareerContainer> */}
       </S.Container>
     </Layout>
   );

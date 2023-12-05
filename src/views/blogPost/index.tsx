@@ -21,8 +21,7 @@ interface PostViewProps {
 
 export const PostView = ({ data }: PostViewProps) => {
   const { t } = useTranslation();
-
-  const [commentsOpenModal, setCommentsOpenModal] = useState(true);
+  const [commentsOpenModal, setCommentsOpenModal] = useState(false);
 
   const handleCloseCommentsModal = () => {
     setCommentsOpenModal(false);

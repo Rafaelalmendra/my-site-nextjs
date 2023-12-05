@@ -6,18 +6,24 @@ export const technologies = [
     name: "React Native",
   },
   {
-    name: "Nextjs",
-  },
-  {
-    name: "NodeJs",
+    name: "Next",
   },
   {
     name: "Typescript",
   },
   {
-    name: "Javascript",
+    name: "Jest",
   },
   {
-    name: "Jest",
+    name: "Micro-Frontend",
+  },
+  {
+    name: "Node",
+  },
+  {
+    name: "Java",
+  },
+  {
+    name: "Google Analytics & Microsoft Clarity",
   },
 ];
