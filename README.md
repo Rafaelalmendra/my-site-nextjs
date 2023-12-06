@@ -25,6 +25,8 @@ My website was created in order to demonstrate my skills and share my knowledge.
 - Graphql
 - Apollo Client
 - I18n
+- Testing Library
+- Jest
 
 <br>
 
