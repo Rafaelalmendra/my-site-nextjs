@@ -38,7 +38,7 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang={this.props.__NEXT_DATA__.query.locale as string}>
+      <Html lang="pt">
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
