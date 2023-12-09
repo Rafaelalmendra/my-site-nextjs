@@ -1,6 +1,9 @@
 import { render, fireEvent } from "@testing-library/react";
 import { Locales } from ".";
 
+import "@testing-library/jest-dom";
+import "@types/testing-library__jest-dom";
+
 jest.mock("next-i18next", () => {
   return {
     __esModule: true,

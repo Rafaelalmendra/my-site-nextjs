@@ -27,7 +27,7 @@ export const CardProject = ({
 
   return (
     <S.ProjectContainer id={title}>
-      {!!image.url ? (
+      {!!image?.url ? (
         <S.ProjectImage>
           <a href={deploy} target="_blank" rel="noopener noreferrer">
             <S.TagContainer>

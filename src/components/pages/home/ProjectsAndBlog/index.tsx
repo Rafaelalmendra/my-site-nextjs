@@ -47,10 +47,10 @@ export const ProjectsAndBlog = ({ projects, postsBlog }: HomeViewProps) => {
           {projects.map((project) => (
             <Card
               key={project.id}
-              image={project.image.url}
               title={project.title}
-              description={project.shortDescription}
               link={project.deploy}
+              image={project?.image?.url || ""}
+              description={project.shortDescription}
             />
           ))}
         </S.CardList>
