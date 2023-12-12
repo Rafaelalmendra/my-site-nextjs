@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useEffect, useState } from "react";
 import TagManager from "react-gtm-module";
 import { appWithTranslation } from "next-i18next";

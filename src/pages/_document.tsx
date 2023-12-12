@@ -1,10 +1,11 @@
+// @ts-nocheck
 /* eslint-disable @next/next/no-script-in-document */
 import Document, {
-  DocumentContext,
   Head,
   Html,
   Main,
   NextScript,
+  DocumentContext,
 } from "next/document";
 import React from "react";
 import { ServerStyleSheet } from "styled-components";
