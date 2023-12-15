@@ -27,15 +27,17 @@ export default Post;
 export async function getStaticPaths() {
   const postsBlog = await getAllPostsBlog();
 
-  const slugs = postsBlog.map((post) => ({
-    params: {
-      slug: post.slug,
-    },
-  }));
+  const slugs = postsBlog
+    ? postsBlog.map((post) => ({
+        params: {
+          slug: post.slug,
+        },
+      }))
+    : [];
 
   return {
-    paths: slugs || [],
-    fallback: "blocking",
+    paths: slugs,
+    fallback: false,
   };
 }
 
