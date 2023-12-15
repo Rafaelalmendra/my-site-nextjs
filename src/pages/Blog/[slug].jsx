@@ -4,7 +4,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { HeadSeo } from "components";
 
 // services
-import { getFullPostBlog } from "services";
+import { getAllPostsBlog, getFullPostBlog } from "services";
 
 // views
 import { PostView } from "views";
@@ -25,9 +25,17 @@ const Post = ({ postBlog }) => {
 export default Post;
 
 export async function getStaticPaths() {
+  const postsBlog = await getAllPostsBlog();
+
+  const slugs = postsBlog.map((post) => ({
+    params: {
+      slug: post.slug,
+    },
+  }));
+
   return {
-    paths: [],
-    fallback: false,
+    paths: slugs || [],
+    fallback: "blocking",
   };
 }
 
@@ -37,7 +45,7 @@ export async function getStaticProps({ params, locale }) {
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common"])),
-      postBlog: JSON.parse(JSON.stringify(postBlog)),
+      postBlog,
     },
   };
 }
