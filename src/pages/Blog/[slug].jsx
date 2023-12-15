@@ -27,7 +27,7 @@ export default Post;
 export async function getStaticPaths() {
   return {
     paths: [],
-    fallback: "blocking",
+    fallback: false,
   };
 }
 
@@ -37,8 +37,7 @@ export async function getStaticProps({ params, locale }) {
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common"])),
-      postBlog,
+      postBlog: JSON.parse(JSON.stringify(postBlog)),
     },
-    revalidate: 3600,
   };
 }
