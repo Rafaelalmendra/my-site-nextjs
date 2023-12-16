@@ -14,6 +14,7 @@ const fetchAPI = async (query, variables) => {
       query,
       variables,
     }),
+    next: { revalidate: 3600 },
   });
 
   const json = await res.json();
